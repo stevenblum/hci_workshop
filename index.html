@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCI Workshop</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17212b;
+      --muted: #52616f;
+      --line: #d8dee5;
+      --paper: #ffffff;
+      --wash: #f5f7f8;
+      --accent: #006b75;
+      --accent-dark: #004f57;
+      --gold: #b38b00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.5;
+    }
+
+    .site-header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 56px 0 44px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent-dark);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      padding: 34px 0 64px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .count {
+      color: var(--muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .lesson-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lesson {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      padding: 22px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .lesson-label {
+      margin: 0 0 6px;
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .lesson h3 {
+      margin: 0;
+      font-size: 1.28rem;
+      letter-spacing: 0;
+    }
+
+    .lesson p {
+      max-width: 760px;
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .lesson a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      color: #ffffff;
+      background: var(--accent);
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .lesson a:focus,
+    .lesson a:hover {
+      background: var(--accent-dark);
+    }
+
+    footer {
+      padding: 24px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 42px 0 34px;
+      }
+
+      .section-heading,
+      .lesson {
+        display: block;
+      }
+
+      .count {
+        display: block;
+        margin-top: 6px;
+      }
+
+      .lesson a {
+        width: 100%;
+        justify-content: center;
+        margin-top: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap hero">
+      <p class="eyebrow">Industrial Engineering Graduate Workshop</p>
+      <h1>Human-Computer Interaction Workshop</h1>
+      <p class="intro">
+        Lesson materials for studying human-centered design, task analysis, human performance,
+        visual attention, cognitive load, and applied evaluation of complex systems.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="section-heading">
+        <h2>Lessons</h2>
+        <span class="count">1 lesson available</span>
+      </div>
+
+      <ol class="lesson-list">
+        <li class="lesson">
+          <div>
+            <p class="lesson-label">Lesson 1</p>
+            <h3>Task Analysis and GOMS Models</h3>
+            <p>
+              Model user tasks with hierarchical task analysis and GOMS/KLM methods, then use
+              those models to predict performance and identify interface improvements.
+            </p>
+          </div>
+          <a href="Lessons/L1/L1_Quarto.html">Open presentation</a>
+        </li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      HCI workshop materials for GitHub Pages.
+    </div>
+  </footer>
+</body>
+</html>
