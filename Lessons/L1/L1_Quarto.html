@@ -6,8 +6,8 @@
 <script src="L1_Quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="L1_Quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="L1_Quarto_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="L1_Quarto_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="L1_Quarto_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <title>Lesson 1: Task Analysis and GOMS/KLM</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -98,7 +98,7 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
-  <link rel="stylesheet" href="../../uri-slide-branding.css">
+  <link rel="stylesheet" href="uri-slide-branding.css">
   <link href="L1_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -1717,254 +1717,503 @@ Predictions of expert user behavior
       });
     </script>
     <a class="toc-home" href="#/table-of-contents" aria-label="Go to table of contents" title="Table of contents">
+
       <svg viewbox="0 0 24 24" aria-hidden="true">
+
         <path d="m3 10.5 9-7 9 7"></path>
+
         <path d="M5.5 9.5V20h13V9.5"></path>
+
         <path d="M9.5 20v-6h5v6"></path>
+
       </svg>
+
     </a>
+
     <a class="toc-overview" href="#" aria-label="Open slide overview" title="Slide overview">
+
       <svg viewbox="0 0 24 24" aria-hidden="true">
+
         <rect x="3" y="3" width="5" height="5"></rect>
+
         <rect x="9.5" y="3" width="5" height="5"></rect>
+
         <rect x="16" y="3" width="5" height="5"></rect>
+
         <rect x="3" y="9.5" width="5" height="5"></rect>
+
         <rect x="9.5" y="9.5" width="5" height="5"></rect>
+
         <rect x="16" y="9.5" width="5" height="5"></rect>
+
         <rect x="3" y="16" width="5" height="5"></rect>
+
         <rect x="9.5" y="16" width="5" height="5"></rect>
+
         <rect x="16" y="16" width="5" height="5"></rect>
+
       </svg>
+
     </a>
+
     <script>
+
       (function() {
+
         const home = document.querySelector(".toc-home");
+
         const overview = document.querySelector(".toc-overview");
+
         const deck = document.querySelector(".reveal");
 
+    
+
         if (home && deck && home.parentElement !== deck) {
+
           deck.appendChild(home);
+
         }
+
+    
 
         if (overview && deck && overview.parentElement !== deck) {
+
           deck.appendChild(overview);
+
         }
+
+    
 
         if (overview) {
+
           overview.addEventListener("click", function(event) {
+
             event.preventDefault();
 
+    
+
             if (window.Reveal && typeof window.Reveal.toggleOverview === "function") {
+
               window.Reveal.toggleOverview();
+
             }
+
           });
+
         }
+
       })();
+
     </script>
+
     <script>
+
       window.addEventListener("load", function() {
+
         let scrollTimeout = null;
+
         const cooldownPeriod = 10;
+
         const minimumDelta = 10;
 
+    
+
         window.addEventListener("wheel", function(event) {
+
           if (!window.Reveal) {
+
             return;
+
           }
+
+    
 
           if (event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+
             return;
+
           }
 
+    
+
           if (Math.abs(event.deltaY) < minimumDelta || scrollTimeout) {
+
             return;
+
           }
+
+    
 
           event.preventDefault();
 
+    
+
           if (event.deltaY > 0) {
+
             window.Reveal.next();
+
           } else {
+
             window.Reveal.prev();
+
           }
+
+    
 
           scrollTimeout = window.setTimeout(function() {
+
             scrollTimeout = null;
+
           }, cooldownPeriod);
+
         }, { passive: false });
+
       });
+
     </script>
+
     <script>
+
       (function() {
+
         const minScale = 0.3;
+
         const fitPadding = 2;
+
         let fitScheduled = false;
 
+    
+
         function visibleSlides() {
+
           return Array.from(document.querySelectorAll(".reveal .slides > section"))
+
             .filter((section) => {
+
               const rect = section.getBoundingClientRect();
+
               const style = window.getComputedStyle(section);
+
               return rect.width > 0 && rect.height > 0 && style.display !== "none";
+
             });
+
         }
+
+    
 
         function measuredChildren(section) {
+
           return Array.from(section.children).filter((child) => {
+
             if (child.matches("aside.notes, aside:not(.notes), .speaker-notes")) {
+
               return false;
+
             }
+
+    
 
             const style = window.getComputedStyle(child);
+
             return style.display !== "none" && style.visibility !== "hidden";
+
           });
+
         }
+
+    
 
         function contentOverflow(section) {
+
           const sectionRect = section.getBoundingClientRect();
+
           const sectionStyle = window.getComputedStyle(section);
+
           const allowedBottom = sectionRect.bottom - parseFloat(sectionStyle.paddingBottom || 0);
+
           let maxBottom = sectionRect.top;
 
+    
+
           measuredChildren(section).forEach((child) => {
+
             const rect = child.getBoundingClientRect();
+
             if (rect.width === 0 && rect.height === 0) {
+
               return;
+
             }
+
             maxBottom = Math.max(maxBottom, rect.bottom);
+
           });
+
+    
 
           return Math.max(0, maxBottom - allowedBottom + fitPadding);
+
         }
+
+    
 
         function fitSlide(section) {
+
           section.style.removeProperty("font-size");
+
           const maxFontSize = parseFloat(window.getComputedStyle(section).fontSize);
 
+    
+
           if (!maxFontSize || contentOverflow(section) <= 0) {
+
             return;
+
           }
+
+    
 
           let low = minScale;
+
           let high = 1;
+
           let best = minScale;
 
+    
+
           for (let i = 0; i < 12; i += 1) {
+
             const scale = (low + high) / 2;
+
             section.style.fontSize = `${maxFontSize * scale}px`;
 
+    
+
             if (contentOverflow(section) <= 0) {
+
               best = scale;
+
               low = scale;
+
             } else {
+
               high = scale;
+
             }
+
           }
+
+    
 
           section.style.fontSize = `${maxFontSize * best}px`;
+
         }
+
+    
 
         function fitVisibleSlides() {
+
           visibleSlides().forEach(fitSlide);
+
         }
+
+    
 
         function scheduleFit() {
+
           if (fitScheduled) {
+
             return;
+
           }
+
+    
 
           fitScheduled = true;
+
           window.requestAnimationFrame(() => {
+
             window.requestAnimationFrame(() => {
+
               fitScheduled = false;
+
               fitVisibleSlides();
+
             });
+
           });
+
         }
+
+    
 
         window.addEventListener("load", scheduleFit);
+
         window.addEventListener("resize", scheduleFit);
 
+    
+
         document.addEventListener("DOMContentLoaded", function() {
+
           scheduleFit();
 
+    
+
           if (window.Reveal && typeof window.Reveal.on === "function") {
+
             window.Reveal.on("ready", scheduleFit);
+
             window.Reveal.on("slidechanged", scheduleFit);
+
             window.Reveal.on("resize", scheduleFit);
+
             window.Reveal.on("overviewhidden", scheduleFit);
+
           }
+
         });
+
       })();
+
     </script>
+
     <script>
+
       (function() {
+
         let sourceFooterScheduled = false;
 
+    
+
         function currentSlide() {
+
           if (!window.Reveal || typeof window.Reveal.getCurrentSlide !== "function") {
+
             return null;
+
           }
+
+    
 
           return window.Reveal.getCurrentSlide();
+
         }
 
+    
+
         function syncSourceFooter() {
+
           const reveal = document.querySelector(".reveal");
 
+    
+
           if (!reveal) {
+
             return;
+
           }
 
+    
+
           reveal.querySelectorAll(":scope > .footer.source-citation-footer").forEach((footer) => {
+
             footer.remove();
+
           });
+
+    
 
           const slide = currentSlide();
 
+    
+
           if (!slide) {
+
             return;
+
           }
+
+    
 
           const slideFooter = slide.querySelector(":scope > .footer.source-citation-footer");
 
+    
+
           if (!slideFooter) {
+
             return;
+
           }
+
+    
 
           const clonedFooter = slideFooter.cloneNode(true);
+
           clonedFooter.dataset.sourceFooterClone = "true";
+
           reveal.appendChild(clonedFooter);
+
         }
+
+    
 
         function scheduleSourceFooterSync() {
+
           if (sourceFooterScheduled) {
+
             return;
+
           }
+
+    
 
           sourceFooterScheduled = true;
+
           window.requestAnimationFrame(() => {
+
             window.requestAnimationFrame(() => {
+
               sourceFooterScheduled = false;
+
               syncSourceFooter();
+
             });
+
           });
+
         }
 
+    
+
         window.addEventListener("load", scheduleSourceFooterSync);
+
         window.addEventListener("hashchange", scheduleSourceFooterSync);
 
+    
+
         document.addEventListener("DOMContentLoaded", function() {
+
           scheduleSourceFooterSync();
 
+    
+
           if (window.Reveal && typeof window.Reveal.on === "function") {
+
             window.Reveal.on("ready", scheduleSourceFooterSync);
+
             window.Reveal.on("slidechanged", scheduleSourceFooterSync);
+
             window.Reveal.on("overviewhidden", scheduleSourceFooterSync);
+
           }
+
         });
+
       })();
+
     </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

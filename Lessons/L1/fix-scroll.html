@@ -1,0 +1,33 @@
+<script>
+  window.addEventListener("load", function() {
+    let scrollTimeout = null;
+    const cooldownPeriod = 10;
+    const minimumDelta = 10;
+
+    window.addEventListener("wheel", function(event) {
+      if (!window.Reveal) {
+        return;
+      }
+
+      if (event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+        return;
+      }
+
+      if (Math.abs(event.deltaY) < minimumDelta || scrollTimeout) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (event.deltaY > 0) {
+        window.Reveal.next();
+      } else {
+        window.Reveal.prev();
+      }
+
+      scrollTimeout = window.setTimeout(function() {
+        scrollTimeout = null;
+      }, cooldownPeriod);
+    }, { passive: false });
+  });
+</script>

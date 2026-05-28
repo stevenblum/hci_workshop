@@ -1,0 +1,45 @@
+<a class="toc-home" href="#/table-of-contents" aria-label="Go to table of contents" title="Table of contents">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="m3 10.5 9-7 9 7"></path>
+    <path d="M5.5 9.5V20h13V9.5"></path>
+    <path d="M9.5 20v-6h5v6"></path>
+  </svg>
+</a>
+<a class="toc-overview" href="#" aria-label="Open slide overview" title="Slide overview">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="3" width="5" height="5"></rect>
+    <rect x="9.5" y="3" width="5" height="5"></rect>
+    <rect x="16" y="3" width="5" height="5"></rect>
+    <rect x="3" y="9.5" width="5" height="5"></rect>
+    <rect x="9.5" y="9.5" width="5" height="5"></rect>
+    <rect x="16" y="9.5" width="5" height="5"></rect>
+    <rect x="3" y="16" width="5" height="5"></rect>
+    <rect x="9.5" y="16" width="5" height="5"></rect>
+    <rect x="16" y="16" width="5" height="5"></rect>
+  </svg>
+</a>
+<script>
+  (function() {
+    const home = document.querySelector(".toc-home");
+    const overview = document.querySelector(".toc-overview");
+    const deck = document.querySelector(".reveal");
+
+    if (home && deck && home.parentElement !== deck) {
+      deck.appendChild(home);
+    }
+
+    if (overview && deck && overview.parentElement !== deck) {
+      deck.appendChild(overview);
+    }
+
+    if (overview) {
+      overview.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        if (window.Reveal && typeof window.Reveal.toggleOverview === "function") {
+          window.Reveal.toggleOverview();
+        }
+      });
+    }
+  })();
+</script>

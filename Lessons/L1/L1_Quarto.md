@@ -2,7 +2,7 @@
 title: "Lesson 1: Task Analysis and GOMS/KLM"
 subtitle: "HCI Workshop"
 resources:
-  - ../../URI_RI_Logo.png
+  - URI_RI_Logo.png
   - figures/*
 bibliography: ../references/hci-workshop.bib
 csl: ../references/hci-slide-note.csl
@@ -15,11 +15,11 @@ format:
     min-scale: 0.2
     max-scale: 1.0
     margin: 0.08
-    css: ../../uri-slide-branding.css
+    css: uri-slide-branding.css
     include-after-body:
-      - ../../toc-home.html
-      - ../../fix-scroll.html
-      - ../../uri-auto-fit.html
+      - toc-home.html
+      - fix-scroll.html
+      - uri-auto-fit.html
     show-notes: true
     auto-stretch: false
     mouse-wheel: false
