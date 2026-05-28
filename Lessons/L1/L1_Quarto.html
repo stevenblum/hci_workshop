@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="L1_Quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="L1_Quarto_files/libs/quarto-html/tabby.min.js"></script>
+<script src="L1_Quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="L1_Quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="L1_Quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="L1_Quarto_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="L1_Quarto_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <title>Lesson 1: Task Analysis and GOMS/KLM</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="../../uri-slide-branding.css">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script>
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "v" || event.key === "V") {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!window.Reveal || typeof window.Reveal.configure !== "function") {
+          return;
+        }
+
+        const notesAreVisible = window.Reveal.getConfig().showNotes === true;
+        document.body.classList.add("notes-toggle-in-progress");
+        window.Reveal.configure({ showNotes: !notesAreVisible });
+
+        window.requestAnimationFrame(function() {
+          if (typeof window.Reveal.layout === "function") {
+            window.Reveal.layout();
+          }
+          window.requestAnimationFrame(function() {
+            document.body.classList.remove("notes-toggle-in-progress");
+          });
+        });
+      }
+    });
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lesson 1: Task Analysis and GOMS/KLM</h1>
+  <p class="subtitle">HCI Workshop</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="table-of-contents" class="slide level2">
+<h2>Lesson Roadmap</h2>
+<ul>
+<li>Interface evaluation methods</li>
+<li>GOMS model structure</li>
+<li>NGOMSL and KLM</li>
+<li>KLM operators, rules, and examples</li>
+<li>Validation and extensions</li>
+</ul>
+<aside class="notes">
+<p>This lesson introduces GOMS as a task-analysis and predictive-modeling technique. Keep the framing practical: GOMS is not a general theory of all user behavior. It is an engineering model for making useful, approximate predictions about routine, skilled, procedural interaction.</p>
+<p>Lesson 2 will extend the discussion to CPM-GOMS, where multiple perceptual, cognitive, and motor processes can overlap, and to team models, where work is distributed across multiple people or agents.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<p>By the end, students can:</p>
+<ul>
+<li>Explain why GOMS helps interface design</li>
+<li>State GOMS/KLM assumptions</li>
+<li>Build a KLM for an Industry 4.0 task</li>
+<li>Validate a KLM against observed task data</li>
+</ul>
+<aside class="notes">
+<p>Emphasize that the main deliverable is not memorizing operator values. The main deliverable is learning how to convert a task into an explicit method, assign primitive operators, estimate task time, and critique whether the model assumptions are appropriate.</p>
+<p>A secondary objective is to prepare students for Lesson 2. KLM is intentionally simple and mostly serial. That simplicity is useful, but it also creates the need for CPM-GOMS when interaction contains overlapping looking, thinking, moving, speaking, monitoring, or waiting.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="evaluation-methods-in-hci" class="slide level2 eval-methods-slide">
+<h2>Evaluation Methods in HCI</h2>
+<table class="eval-methods">
+<thead>
+<tr>
+<th>
+Method source
+</th>
+<th>
+Information description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Verbal reports
+</td>
+<td>
+User accounts of thinking during system use
+</td>
+</tr>
+<tr>
+<td>
+Questionnaires
+</td>
+<td>
+Subjective user responses to targeted questions
+</td>
+</tr>
+<tr>
+<td>
+Use data
+</td>
+<td>
+Measures from actual or simulated system use
+</td>
+</tr>
+<tr>
+<td>
+Design walkthroughs
+</td>
+<td>
+End-user and development-team feedback on acceptability
+</td>
+</tr>
+<tr>
+<td>
+Heuristic reviews
+</td>
+<td>
+UI expert judgment about general acceptability
+</td>
+</tr>
+<tr class="theory-based-analysis">
+<td>
+Theory-based analysis
+</td>
+<td>
+Predictions of expert user behavior
+</td>
+</tr>
+</tbody>
+</table>
+<div class="footer source-citation-footer">
+<p>Table adapted from Karat, 1997, “User-centered software evaluation,” Chap. 28, Table 1.</p>
+</div>
+<aside class="notes">
+<p>This slide adapts Karat’s Chapter 28, Table 1, in Helander et al., focusing on the method sources and the kind of information each source provides.</p>
+<p>The first three rows are use-based sources: verbal reports, questionnaires, and use data. These rely on people using, trying, or responding to a system or prototype.</p>
+<p>The next two rows are inspection-oriented sources: design walkthroughs and heuristic reviews. These are especially useful early because they can inform design decisions before a full system or large user study exists.</p>
+<p>The green row is the bridge to this lesson. Theory-based analysis includes GOMS-family modeling: using a cognitive/task theory to predict expert user behavior. It is not a replacement for all user evaluation, but it can provide early ease-of-use predictions and compare design alternatives before implementation.</p>
+<p>Source: Helander et al.&nbsp;(1997), Chapter 28, Table 1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="theory-based-task-analysis" class="slide level2 theory-task-analysis-slide">
+<h2>Theory-Based Task Analysis</h2>
+<div class="theory-task-layout">
+<div class="theory-task-copy">
+<ul>
+<li>Task analysis: describe what users must know and do to accomplish goals</li>
+<li>GOMS focuses on procedural “how-to” knowledge</li>
+<li>Represents tasks as goals, operators, methods, and selection rules</li>
+<li>Best fit: routine cognitive skills, not open-ended exploration</li>
+<li>Starts from top-level goals found through other task-analysis work</li>
+</ul>
+</div>
+<p><img src="figures/john_kieras_1994_fig2_goms_family.jpeg" class="slide-figure figure-goms-family" alt="John and Kieras Figure 2 shows General GOMS under Task Analysis, linked to specific GOMS techniques and human information-processing frameworks."></p>
+</div>
+<div class="footer source-citation-footer">
+<p>John and Kieras, 1994, “The GOMS Family of Analysis Techniques,” secs. 3.1-3.3 and fig.&nbsp;2.</p>
+</div>
+<aside class="notes">
+<p>This slide links directly back to the green row on the previous slide. GOMS is a theory-based analysis method because it analyzes tasks using explicit assumptions about human information processing.</p>
+<p>John and Kieras Section 3 frames the GOMS family as a lattice. At the top is task analysis; at the bottom are conceptual frameworks for human information processing, especially serial and parallel stage models. GOMS sits in between: it is a way to analyze and represent tasks in a form connected to those cognitive assumptions.</p>
+<p>Section 3.1 explains the conceptual-framework side. Stage models assume that interaction can be understood through perceptual, cognitive, and motor processing stages. The Model Human Processor is important because it turns those ideas into an engineering model that can support predictions about HCI performance.</p>
+<p>Section 3.2 explains the computational-architecture level. These are more explicit models that can be run as simulations, such as CCT, ACT-R, Soar, and EPIC. John and Kieras note that, at the time, CCT was the ready-to-use computational basis for NGOMSL.</p>
+<p>Section 3.3 is the key task-analysis point. General GOMS is under Task Analysis, but it is a specific kind of task analysis: it represents procedural “how-to-do-it” knowledge using goals, operators, methods, and selection rules.</p>
+<p>Emphasize the three restrictions. First, GOMS is for procedural knowledge, not all knowledge about a system. Second, it is recommended for routine cognitive skills, not exploration or open-ended problem solving. Third, the analyst must already have a list of top-level user goals; GOMS does not discover that list by itself. Those goals come from interviews, observations, existing systems, broader task analysis, or analyst judgment.</p>
+<p>Source: John and Kieras (1994), Section 3, especially Sections 3.1-3.3 and Figure 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-as-engineering-model" class="slide level2">
+<h2>GOMS as Engineering Model</h2>
+<ul>
+<li>Approximate, not perfect</li>
+<li>Predictive, not merely descriptive</li>
+<li>Usable by designers</li>
+<li>Focused on procedural interaction</li>
+</ul>
+<aside class="notes">
+<p>John and Kieras describe GOMS models as engineering models of human-computer interaction. Engineering models are deliberately approximate. They include enough detail to support design decisions, without trying to model every psychological process.</p>
+<p>Use the “EPA mileage rating” analogy: GOMS predictions may not exactly match any particular user on any particular day, but they can be very useful for comparing alternatives under consistent assumptions.</p>
+<p>The original Card, Moran, and Newell framing emphasizes a priori prediction, coverage of relevant HCI tasks, approximation, and learnability for practitioners.</p>
+<p>This framing helps students avoid two mistakes: treating GOMS as exact truth, and dismissing it because it is approximate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-architecture" class="slide level2 compact goms-architecture-slide">
+<h2>GOMS Architecture</h2>
+<p><strong>GOMS model = Goals + Operators + Methods + Selection Rules</strong></p>
+<ul>
+<li><strong>Goals:</strong> desired states that organize the task; they identify what is wanted, what methods are available, and what has already been tried</li>
+<li><strong>Operators:</strong> elementary perceptual, cognitive, or motor acts; each changes the user’s mental state or task environment and has an effect and duration</li>
+<li><strong>Methods:</strong> learned procedures for achieving goals; conditional sequences of subgoals and operators driven by memory and task-environment tests</li>
+<li><strong>Selection rules:</strong> if-then rules for choosing among competing methods; skilled choices are fast, smooth, and based on task conditions</li>
+</ul>
+<div class="footer source-citation-footer">
+<p>Card, Moran, and Newell, 1983, “The Psychology of Human-Computer Interaction,” Chap. 5, sec.&nbsp;5.1.</p>
+</div>
+<aside class="notes">
+<p>This slide follows Card, Moran, and Newell’s original definition of a GOMS model in Chapter 5, Section 5.1. Their key claim is that the user’s cognitive structure for skilled interaction can be represented as goals, operators, methods, and selection rules.</p>
+<p>A goal might be “Start CNC cutting program.” It is not just a label for the outcome; it also functions as a memory point for what the user is trying to do, which methods could be used, and what has already been attempted.</p>
+<p>Operators are the model’s executable units. Depending on the grain of analysis, an operator might be pressing a key, pointing to a target, mentally preparing for the next step, or verifying the displayed machine state. Card, Moran, and Newell emphasize that operators have effects and durations, which is what lets a GOMS model support time prediction.</p>
+<p>A method is the ordered procedure for a goal: open the program screen, select the program, confirm it, and press Cycle Start. Methods are learned task knowledge available during skilled performance, not plans invented from scratch while acting.</p>
+<p>A selection rule chooses among methods when more than one method is available. For example, if the correct CNC program is already loaded, use a shorter method that skips program selection; otherwise, use the full method. In skilled behavior, this choice should be quick and routine rather than a new problem-solving episode.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 5, Section 5.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mini-goms-example" class="slide level2">
+<h2>Mini GOMS Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>Goal: Start CNC cutting program</span>
+<span id="cb1-2"><a href=""></a>Method:</span>
+<span id="cb1-3"><a href=""></a>  1. Open Program screen</span>
+<span id="cb1-4"><a href=""></a>  2. Select required program</span>
+<span id="cb1-5"><a href=""></a>  3. Confirm program loaded</span>
+<span id="cb1-6"><a href=""></a>  4. Press Cycle Start</span>
+<span id="cb1-7"><a href=""></a>Selection rule:</span>
+<span id="cb1-8"><a href=""></a>  IF program already loaded, skip 1–3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Use this mini example to show why GOMS is more than a flowchart. The goal specifies the user’s intention. The method specifies what the user must know how to do. The selection rule captures procedural knowledge that depends on task state.</p>
+<p>This also previews NGOMSL, which writes methods in a structured natural-language notation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="model-human-processor" class="slide level2">
+<h2>Model Human Processor</h2>
+<p><img data-src="figures/card_1983_fig2_1_model_human_processor.png" class="slide-figure figure-mhp"></p>
+<aside class="notes">
+<p>Card, Moran, and Newell introduce the Model Human Processor as a deliberately simplified information-processing model for HCI engineering. It is meant to help designers remember psychological facts and make approximate predictions, not to describe literally what is inside the head.</p>
+<p>The model has two parts: memories and processors, plus principles of operation. Memories are described by capacity, decay time, and code type. Processors are described mainly by cycle time. The three interacting subsystems are perceptual, cognitive, and motor.</p>
+<p>For the parameters in the figure, <span class="math inline">\(\mu\)</span> means storage capacity, <span class="math inline">\(\delta\)</span> means decay time or persistence of an item, <span class="math inline">\(\kappa\)</span> means the dominant code type used to represent the information, and <span class="math inline">\(\tau\)</span> means processor cycle time. The exact values differ by memory store or processor, but the general idea is the same: how much can be held, how long it remains available, what form the representation takes, and how quickly a processing cycle can complete.</p>
+<p>The notation <code>100 [50-200] ms</code> means a nominal value followed by an estimated range. The first number is the middle or typical value Card, Moran, and Newell recommend for approximate engineering calculations. The bracketed values are plausible low and high bounds, reflecting task conditions, measurement conditions, practice, individual differences, and stimulus quality. For time parameters, the low value is faster and the high value is slower; for capacity parameters, the low value means less capacity and the high value means more capacity. This is why the model supports both a typical Middleman calculation and sensitivity checks using low and high parameter values.</p>
+<p>Use this figure to connect the rest of the lesson to GOMS. Information flows from sensory input into perceptual memories, then into Working Memory through the Perceptual Processor. Working Memory is activated chunks in Long-Term Memory. The Cognitive Processor uses a recognize-act cycle to select actions, and the Motor Processor carries out those actions.</p>
+<p>The model supports task analysis, calculation, and approximation. Card, Moran, and Newell recommend reasoning with nominal values and with plausible ranges: a Middleman, Fastman, and Slowman version of the user. Some tasks look serial, such as pressing a key in response to a light. Other skilled tasks, such as typing or reading, can pipeline perceptual, cognitive, and motor processes.</p>
+<p>Section 2.3 is the caveat: this is a useful synthesis, not a settled complete theory. The memory “boxes,” depth of processing, Working Memory span, interference, decay, and processor-control assumptions are simplifications chosen because they give designers a usable first approximation.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, especially section 2.1 and Figure 2.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="model-human-processor-parameters" class="slide level2 compact">
+<h2>Model Human Processor Parameters</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Question answered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mu\)</span></td>
+<td>capacity</td>
+<td>How much can it hold?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta\)</span></td>
+<td>decay / persistence</td>
+<td>How long is it available?</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\kappa\)</span></td>
+<td>code</td>
+<td>What form is it represented in?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\tau\)</span></td>
+<td>cycle time</td>
+<td>How long is one processor cycle?</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Format: nominal [low-high range]</li>
+<li>Nominal = Middleman engineering value</li>
+<li>Range = low to high parameter bounds</li>
+<li>Decay is degradation, not deletion</li>
+<li>Values synthesize empirical estimates</li>
+</ul>
+<aside class="notes">
+<p>This slide makes the notation in Figure 2.1 explicit. Card, Moran, and Newell use memory parameters for capacity, decay, and code type, and processor parameters for cycle time.</p>
+<p>Decay does not mean the information is completely gone at exactly the listed time. It means availability or retrievability is declining. For the sensory image stores, Card, Moran, and Newell use half-life as an index of decay: the point where probability of retrieval has fallen below about 50%. They also note that exponential decay is a useful approximation, not a claim that the trace disappears instantly.</p>
+<p>For Working Memory, apparent decay is strongly shaped by interference. A chunk can become less accessible as new chunks are activated, and it can sometimes be refreshed or reconstructed if appropriate cues remain. In Long-Term Memory, failure to retrieve often means the right cue did not activate the item or that competing associations interfered, not that the knowledge was physically erased.</p>
+<p>The notation such as <code>70 [25-170] ms</code> or <code>7 [5-9] chunks</code> should be read as a typical or nominal value followed by a plausible low-high range. The nominal value is the value to use for a first-pass Middleman calculation. The bracketed range gives low and high parameter values for sensitivity analysis.</p>
+<p>The nominal values should not be treated as exact biological constants or simple averages from a single experiment. Card, Moran, and Newell chose them as practical engineering estimates from the available empirical literature. For example, they describe the nominal cognitive processor cycle time as about the median of estimates across several task phenomena, while the lower and upper bounds include the estimates they wanted the model to cover.</p>
+<p>The range is intentionally broad because user performance changes with practice, effort, task pacing, stimulus quality, measurement conditions, and individual differences. The engineering use is to calculate a typical estimate and then check whether the design conclusion still holds under low and high assumptions.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, especially sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="perceptual-processor" class="slide level2 compact mhp-callout-slide">
+<h2>Perceptual Processor</h2>
+<ul>
+<li>Converts sensations into percepts</li>
+<li>Encodes selected input into symbols</li>
+<li>Combines events within one cycle</li>
+<li>Guides visual search and fixation</li>
+<li>Cycle time <span class="math inline">\(\tau_{\mathrm{P}}\)</span>: 100 [50-200] ms</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 34%; --mhp-y: 39%; --mhp-w: 25%; --mhp-h: 11%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The Perceptual Processor turns sensory input into internal representations. The nominal cycle time <span class="math inline">\(\tau_{\mathrm{P}}\)</span> is about 100 ms, with a typical range from about 50 to 200 ms.</p>
+<p>Events that occur within one perceptual cycle can be combined into one percept. Chapter 2 uses this idea to explain phenomena such as apparent motion, click fusion, and perceived causality in animation. For interface timing, very short delays can be perceptually invisible, while delays around the perceptual cycle can disrupt continuity.</p>
+<p>Visual tasks are not just about the processor cycle. The eye obtains high detail only in the fovea, and the eyes move in saccades. The model uses about 230 ms for a typical eye movement, with a wide range depending on task and observer. Reading, scanning a display, and finding a target can therefore be dominated by eye movements rather than by the 100 ms perceptual cycle alone.</p>
+<p>The Variable Perceptual Processor Rate Principle says that perceptual cycle time varies inversely with stimulus intensity. High-contrast, bright, salient signals are processed faster than faint or low-contrast signals. This gives a psychological reason for making critical state changes visible, persistent, and discriminable.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="visual-and-auditory-image-stores" class="slide level2 compact mhp-callout-slide">
+<h2>Visual and Auditory Image Stores</h2>
+<ul>
+<li>Visual code <span class="math inline">\(\kappa_{\mathrm{VIS}}\)</span>: physical trace</li>
+<li>Visual capacity <span class="math inline">\(\mu_{\mathrm{VIS}}\)</span>: 17 [7-17] letters</li>
+<li>Visual duration <span class="math inline">\(\delta_{\mathrm{VIS}}\)</span>: 200 [70-1000] ms</li>
+<li>Auditory code <span class="math inline">\(\kappa_{\mathrm{AIS}}\)</span>: physical sound</li>
+<li>Auditory capacity <span class="math inline">\(\mu_{\mathrm{AIS}}\)</span>: 5 [4.4-6.2] letters</li>
+<li>Auditory duration <span class="math inline">\(\delta_{\mathrm{AIS}}\)</span>: 1500 [900-3500] ms</li>
+<li>Decay <span class="math inline">\(\delta\)</span> is a retrieval half-life estimate</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 16%; --mhp-y: 12%; --mhp-w: 50%; --mhp-h: 18%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The perceptual memories are short-lived stores that hold sensory information before it has been fully recognized and symbolically encoded. Card, Moran, and Newell distinguish the Visual Image Store and Auditory Image Store.</p>
+<p>The code type is physical. A visual stimulus is represented in terms of physical features such as shape, curvature, intensity, and spatial pattern before it is represented as a recognized symbol. This matters for interface design because users can select from the perceptual store only by physical properties before recognition. After a quick display of colored letters and numbers, for example, a person can attend to the green items or the top half, but not to “the even digits” before identifying the items.</p>
+<p>Useful nominal values from the model are: Visual Image Store half-life about 200 ms, capacity about 17 letters; Auditory Image Store half-life about 1500 ms, capacity about 5 letters. Auditory information persists longer because it often needs to be interpreted over time.</p>
+<p>For dashboards, alarms, and machine HMIs, the design implication is that fleeting displays and transient alerts should not require users to extract many symbolic items after the fact. If the trace is brief and complex, Working Memory fills before everything can be transferred.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, section 2.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="working-memory" class="slide level2 compact mhp-callout-slide">
+<h2>Working Memory</h2>
+<ul>
+<li>Active chunks for the current task</li>
+<li>Chunk = meaningful unit for this user</li>
+<li>Code <span class="math inline">\(\kappa_{\mathrm{WM}}\)</span>: acoustic or visual</li>
+<li>Pure capacity <span class="math inline">\(\mu_{\mathrm{WM}}\)</span>: 3 [2.5-4.1] chunks</li>
+<li>Effective span <span class="math inline">\(\mu^*_{\mathrm{WM}}\)</span>: 7 [5-9] chunks</li>
+<li>Pure = raw slots; span = chunked/rehearsed units</li>
+<li>Interference: new chunks make old chunks harder to access</li>
+<li>Decay <span class="math inline">\(\delta_{\mathrm{WM}}\)</span>: 7 [5-226] sec</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 66%; --mhp-y: 12%; --mhp-w: 30%; --mhp-h: 20%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>This slide separates the Working Memory variables from the Visual Image Store and Auditory Image Store. Those image stores are perceptual memories. Working Memory is the active task workspace used by the Cognitive Processor.</p>
+<p>Working Memory holds the intermediate products of thinking and the representations produced by perception. Functionally, it is where mental operations get their operands and leave their outputs. Structurally, Card, Moran, and Newell model it as activated chunks in Long-Term Memory.</p>
+<p>The key unit is the chunk. What counts as a chunk depends on the user and their prior knowledge. A random sequence can exceed span, while an only slightly different sequence can become easy if it maps onto familiar chunks. This is why expertise matters so much in KLM and GOMS: an expert may treat a procedure, command, or display state as one chunk that a novice must handle as several separate items.</p>
+<p>Working Memory commonly uses acoustic or visual symbolic codes. The model distinguishes a pure capacity of about 3 chunks from an effective span of about 7 chunks, because familiar structures and rehearsal let people maintain more useful units than raw storage alone would suggest. It decays or becomes inaccessible over seconds, especially under interference. The model gives a rough half-life of about 7 seconds for three chunks, but much longer for a single chunk. Rehearsal can keep a small number of chunks active, but it consumes attention and competes with other mental work.</p>
+<p>For interface design, reduce Working Memory load by chunking information, keeping task-relevant values visible, using meaningful labels, avoiding easily confused codes, and not requiring users to remember arbitrary strings across intervening steps.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cognitive-long-term-memory" class="slide level2 compact mhp-callout-slide">
+<h2>Cognitive Long-Term Memory</h2>
+<ul>
+<li>Learned facts/procedures <span class="math inline">\(\kappa_{\mathrm{LTM}}\)</span>: semantic</li>
+<li>Capacity <span class="math inline">\(\mu_{\mathrm{LTM}}\)</span>: effectively unlimited</li>
+<li>Duration <span class="math inline">\(\delta_{\mathrm{LTM}}\)</span>: effectively permanent</li>
+<li>Retrieves by associative cues</li>
+<li>Similar items can interfere</li>
+<li>Fast to read, slow to write</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 14%; --mhp-y: 1%; --mhp-w: 84%; --mhp-h: 31%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>Long-Term Memory holds facts, procedures, histories, and associations. In the Model Human Processor it is coded primarily semantically, with no modeled erasure and no practical capacity limit for the engineering questions in the chapter.</p>
+<p>Retrieval is associative. A cue in Working Memory activates related chunks in Long-Term Memory. Failure to remember often means the right retrieval route was not activated, not that the knowledge is gone.</p>
+<p>Two principles are central. The Encoding Specificity Principle says that how information is encoded determines which retrieval cues will work later. The Discrimination Principle says retrieval difficulty depends on competing candidates relative to the cue. Similar command names, similar procedures, or semantically overlapping systems can interfere with each other.</p>
+<p>Writing to Long-Term Memory is slow compared with reading. The Cognitive Processor can access Long-Term Memory on each cognitive cycle, but forming retrievable new knowledge requires time in Working Memory and useful associations. This is why training, naming, examples, and consistency matter: they shape the cues users will later have available.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cognitive-processor" class="slide level2 compact mhp-callout-slide">
+<h2>Cognitive Processor</h2>
+<ul>
+<li>Interprets the current task state</li>
+<li>Retrieves knowledge and procedures</li>
+<li>Chooses the next deliberate action</li>
+<li>Updates Working Memory each cycle</li>
+<li>Cycle time <span class="math inline">\(\tau_{\mathrm{C}}\)</span>: 70 [25-170] ms</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 67%; --mhp-y: 35%; --mhp-w: 20%; --mhp-h: 11%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The Cognitive Processor operates through a recognize-act cycle. On each cycle, the contents of Working Memory cue associated actions or knowledge in Long-Term Memory; those actions then modify Working Memory and set up the next cycle.</p>
+<p>The nominal cognitive cycle time <span class="math inline">\(\tau_{\mathrm{C}}\)</span> is about 70 ms, with a broad range. Card, Moran, and Newell use this value to explain simple reaction tasks: a perceptual cycle plus a cognitive cycle plus a motor cycle gives about 240 ms. More complex judgments add cycles. Physical matches, name matches, class matches, and choice reactions become slower as additional recognition, classification, or decision steps are required.</p>
+<p>The Variable Cognitive Processor Rate Principle says the cycle can shorten under higher effort, higher task demand, information load, or practice. The Uncertainty Principle adds that decision time increases with uncertainty, as in Hick’s Law.</p>
+<p>The cognitive system can recognize many things in parallel, but deliberate action is effectively serial. This is the bridge to GOMS: a method can be modeled as a sequence of operators because deliberate cognitive control tends to choose one next action at a time, even though perception and motor execution may overlap in skilled behavior.</p>
+<p>Chapter 2 also uses the Cognitive Processor to frame complex task behavior. Operator sequences can often be added to approximate total task time. The Rationality Principle says behavior is shaped by goals, task structure, operators, inputs, knowledge, and process limits. The Problem Space Principle says problem solving can be described as states of knowledge, operators, constraints, and control knowledge.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="motor-system" class="slide level2 compact mhp-callout-slide">
+<h2>Motor System</h2>
+<ul>
+<li>Turns selected actions into movement</li>
+<li>Controls eyes, head, hands, fingers</li>
+<li>Executes skilled action bursts</li>
+<li>Uses slower feedback for correction</li>
+<li>Cycle time <span class="math inline">\(\tau_{\mathrm{M}}\)</span>: 70 [30-100] ms</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 73%; --mhp-y: 47%; --mhp-w: 23%; --mhp-h: 13%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The motor system translates thought into action through voluntary muscles. For computer interaction, the most important effectors are the arm-hand-finger system and the head-eye system.</p>
+<p>Card, Moran, and Newell model movement as discrete micromovements rather than continuous motion. The nominal Motor Processor cycle time <span class="math inline">\(\tau_{\mathrm{M}}\)</span> is about 70 ms. Because the feedback loop from action to perception is much longer, roughly 200 to 500 ms, rapid acts such as typing and speaking are executed as preprogrammed bursts rather than as fully closed-loop movements.</p>
+<p>The chapter’s pen-movement example shows two paths. Open-loop motor commands can be issued at roughly the motor cycle rate. Closed-loop corrections require perceiving the result, deciding on a correction, and issuing a new motor command, so the cycle is closer to <span class="math inline">\(\tau_{\mathrm{P}} + \tau_{\mathrm{C}} + \tau_{\mathrm{M}}\)</span>, about 240 ms nominally.</p>
+<p>For KLM, this helps explain why not every small motor movement should be treated as a visually corrected decision. Skilled, practiced actions can run as motor routines; visually guided corrections, target acquisition, and verification add time.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, section 2.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="motor-skill-and-fitts-law" class="slide level2 compact mhp-callout-slide">
+<h2>Motor Skill and Fitts’ Law</h2>
+<ul>
+<li>Predicts aimed movement time</li>
+<li>Links layout to physical effort</li>
+<li><span class="math inline">\(T_{\mathrm{pos}} = I_{\mathrm{M}} \log_2(D/S + 0.5)\)</span></li>
+<li>Smaller/farther targets take longer</li>
+<li>Practice speeds repeated routines</li>
+<li><span class="math inline">\(I_{\mathrm{M}} \approx 100\)</span> ms/bit</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 0%; --mhp-y: 84%; --mhp-w: 27%; --mhp-h: 16%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>Fitts’ Law models the time to move to a target as a function of distance <span class="math inline">\(D\)</span> and target size <span class="math inline">\(S\)</span>. The important design idea is relative precision: far targets and small targets take longer because they require more corrective control.</p>
+<p>Card, Moran, and Newell derive the law from repeated perceptual-cognitive-motor corrections, then use empirical data to set a practical value of about 100 ms per bit, with a typical range around 70 to 120 ms per bit depending on task conditions and measurement method. They recommend a Welford-style form, shown on the slide as <span class="math inline">\(T_{\mathrm{pos}} = I_{\mathrm{M}} \log_2(D/S + 0.5)\)</span>.</p>
+<p>The same motor-skill section also emphasizes the Power Law of Practice: task time decreases as a power function of practice. This applies broadly to skilled cognitive and perceptual-motor behavior. For keystroking, practice produces large differences: novice, moderate, expert, and champion rates can differ by more than an order of magnitude.</p>
+<p>For interface evaluation, use average KLM pointing times for quick classroom estimates, but use Fitts’ Law when target distance and target size are central to the design question. In industrial HMIs, this matters for high-frequency controls, emergency actions, gloved use, touchscreens, and dense dashboards.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, especially section 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gomsklm-assumptions" class="slide level2">
+<h2>GOMS/KLM Assumptions</h2>
+<ul>
+<li>Routine cognitive skill</li>
+<li>Skilled, knowledgeable user</li>
+<li>Known method and starting state</li>
+<li>Error-free execution</li>
+<li>Measured or estimated response times</li>
+</ul>
+<aside class="notes">
+<p>These are boundary conditions. Basic GOMS/KLM is strongest when the task is routine, the user already knows what to do, the method is known, and the analyst can represent the procedure as a sequence of primitive operators.</p>
+<p>The model predicts procedural cost, not user acceptance, trust, motivation, fatigue, emotion, organizational fit, or deep conceptual understanding. Olson and Olson’s review, as discussed by John &amp; Kieras, is useful for emphasizing what cognitive modeling can and cannot address.</p>
+<p>Warn students not to use simple KLM for open-ended exploration, diagnosis, creative problem solving, or emergency improvisation unless the model is extended and the limitations are clearly stated.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ngomsl" class="slide level2 compact">
+<h2>NGOMSL</h2>
+<ul>
+<li>Natural GOMS Language</li>
+<li>Structured procedure notation</li>
+<li>Shows methods and selection rules</li>
+<li>Estimates execution and learning time</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/john_kieras_1994_fig5_ngomsl_moving_text.png" class="slide-figure figure-tall"></p>
+<figcaption>John &amp; Kieras (1994), Figure 5: NGOMSL methods for moving text.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>NGOMSL stands for Natural GOMS Language. It is a readable, program-like notation for writing GOMS methods and selection rules.</p>
+<p>NGOMSL is more explicit than KLM because it shows method structure, not just an operator sequence. It is useful for training, documentation, help-system design, and learning-time estimation.</p>
+<p>Explain that NGOMSL is best for hierarchical, sequential procedures. It is less appropriate when perceptual, cognitive, and motor processes overlap heavily; those cases motivate CPM-GOMS.</p>
+<p>John &amp; Kieras Figure 5 shows NGOMSL methods for moving text and includes both execution-time and procedure-learning-time estimates.</p>
+<p>Wagner et al.&nbsp;(2006) provide an applied example of NGOMSL/GOMS modeling in a multi-robot interface context.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ngomsl-mini-example" class="slide level2">
+<h2>NGOMSL Mini Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>Method for goal: Start CNC cutting program</span>
+<span id="cb2-2"><a href=""></a>Step 1. Accomplish goal: Open program screen.</span>
+<span id="cb2-3"><a href=""></a>Step 2. Accomplish goal: Select required program.</span>
+<span id="cb2-4"><a href=""></a>Step 3. Accomplish goal: Confirm program is loaded.</span>
+<span id="cb2-5"><a href=""></a>Step 4. Accomplish goal: Start cycle.</span>
+<span id="cb2-6"><a href=""></a>Step 5. Return with goal accomplished.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Point out that NGOMSL reads like a simplified program for the user’s procedural knowledge. Each step can be expanded into submethods until the operators are primitive enough for analysis.</p>
+<p>Also mention that NGOMSL can reveal inconsistencies in interface procedure design. If two similar tasks require very different procedures, users may need more learning and may be more likely to make slips.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="keystroke-level-model" class="slide level2">
+<h2>Keystroke-Level Model</h2>
+<ul>
+<li>Simplest GOMS variant</li>
+<li>Analyst supplies the method</li>
+<li>Convert method into operators</li>
+<li>Sum operator times</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>T_task = ΣK + ΣB + ΣP + ΣH + ΣD + ΣM + ΣR</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>KLM is the most accessible GOMS technique. It is fast, practical, and easy to teach.</p>
+<p>The analyst defines the task, user, starting state, and method. Then each action is converted to a primitive operator such as K, B, P, H, D, M, or R. Predicted time is simply the sum of those operator times.</p>
+<p>KLM is particularly useful for comparing alternatives for the same benchmark task. It does not determine which method users will discover or choose unless the analyst explicitly defines methods and selection rules.</p>
+<p>Sources: Card, Moran, &amp; Newell (1983); John &amp; Kieras (1994); Dix et al.&nbsp;(2004), Chapter 12.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="klm-operators" class="slide level2">
+<h2>KLM Operators</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/dix_2004_table_12_1_klm_operator_times.png" class="slide-figure figure-wide"></p>
+<figcaption>Dix et al.&nbsp;(2004), Table 12.1: operator times for the keystroke-level model.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Keep the slide concise; discuss details verbally.</p>
+<p>K depends heavily on user skill. Dix summarizes examples such as 0.12s for a very skilled typist, 0.28s for a less skilled typist, and longer values for non-typists. B is commonly 0.10s for button-down or button-up, or 0.20s for a click. P is often approximated as 1.10s, but can be replaced by Fitts’ Law when distance and target size matter. H is homing time between input devices. D is drawing or gesture time and is domain dependent. M is mental preparation. R is system response time and should be measured when possible.</p>
+<p>For CNC panels, touchscreens, gloves, robot-control stations, or VR interfaces, use standard values for classroom exercises but measure task-specific values for research or design decisions.</p>
+<p>Sources: Card, Moran, &amp; Newell (1983); Dix et al.&nbsp;(2004), Table 12.1; Kieras in Diaper &amp; Stanton (2004).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="building-a-klm" class="slide level2">
+<h2>Building a KLM</h2>
+<ol type="1">
+<li>Define benchmark task</li>
+<li>Define user and starting state</li>
+<li>Write exact method</li>
+<li>Translate into operators</li>
+<li>Add M and R</li>
+<li>Sum and compare</li>
+</ol>
+<aside class="notes">
+<p>Students often skip the starting state. Do not let them. KLM predictions change drastically depending on whether text is already selected, whether the cursor is active, whether the user’s hand is on the mouse or keyboard, whether the target is visible, and whether the system is already in the right mode.</p>
+<p>The method must be exact enough that another analyst could reproduce the operator sequence. Ambiguous verbs like “use the menu” should be decomposed into point, button-down, drag/point, button-up, and any required mental operators.</p>
+<p>After summing, compare alternatives or validate against observations. The value of a KLM is usually comparative rather than absolute.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mental-operator-rules" class="slide level2">
+<h2>Mental Operator Rules</h2>
+<ul>
+<li>Place <strong>M</strong> before cognitive units</li>
+<li>Do not split practiced chunks unnecessarily</li>
+<li>Chunking depends on expertise</li>
+<li>Treat uncertainty as sensitivity analysis</li>
+</ul>
+<aside class="notes">
+<p>Most KLM debates are debates about M. M represents mental preparation before an action or action chunk. It is not a model of deep reasoning.</p>
+<p>Place M before choosing a command, recalling what to do next, or verifying what action is appropriate. Avoid adding separate M operators inside a well-practiced chunk.</p>
+<p>For direct manipulation, John and Kieras recommend modified placement rules: place M before command-selecting pointing actions or before the start of a direct-manipulation cognitive unit.</p>
+<p>Olson and Olson refined estimates for mental operations, and Lane et al.&nbsp;refined M-placement heuristics for fixed menu-choice subtasks, as summarized by John &amp; Kieras.</p>
+<p>Teaching tactic: if students disagree, make two models: a conservative model with more M operators and an expert-chunked model with fewer M operators. Compare whether the design conclusion changes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-copypaste-task" class="slide level2">
+<h2>Example: Copy/Paste Task</h2>
+<p><strong>Task state</strong></p>
+<ul>
+<li>Text already selected</li>
+<li>Insertion point visible</li>
+<li>Compare shortcut vs.&nbsp;menu</li>
+<li>Values: M=1.35, P=1.10, B=0.20, K=0.28</li>
+</ul>
+<aside class="notes">
+<p>This example is intentionally simple and familiar. It lets students focus on KLM mechanics rather than domain complexity.</p>
+<p>Be explicit about assumptions. If the insertion point is already active, the shortcut method is much faster. If the user must move to the insertion point, the shortcut method needs pointing and clicking too. If the user does not know shortcuts, menu interaction may be more realistic.</p>
+<p>This is a good moment to emphasize that KLM models are conditional claims: “Given this user, task state, method, and operator-value set, the predicted execution time is X.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="copypaste-klm-comparison" class="slide level2">
+<h2>Copy/Paste KLM Comparison</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Operator sequence</th>
+<th style="text-align: right;">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shortcut</td>
+<td>M 2K M 2K</td>
+<td style="text-align: right;">3.82s</td>
+</tr>
+<tr class="even">
+<td>Menu</td>
+<td>3M 5P 5B</td>
+<td style="text-align: right;">10.15s</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Shortcut is faster for skilled users</li>
+<li>Menu may be more discoverable</li>
+<li>State assumptions matter</li>
+</ul>
+<aside class="notes">
+<p>For the shortcut method, the model is M + 2K + M + 2K. With K = 0.28s, this is 1.35 + 0.56 + 1.35 + 0.56 = 3.82s.</p>
+<p>For the menu method, the model includes preparing to copy, pointing to the Edit menu, mouse down, pointing to Copy, mouse up, preparing to position the insertion point, pointing to the insertion point, clicking, preparing to paste, pointing to Edit, mouse down, pointing to Paste, and mouse up. That aggregates to 3M + 5P + 5B, where the B total is 0.60s because some button actions are down/up rather than full clicks.</p>
+<p>Interpretation: the shortcut method is faster only under the stated assumptions. The menu method may be slower but more discoverable for novices. This distinction is a design tradeoff, not just a calculation.</p>
+<p>Suggested figure: pair this slide with John &amp; Kieras Figure 3, which shows KLM for a moving-text task and demonstrates M placement before command-oriented chunks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="literature-example-moving-text" class="slide level2 dense">
+<h2>Literature Example: Moving Text</h2>
+<ul>
+<li>Task: move phrase in word processor</li>
+<li>KLM prediction: <strong>14.38s</strong></li>
+<li>CMN-GOMS prediction: <strong>14.38s</strong></li>
+<li>NGOMSL prediction: <strong>16.38s</strong></li>
+</ul>
+<div class="figure-grid">
+<p><img data-src="figures/john_kieras_1994_fig3_klm_moving_text.png" class="slide-figure" alt="John &amp; Kieras (1994), Figure 3: KLM for moving text."> <img data-src="figures/john_kieras_1994_fig4_cmn_goms_moving_text.png" class="slide-figure" alt="John &amp; Kieras (1994), Figure 4: CMN-GOMS for moving text."> <img data-src="figures/john_kieras_1994_fig5_ngomsl_moving_text.png" class="slide-figure" alt="John &amp; Kieras (1994), Figure 5: NGOMSL for moving text."></p>
+</div>
+<aside class="notes">
+<p>John &amp; Kieras use one text-editing task to illustrate several GOMS variants. The KLM and CMN-GOMS predictions match at 14.38 seconds for the example. NGOMSL predicts 16.38 seconds because it represents additional cognitive overhead and method structure more explicitly.</p>
+<p>The NGOMSL example also estimates procedure learning time. This is a useful distinction: KLM estimates execution time, while NGOMSL can also estimate learning time for procedural knowledge.</p>
+<p>Use Figures 3, 4, and 5 side by side if possible. Figure 3 shows the KLM sequence. Figure 4 shows the CMN-GOMS hierarchy and selection rule. Figure 5 shows the NGOMSL method listing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="industry-4.0-example-cnc-hmi" class="slide level2 compact">
+<h2>Industry 4.0 Example: CNC HMI</h2>
+<p><strong>Task:</strong> start a CNC cutting program</p>
+<ul>
+<li>Trained operator</li>
+<li>Known program and part ID</li>
+<li>Touchscreen or mouse input</li>
+<li>No errors modeled</li>
+<li>R values measured/estimated</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/dou_2017_fig2_cnc_hmi_design_scheme.jpeg" class="slide-figure figure-wide"></p>
+<figcaption>Dou et al.&nbsp;(2017), Figure 2: HMI design scheme of a CNC machine control panel.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Dou et al.&nbsp;describe CNC control panels as including areas such as total control, pattern selection, spindle control, program edit, and tool changer areas. They also emphasize that CNC HMI design affects operator efficiency and experience, and that poor designs can create burden when they do not match the operator’s mental model.</p>
+<p>This makes CNC control a good Industry 4.0 example: it is procedural, safety-relevant, and HMI layout matters.</p>
+<p>State the assumptions before showing the KLM. The operator is trained. The program name and part ID are known. The task is routine. There are no errors. The program list opens after 0.80s, and machine confirmation takes 1.00s.</p>
+<p>Suggested custom visual: simple CNC panel AOI diagram with Program Edit, Pattern Selection, Spindle Control, Tool Changer, Cycle Start, and Alarm/Status Area.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cnc-klm-model" class="slide level2">
+<h2>CNC KLM Model</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href=""></a>M P B R  M P B  M P B R  M P B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5.40s</td>
+</tr>
+<tr class="even">
+<td>P</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4.40s</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.80s</td>
+</tr>
+<tr class="even">
+<td>R</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.80s</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>12.40s</strong></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Walk through the expanded procedure verbally:</p>
+<ol type="1">
+<li>Prepare to open the program screen. 2. Point to Program Edit. 3. Select it. 4. Wait for program list. 5. Choose target program. 6. Point to program ID. 7. Select program. 8. Prepare to load program. 9. Point to Load/Run. 10. Select Load/Run. 11. Wait for confirmation. 12. Verify ready state. 13. Point to Cycle Start. 14. Press Cycle Start.</li>
+</ol>
+<p>The total is 4M + 4P + 4B + 2R = 5.40 + 4.40 + 0.80 + 1.80 = 12.40 seconds.</p>
+<p>Discussion prompts: What changes if the operator searches a long program list? What if Program Edit is far from Cycle Start? What if system response is 3.0s instead of 0.8s? What if safety verification is required before Cycle Start? What if gloves, lighting, or screen size alter pointing time?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validating-klm" class="slide level2">
+<h2>Validating KLM</h2>
+<ul>
+<li>Record same benchmark task</li>
+<li>Separate execution, wait, error, and recovery time</li>
+<li>Compare predicted vs.&nbsp;observed time</li>
+<li>Re-estimate task-specific values if needed</li>
+<li>Report design-relevant differences</li>
+</ul>
+<aside class="notes">
+<p>Validation checks whether the model is good enough for the design decision. It does not need to prove that the model perfectly predicts every user.</p>
+<p>A practical validation process: record trained users performing the same benchmark task; capture time-stamped actions through video, screen logs, interaction logs, or eye tracking; separate user execution time from system response time; remove or separately model errors and recovery; compare predicted and observed times; adjust task-specific operator values if needed.</p>
+<p>John and Kieras emphasize that GOMS predictions are especially useful for comparing alternatives. A model that predicts the direction and rough magnitude of differences may be sufficient for early design.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validation-data-sources" class="slide level2">
+<h2>Validation Data Sources</h2>
+<ul>
+<li>Screen or interaction logs</li>
+<li>Video coding</li>
+<li>Eye tracking</li>
+<li>Physiological data</li>
+<li>Post-task interview / RTA</li>
+</ul>
+<aside class="notes">
+<p>Use multiple data sources when a single measure does not explain performance. Dou et al.&nbsp;combine physiological data, eye tracking, behavior analysis, and visualization to evaluate CNC control-panel schemes.</p>
+<p>Eye tracking can help identify visual search, verification, and attention allocation. Land and Tatler argue that gaze during natural tasks is strongly tied to the information needed for action. Meyer et al.&nbsp;show how eye-tracking stimulated retrospective think-aloud can reveal decision cues in air traffic control.</p>
+<p>Do not overclaim eye tracking. A fixation tells us where the eyes were directed, not automatically what the user understood. Combining gaze data with task context, logs, and post-task explanation is stronger.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="weaknesses-of-klm" class="slide level2">
+<h2>Weaknesses of KLM</h2>
+<ul>
+<li>Assumes skilled, error-free performance</li>
+<li>Weak for exploration and diagnosis</li>
+<li>Does not discover missing goals</li>
+<li>Mostly serial</li>
+<li>Sensitive to analyst assumptions</li>
+</ul>
+<aside class="notes">
+<p>KLM is powerful because it is simple, but that simplicity is also its boundary.</p>
+<p>It assumes the user already knows what to do. It does not model novice exploration, errors, recovery, fatigue, motivation, trust, acceptance, or organizational fit unless extended. It may also underrepresent visual search and verification unless those activities are explicitly included.</p>
+<p>The model can hide analyst assumptions if the task state, method, M placements, and operator values are not documented. Require students to report assumptions with every KLM.</p>
+<p>Bridge to Lesson 2: when the user can look, think, speak, and move in overlapping streams, or when multiple people coordinate, move from KLM to CPM-GOMS or team models.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-placement-of-m" class="slide level2">
+<h2>Extension: Placement of M</h2>
+<ul>
+<li>M = preparation for an action chunk</li>
+<li>More expertise → larger chunks</li>
+<li>Direct manipulation needs care</li>
+<li>Model uncertainty explicitly</li>
+</ul>
+<aside class="notes">
+<p>M placement is the most common source of disagreement. Treat it as a modeling decision, not a hidden truth.</p>
+<p>Experienced users combine actions into larger chunks, reducing the number of M operators. Novices may require more mental preparation because they must recall commands, interpret labels, or verify task state more often.</p>
+<p>Direct-manipulation interfaces need careful M placement because pointing can be part of selecting a command or part of executing a physical-like action. John &amp; Kieras discuss modifications to the original KLM rules for direct manipulation.</p>
+<p>Class exercise: give the same task to students and ask for two models: conservative and expert-chunked. Compare the predicted difference.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-task-specific-m" class="slide level2">
+<h2>Extension: Task-Specific M</h2>
+<p>Industry 4.0 mental checks may include:</p>
+<ul>
+<li>Verify part / work order</li>
+<li>Check tool path or recipe</li>
+<li>Confirm safety interlock</li>
+<li>Interpret alarm severity</li>
+<li>Confirm robot behavior</li>
+</ul>
+<aside class="notes">
+<p>Some domains require mental operators that are not well represented by generic “prepare” pauses. In CNC, welding, robot control, and manufacturing execution systems, users may repeatedly verify state before committing to action.</p>
+<p>Estimate task-specific M by using video, logs, eye tracking, and interviews. Repeated fixations on status or alarm areas before a command may suggest verification activity. Retrospective think-aloud can help identify what was being checked.</p>
+<p>Replace generic 1.35s M with measured task-specific values when verification dominates the task. Document the evidence used to justify the custom value.</p>
+<p>Sources: Dou et al.&nbsp;(2017); Wagner et al.&nbsp;(2006); Land &amp; Tatler (2009); Meyer et al.&nbsp;(2022).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-fitts-law" class="slide level2">
+<h2>Extension: Fitts’ Law</h2>
+<p>Use when pointing depends on layout:</p>
+<ul>
+<li>Small targets</li>
+<li>Large distances</li>
+<li>Gloves or touchscreens</li>
+<li>Alternative panel layouts</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>T = a + b log2(D / W + 1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>For quick classroom estimates, use P = 1.10s. Replace average P with Fitts’ Law when target distance and width are central to the design question.</p>
+<p>D is distance to the target. W is target width. a and b are empirically estimated constants.</p>
+<p>Design implication: large, nearby, frequently used controls reduce pointing time. For CNC panels, Cycle Start, Feed Hold, Program Select, and alarm acknowledgement should be laid out with both speed and safety in mind. However, safety-critical controls may also require protection against accidental activation, so speed is not the only design criterion.</p>
+<p>Sources: Card, Moran, &amp; Newell (1983); Dix et al.&nbsp;(2004); Gong &amp; Kieras as summarized in Kieras/Helander.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-learning" class="slide level2">
+<h2>Extension: Learning</h2>
+<ul>
+<li>KLM predicts execution time</li>
+<li>NGOMSL can estimate learning time</li>
+<li>Practice reduces M through chunking</li>
+<li>Domain knowledge remains outside the model</li>
+</ul>
+<aside class="notes">
+<p>KLM assumes the method is already known. It is not a learning model.</p>
+<p>NGOMSL can estimate procedure learning time from the amount and similarity of procedural knowledge. This makes it more useful when the design question involves training, documentation, or help-system design.</p>
+<p>Use caution in high-domain-knowledge systems. NGOMSL can estimate learning of the procedure in the model, but not all domain knowledge needed to operate a CNC machine, robot team, aircraft system, or manufacturing process.</p>
+<p>Example: a novice CNC operator may need explicit mental steps for locating Program Edit, interpreting program IDs, confirming the correct part, and interpreting ready status. A trained operator may chunk these into one routine “load program” method.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="choosing-a-goms-variant" class="slide level2 compact">
+<h2>Choosing a GOMS Variant</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Technique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fast execution estimate</td>
+<td>KLM</td>
+</tr>
+<tr class="even">
+<td>Procedure structure</td>
+<td>CMN-GOMS / NGOMSL</td>
+</tr>
+<tr class="odd">
+<td>Learning time</td>
+<td>NGOMSL</td>
+</tr>
+<tr class="even">
+<td>Parallel activity</td>
+<td>CPM-GOMS</td>
+</tr>
+<tr class="odd">
+<td>Team coordination</td>
+<td>Team / distributed models</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/john_kieras_1994_fig8_goms_technique_selection.png" class="slide-figure figure-wide"></p>
+<figcaption>John &amp; Kieras (1994), Figure 8: matching GOMS techniques to design questions.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Use this slide to consolidate the lesson and bridge to Lesson 2.</p>
+<p>KLM is the fastest and simplest model. CMN-GOMS and NGOMSL provide more explicit method structures. NGOMSL is useful when learning time and documentation matter. CPM-GOMS is needed when perceptual, cognitive, motor, and system processes overlap. Team or distributed models are needed when multiple people or agents coordinate.</p>
+<p>John &amp; Kieras Figure 8 is the key summary figure for choosing among GOMS methods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exit-activity" class="slide level2">
+<h2>Exit Activity</h2>
+<p>Build a KLM for one routine task:</p>
+<ul>
+<li>CNC: load/start program</li>
+<li>MES: acknowledge alarm</li>
+<li>Dashboard: trace heat-lot</li>
+<li>Robot UI: add behavior</li>
+<li>Word processor: move text</li>
+</ul>
+<aside class="notes">
+<p>Student deliverables should include: task description, assumed user, starting state, method steps, operator table, predicted time, validation plan, and one design change expected to reduce execution time.</p>
+<p>Encourage students to choose a task that is routine enough for KLM. If their task involves diagnosis, exploration, or multi-person coordination, have them identify what KLM can model and what would require a different technique.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="figure-checklist" class="slide level2">
+<h2>Figure Checklist</h2>
+<ul>
+<li>Evaluation methods matrix</li>
+<li>Card, Moran, &amp; Newell Fig. 2.1: Model Human Processor</li>
+<li>Kieras Fig. 6.2: GOMS meta-model</li>
+<li>Dix Table 12.1: KLM operators</li>
+<li>John &amp; Kieras Figs. 3–5: text editing examples</li>
+<li>John &amp; Kieras Fig. 8: technique selection</li>
+<li>Custom CNC HMI AOI diagram</li>
+</ul>
+<aside class="notes">
+<p>This slide can remain at the end of the instructor version or be removed from the student version.</p>
+<p>For a polished deck, insert or redraw the figures where they are referenced:</p>
+<ol type="1">
+<li>Evaluation methods matrix: custom 2×2.</li>
+<li>Card, Moran, and Newell Figure 2.1: Model Human Processor memories and processors.</li>
+<li>Kieras Figure 6.2: task meta-model from Diaper &amp; Stanton.</li>
+<li>Dix Table 12.1: KLM operator values.</li>
+<li>John &amp; Kieras Figures 3–5: KLM, CMN-GOMS, and NGOMSL for the same moving-text task.</li>
+<li>John &amp; Kieras Figure 8: matching GOMS variants to design questions.</li>
+<li>Custom CNC HMI AOI diagram based on Dou et al.’s control-panel areas.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="core-sources" class="slide level2">
+<h2>Core Sources</h2>
+<ul>
+<li>Card, Moran, &amp; Newell (1983)</li>
+<li>John &amp; Kieras (1994)</li>
+<li>Kieras in Diaper &amp; Stanton (2004)</li>
+<li>Olson &amp; Olson (1990)</li>
+<li>Lane et al.&nbsp;(1993)</li>
+<li>Dix et al.&nbsp;(2004)</li>
+<li>Dou et al.&nbsp;(2017)</li>
+<li>Wagner et al.&nbsp;(2006)</li>
+</ul>
+<aside class="notes">
+<p>Source integrity note: the working set includes local source files for Card, Moran, &amp; Newell (1983), John &amp; Kieras (1994), Kieras/Diaper task-analysis material, Dix et al.&nbsp;(2004), CNC-HMI evaluation, multi-robot GOMS modeling, and several eye-tracking/task-analysis sources. Standalone copies of Olson &amp; Olson (1990), Lane et al.&nbsp;(1993), and a separate Kieras presentation were not available as independent uploaded files in the working set. Those sources are referenced where the uploaded documents summarize or cite them.</p>
+<p>Additional useful supporting sources for validation and visual task analysis include Land &amp; Tatler (2009), Meyer et al.&nbsp;(2022), Starke et al.&nbsp;(2017), and related eye-tracking/control-room studies.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="L1_Quarto_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="L1_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="L1_Quarto_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: true,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 800,
+
+        height: 600,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <a class="toc-home" href="#/table-of-contents" aria-label="Go to table of contents" title="Table of contents">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <path d="m3 10.5 9-7 9 7"></path>
+        <path d="M5.5 9.5V20h13V9.5"></path>
+        <path d="M9.5 20v-6h5v6"></path>
+      </svg>
+    </a>
+    <a class="toc-overview" href="#" aria-label="Open slide overview" title="Slide overview">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="3" width="5" height="5"></rect>
+        <rect x="9.5" y="3" width="5" height="5"></rect>
+        <rect x="16" y="3" width="5" height="5"></rect>
+        <rect x="3" y="9.5" width="5" height="5"></rect>
+        <rect x="9.5" y="9.5" width="5" height="5"></rect>
+        <rect x="16" y="9.5" width="5" height="5"></rect>
+        <rect x="3" y="16" width="5" height="5"></rect>
+        <rect x="9.5" y="16" width="5" height="5"></rect>
+        <rect x="16" y="16" width="5" height="5"></rect>
+      </svg>
+    </a>
+    <script>
+      (function() {
+        const home = document.querySelector(".toc-home");
+        const overview = document.querySelector(".toc-overview");
+        const deck = document.querySelector(".reveal");
+
+        if (home && deck && home.parentElement !== deck) {
+          deck.appendChild(home);
+        }
+
+        if (overview && deck && overview.parentElement !== deck) {
+          deck.appendChild(overview);
+        }
+
+        if (overview) {
+          overview.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            if (window.Reveal && typeof window.Reveal.toggleOverview === "function") {
+              window.Reveal.toggleOverview();
+            }
+          });
+        }
+      })();
+    </script>
+    <script>
+      window.addEventListener("load", function() {
+        let scrollTimeout = null;
+        const cooldownPeriod = 10;
+        const minimumDelta = 10;
+
+        window.addEventListener("wheel", function(event) {
+          if (!window.Reveal) {
+            return;
+          }
+
+          if (event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+            return;
+          }
+
+          if (Math.abs(event.deltaY) < minimumDelta || scrollTimeout) {
+            return;
+          }
+
+          event.preventDefault();
+
+          if (event.deltaY > 0) {
+            window.Reveal.next();
+          } else {
+            window.Reveal.prev();
+          }
+
+          scrollTimeout = window.setTimeout(function() {
+            scrollTimeout = null;
+          }, cooldownPeriod);
+        }, { passive: false });
+      });
+    </script>
+    <script>
+      (function() {
+        const minScale = 0.3;
+        const fitPadding = 2;
+        let fitScheduled = false;
+
+        function visibleSlides() {
+          return Array.from(document.querySelectorAll(".reveal .slides > section"))
+            .filter((section) => {
+              const rect = section.getBoundingClientRect();
+              const style = window.getComputedStyle(section);
+              return rect.width > 0 && rect.height > 0 && style.display !== "none";
+            });
+        }
+
+        function measuredChildren(section) {
+          return Array.from(section.children).filter((child) => {
+            if (child.matches("aside.notes, aside:not(.notes), .speaker-notes")) {
+              return false;
+            }
+
+            const style = window.getComputedStyle(child);
+            return style.display !== "none" && style.visibility !== "hidden";
+          });
+        }
+
+        function contentOverflow(section) {
+          const sectionRect = section.getBoundingClientRect();
+          const sectionStyle = window.getComputedStyle(section);
+          const allowedBottom = sectionRect.bottom - parseFloat(sectionStyle.paddingBottom || 0);
+          let maxBottom = sectionRect.top;
+
+          measuredChildren(section).forEach((child) => {
+            const rect = child.getBoundingClientRect();
+            if (rect.width === 0 && rect.height === 0) {
+              return;
+            }
+            maxBottom = Math.max(maxBottom, rect.bottom);
+          });
+
+          return Math.max(0, maxBottom - allowedBottom + fitPadding);
+        }
+
+        function fitSlide(section) {
+          section.style.removeProperty("font-size");
+          const maxFontSize = parseFloat(window.getComputedStyle(section).fontSize);
+
+          if (!maxFontSize || contentOverflow(section) <= 0) {
+            return;
+          }
+
+          let low = minScale;
+          let high = 1;
+          let best = minScale;
+
+          for (let i = 0; i < 12; i += 1) {
+            const scale = (low + high) / 2;
+            section.style.fontSize = `${maxFontSize * scale}px`;
+
+            if (contentOverflow(section) <= 0) {
+              best = scale;
+              low = scale;
+            } else {
+              high = scale;
+            }
+          }
+
+          section.style.fontSize = `${maxFontSize * best}px`;
+        }
+
+        function fitVisibleSlides() {
+          visibleSlides().forEach(fitSlide);
+        }
+
+        function scheduleFit() {
+          if (fitScheduled) {
+            return;
+          }
+
+          fitScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              fitScheduled = false;
+              fitVisibleSlides();
+            });
+          });
+        }
+
+        window.addEventListener("load", scheduleFit);
+        window.addEventListener("resize", scheduleFit);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleFit();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", scheduleFit);
+            window.Reveal.on("slidechanged", scheduleFit);
+            window.Reveal.on("resize", scheduleFit);
+            window.Reveal.on("overviewhidden", scheduleFit);
+          }
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        let sourceFooterScheduled = false;
+
+        function currentSlide() {
+          if (!window.Reveal || typeof window.Reveal.getCurrentSlide !== "function") {
+            return null;
+          }
+
+          return window.Reveal.getCurrentSlide();
+        }
+
+        function syncSourceFooter() {
+          const reveal = document.querySelector(".reveal");
+
+          if (!reveal) {
+            return;
+          }
+
+          reveal.querySelectorAll(":scope > .footer.source-citation-footer").forEach((footer) => {
+            footer.remove();
+          });
+
+          const slide = currentSlide();
+
+          if (!slide) {
+            return;
+          }
+
+          const slideFooter = slide.querySelector(":scope > .footer.source-citation-footer");
+
+          if (!slideFooter) {
+            return;
+          }
+
+          const clonedFooter = slideFooter.cloneNode(true);
+          clonedFooter.dataset.sourceFooterClone = "true";
+          reveal.appendChild(clonedFooter);
+        }
+
+        function scheduleSourceFooterSync() {
+          if (sourceFooterScheduled) {
+            return;
+          }
+
+          sourceFooterScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              sourceFooterScheduled = false;
+              syncSourceFooter();
+            });
+          });
+        }
+
+        window.addEventListener("load", scheduleSourceFooterSync);
+        window.addEventListener("hashchange", scheduleSourceFooterSync);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleSourceFooterSync();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", scheduleSourceFooterSync);
+            window.Reveal.on("slidechanged", scheduleSourceFooterSync);
+            window.Reveal.on("overviewhidden", scheduleSourceFooterSync);
+          }
+        });
+      })();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" default-locale="en-US">
+  <info>
+    <title>HCI Workshop Slide Note</title>
+    <id>https://example.com/styles/hci-workshop-slide-note</id>
+    <link href="https://example.com/styles/hci-workshop-slide-note" rel="self"/>
+    <author>
+      <name>HCI Workshop</name>
+    </author>
+    <category citation-format="note"/>
+    <category field="generic-base"/>
+    <summary>Short note citations for slides: author, year, and title.</summary>
+    <updated>2026-05-23T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", " delimiter-precedes-last="contextual"/>
+      <substitute>
+        <names variable="editor">
+          <name form="short" and="text" delimiter=", " delimiter-precedes-last="contextual"/>
+        </names>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="issued-year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <choose>
+      <if variable="title-short">
+        <text variable="title-short" quotes="true"/>
+      </if>
+      <else>
+        <text variable="title" quotes="true"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="locator">
+    <choose>
+      <if variable="locator">
+        <group delimiter=" ">
+          <label variable="locator" form="short"/>
+          <text variable="locator"/>
+        </group>
+      </if>
+    </choose>
+  </macro>
+
+  <citation>
+    <layout suffix=".">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="issued-year"/>
+        <text macro="title"/>
+        <text macro="locator"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout suffix=".">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="issued-year"/>
+        <text macro="title"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

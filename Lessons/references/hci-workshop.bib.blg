@@ -1,0 +1,14 @@
+[0] Config.pm:307> INFO - This is Biber 2.17 running in TOOL mode
+[0] Config.pm:310> INFO - Logfile is '/home/scblum/Projects/hci_workshop_planning/Lessons/references/hci-workshop.bib.blg'
+[31] biber:340> INFO - === Sat May 23, 2026, 17:10:54
+[43] Biber.pm:4570> INFO - Looking for bibtex file '/home/scblum/Projects/hci_workshop_planning/Lessons/references/hci-workshop.bib'
+[44] bibtex.pm:1713> INFO - LaTeX decoding ...
+[50] bibtex.pm:1518> INFO - Found BibTeX data source '/home/scblum/Projects/hci_workshop_planning/Lessons/references/hci-workshop.bib'
+[96] Biber.pm:1663> INFO - Datamodel validation starting
+[96] Biber.pm:1712> INFO - Datamodel validation complete
+[99] UCollate.pm:68> INFO - Overriding locale 'en_US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[99] UCollate.pm:68> INFO - Overriding locale 'en_US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[100] Biber.pm:4203> INFO - Sorting list 'tool/global//global/global' of type 'entry' with template 'tool' and locale 'en_US'
+[100] Biber.pm:4209> INFO - No sort tailoring available for locale 'en_US'
+[103] bibtex.pm:439> INFO - Writing '/tmp/hci-workshop-normalized.bib' with encoding 'UTF-8'
+[103] bibtex.pm:479> INFO - Output to /tmp/hci-workshop-normalized.bib
