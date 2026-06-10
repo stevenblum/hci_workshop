@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Task analysis to AOI workflow</title>
+  <desc id="desc">Workflow showing task steps becoming information needs, AOIs, metrics, and design recommendations.</desc>
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #2f3947; stroke-width: 3; rx: 8; }
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 25px; font-weight: 700; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #4b5563; font-size: 18px; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#2f3947"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <text class="label" x="500" y="52" style="font-size:30px">Task Analysis Makes AOIs Defensible</text>
+  <rect class="box" x="55" y="120" width="165" height="120"/>
+  <rect class="box" x="285" y="120" width="165" height="120"/>
+  <rect class="box" x="515" y="120" width="165" height="120"/>
+  <rect class="box" x="745" y="120" width="190" height="120"/>
+  <text class="label" x="137" y="166">Task Step</text>
+  <text class="small" x="137" y="202">detect issue</text>
+  <text class="label" x="367" y="166">Information</text>
+  <text class="small" x="367" y="202">status, cause, risk</text>
+  <text class="label" x="597" y="166">AOI</text>
+  <text class="small" x="597" y="202">alert, trend, control</text>
+  <text class="label" x="840" y="166">Measure</text>
+  <text class="small" x="840" y="202">first look, dwell, revisit</text>
+  <path d="M220 180 H280" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M450 180 H510" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M680 180 H740" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="165" y="315" width="670" height="90" fill="#eff8f6" stroke="#6fc2b0" stroke-width="4" rx="8"/>
+  <text class="label" x="500" y="350">Design recommendation</text>
+  <text class="small" x="500" y="382">move status closer to action, reduce switching, strengthen feedback, remove distractors</text>
+  <path d="M840 240 C840 285 780 325 670 345" stroke="#2f3947" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Fixation and saccade sequence</title>
+  <desc id="desc">A simplified scan path showing stable fixations joined by fast saccades across an interface.</desc>
+  <defs>
+    <style>
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 25px; font-weight: 700; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #4b5563; font-size: 19px; }
+      .card { fill: #f8fafc; stroke: #8b95a1; stroke-width: 3; rx: 8; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2f3947"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#ffffff"/>
+  <rect class="card" x="85" y="70" width="165" height="105"/>
+  <rect class="card" x="380" y="55" width="175" height="120"/>
+  <rect class="card" x="645" y="110" width="175" height="105"/>
+  <rect class="card" x="215" y="245" width="190" height="85"/>
+  <rect class="card" x="530" y="260" width="190" height="80"/>
+  <circle cx="164" cy="122" r="24" fill="#f05d5e" opacity="0.88"/>
+  <circle cx="468" cy="116" r="30" fill="#f05d5e" opacity="0.88"/>
+  <circle cx="730" cy="160" r="22" fill="#f05d5e" opacity="0.88"/>
+  <circle cx="310" cy="288" r="28" fill="#f05d5e" opacity="0.88"/>
+  <circle cx="625" cy="302" r="25" fill="#f05d5e" opacity="0.88"/>
+  <path d="M188 122 C255 95 333 97 438 116" stroke="#2f3947" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M498 119 C570 118 622 132 708 155" stroke="#2f3947" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M719 180 C625 254 491 297 340 289" stroke="#2f3947" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M340 291 C420 265 507 277 600 300" stroke="#2f3947" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+  <text class="label" x="92" y="40">A scan path is a sequence of information samples</text>
+  <text class="small" x="118" y="205">Fixation: relative stability for information uptake</text>
+  <text class="small" x="448" y="205">Saccade: fast shift to the next useful location</text>
+  <text class="label" x="108" y="130">Alert</text>
+  <text class="label" x="416" y="126">Status</text>
+  <text class="label" x="676" y="169">Trend</text>
+  <text class="label" x="250" y="297">Control</text>
+  <text class="label" x="556" y="312">Feedback</text>
+</svg>

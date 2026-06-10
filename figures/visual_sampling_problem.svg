@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Foveal sampling and peripheral context</title>
+  <desc id="desc">Diagram showing high-detail foveal vision in the center, parafoveal vision around it, and lower-detail peripheral context across the visual field.</desc>
+  <defs>
+    <style>
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 28px; font-weight: 700; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 22px; }
+      .note { font-family: Arial, Helvetica, sans-serif; fill: #4b5563; font-size: 19px; }
+    </style>
+    <radialGradient id="field" cx="50%" cy="50%" r="56%">
+      <stop offset="0%" stop-color="#f05d5e" stop-opacity="0.98"/>
+      <stop offset="18%" stop-color="#f7b267" stop-opacity="0.9"/>
+      <stop offset="42%" stop-color="#6fc2b0" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#d9e2ec" stop-opacity="0.92"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="900" height="520" fill="#fafafa"/>
+  <ellipse cx="450" cy="250" rx="380" ry="190" fill="url(#field)" stroke="#2f3947" stroke-width="4"/>
+  <ellipse cx="450" cy="250" rx="132" ry="82" fill="none" stroke="#ffffff" stroke-width="5" stroke-dasharray="14 12"/>
+  <ellipse cx="450" cy="250" rx="56" ry="36" fill="none" stroke="#ffffff" stroke-width="5"/>
+  <line x1="450" y1="120" x2="450" y2="380" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  <line x1="280" y1="250" x2="620" y2="250" stroke="#ffffff" stroke-width="3" opacity="0.7"/>
+  <text class="label" x="390" y="240">Fovea</text>
+  <text class="small" x="362" y="276">high detail</text>
+  <text class="label" x="270" y="142">Parafovea</text>
+  <text class="small" x="252" y="174">useful preview</text>
+  <text class="label" x="610" y="112">Periphery</text>
+  <text class="small" x="598" y="144">context, motion, alerts</text>
+  <path d="M450 292 C450 345 450 378 450 414" stroke="#f05d5e" stroke-width="6" fill="none" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#f05d5e"/>
+    </marker>
+  </defs>
+  <text class="note" x="142" y="455">Design consequence: small text and precise status values require fixation.</text>
+  <text class="note" x="142" y="486">Peripheral cues need size, motion, contrast, or spatial predictability.</text>
+</svg>

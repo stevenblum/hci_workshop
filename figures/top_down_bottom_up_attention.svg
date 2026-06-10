@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+  <title id="title">Top-down and bottom-up attention</title>
+  <desc id="desc">Diagram comparing task goals and visual salience as two forces shaping gaze selection.</desc>
+  <defs>
+    <style>
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 28px; font-weight: 700; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #4b5563; font-size: 20px; text-anchor: middle; }
+      .pill { fill: #f8fafc; stroke: #2f3947; stroke-width: 3; rx: 14; }
+    </style>
+    <marker id="arrow-red" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#f05d5e"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#6fc2b0"/>
+    </marker>
+  </defs>
+  <rect width="900" height="440" fill="#ffffff"/>
+  <rect class="pill" x="65" y="80" width="270" height="230"/>
+  <rect class="pill" x="565" y="80" width="270" height="230"/>
+  <circle cx="450" cy="195" r="82" fill="#f8fafc" stroke="#2f3947" stroke-width="4"/>
+  <circle cx="450" cy="195" r="28" fill="#f7b267" stroke="#2f3947" stroke-width="3"/>
+  <text class="label" x="200" y="135">Top-down</text>
+  <text class="small" x="200" y="178">goals</text>
+  <text class="small" x="200" y="210">expectations</text>
+  <text class="small" x="200" y="242">task model</text>
+  <text class="label" x="700" y="135">Bottom-up</text>
+  <text class="small" x="700" y="178">contrast</text>
+  <text class="small" x="700" y="210">motion</text>
+  <text class="small" x="700" y="242">visual prominence</text>
+  <text class="label" x="450" y="365">Where gaze goes next</text>
+  <path d="M335 190 H365 C390 190 405 192 420 195" stroke="#6fc2b0" stroke-width="8" fill="none" marker-end="url(#arrow-teal)"/>
+  <path d="M565 190 H535 C510 190 495 192 480 195" stroke="#f05d5e" stroke-width="8" fill="none" marker-end="url(#arrow-red)"/>
+  <text class="small" x="450" y="388">Natural tasks often make top-down needs dominant.</text>
+</svg>

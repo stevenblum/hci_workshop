@@ -1,0 +1,4158 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="L1_Quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="L1_Quarto_files/libs/quarto-html/tabby.min.js"></script>
+<script src="L1_Quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="L1_Quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="L1_Quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="L1_Quarto_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="L1_Quarto_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <title>Lesson 1: Cognitive Models</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="L1_Quarto_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="uri-slide-branding.css">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="L1_Quarto_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script>
+    document.documentElement.classList.add("lesson-l1");
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "v" || event.key === "V") {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!window.Reveal || typeof window.Reveal.configure !== "function") {
+          return;
+        }
+
+        const notesAreVisible = window.Reveal.getConfig().showNotes === true;
+        document.body.classList.add("notes-toggle-in-progress");
+        window.Reveal.configure({ showNotes: !notesAreVisible });
+
+        window.requestAnimationFrame(function() {
+          if (typeof window.Reveal.layout === "function") {
+            window.Reveal.layout();
+          }
+          window.requestAnimationFrame(function() {
+            document.body.classList.remove("notes-toggle-in-progress");
+          });
+        });
+      }
+    });
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="lesson-1-cognitive-models" class="title-slide slide level1 quarto-title-block center">
+<h1>Lesson 1: Cognitive Models</h1>
+<div class="subtitle">
+<p>HCI Workshop</p>
+</div>
+</section>
+<section id="table-of-contents" class="slide level2">
+<h2>Lesson Roadmap</h2>
+<ul>
+<li><strong>Section 1.1: Task Analysis:</strong> work systems, task models, HTA/GOMS, and model complexity</li>
+<li><strong>Section 1.2: Cognitive Architectures:</strong> Model Human Processor concepts that support predictive modeling</li>
+<li><strong>Section 1.3: GOMS Models:</strong> goals, operators, methods, selection rules, and NGOMSL</li>
+<li><strong>Section 1.4: Key-Stroke Level Model:</strong> KLM operators, examples, validation, and practical extensions</li>
+<li><strong>Section 1.5: EPIC Models:</strong> parallel perceptual, cognitive, and motor simulation for complex interaction</li>
+</ul>
+<aside class="notes">
+<p>This lesson is now organized as five horizontal sections. Section 1.1 gives students the task-analysis foundation for later modeling. Section 1.2 introduces the cognitive architecture assumptions behind later predictive models. Sections 1.3 and 1.4 move from GOMS structure to KLM calculation. Section 1.5 introduces EPIC as the more explicit cognitive-architecture direction for overlapping perceptual, cognitive, and motor activity.</p>
+<p>Use the horizontal and vertical navigation explicitly: move right to change major topic, and move down to stay within the same section.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<p>By the end, students can:</p>
+<ul>
+<li>Choose a task analysis method for a design question</li>
+<li>Explain why cognitive architectures help HCI prediction</li>
+<li>State GOMS/KLM assumptions</li>
+<li>Build a KLM for an Industry 4.0 task</li>
+<li>Validate a KLM against observed task data</li>
+<li>Explain when EPIC-style models are needed</li>
+</ul>
+<aside class="notes">
+<p>Emphasize that the main deliverable is not memorizing operator values. The main deliverable is learning how to convert a task into an explicit method, assign primitive operators, estimate task time, and critique whether the model assumptions are appropriate.</p>
+<p>A secondary objective is to prepare students to choose the right model depth. KLM is intentionally simple and mostly serial. That simplicity is useful, but it also creates the need for CPM-GOMS or EPIC-style models when interaction contains overlapping looking, thinking, moving, speaking, monitoring, or waiting.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-1.1-task-analysis" class="title-slide slide level1 section-divider center">
+<h1>Section 1.1: Task Analysis</h1>
+<ul>
+<li>Interface design as support for purposeful work</li>
+<li>Goals, subgoals, actions, dependencies, and feedback</li>
+<li>Choosing the smallest useful task model</li>
+<li>Bridge from task analysis to cognitive models</li>
+</ul>
+<aside class="notes">
+<p>This section grounds the lesson in task analysis before students see predictive models. The central teaching point is that interface design is not only about screen layout. It is about supporting purposeful work.</p>
+<p>Task analysis supplies the work model that later cognitive models need: goals, actions, information needs, tools, timing, dependencies, constraints, and feedback.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="setting-the-scene-why-these-models-matter" class="slide level2 compact">
+<h2>Setting the Scene: Why These Models Matter</h2>
+<ul>
+<li><strong>Interface design</strong> – design actions, not just screens</li>
+<li><strong>Task analysis</strong> – model work, goals, and context</li>
+<li><strong>Cognitive architecture</strong> – model human processing limits</li>
+<li><strong>Requirements</strong> – identify what the system must support</li>
+<li><strong>Redesign</strong> – find friction, errors, and weak feedback</li>
+<li><strong>Evaluation</strong> – predict time, workload, and learning</li>
+</ul>
+<aside class="notes">
+<p>Use this slide to set up the whole lesson. The core idea is that interface design is not only about screen layout. It is about supporting purposeful work.</p>
+<p>Task analysis helps us describe the work: goals, subgoals, actions, information needs, tools, timing, dependencies, and constraints. Cognitive architectures help us explain why some task designs are easy, difficult, slow, error-prone, or hard to learn.</p>
+<p>The practical message for students is that these models are useful throughout design. They can support requirements, prototyping, redesign, evaluation, training, automation, and performance prediction.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Sources: Diaper, “Understanding Task Analysis for Human-Computer Interaction,” in Diaper and Stanton, <em>The Handbook of Task Analysis for Human-Computer Interaction</em>, Ch. 1; Chipman and Kieras, “Operator Centered Design of Ship Systems.”</p>
+</div>
+</section>
+<section id="task-analysis" class="slide level2 compact">
+<h2>Task Analysis</h2>
+<ul>
+<li><strong>Task</strong> – purposeful work toward a goal</li>
+<li><strong>Work system</strong> – people, tools, information, environment</li>
+<li><strong>Task model</strong> – simplified representation of work</li>
+<li><strong>Performance</strong> – how well the work is accomplished</li>
+<li><strong>Design use</strong> – requirements, redesign, evaluation</li>
+</ul>
+<aside class="notes">
+<p>This slide should be short. The main point is that task analysis is not just a list of clicks. It is a model of work performance.</p>
+<p>A task model can be simple or complex. It may be a list, a hierarchy, a table, a diagram, or a more formal model. What matters is whether the model helps the designer answer a question about the work and the system being designed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Diaper, “Understanding Task Analysis for Human-Computer Interaction,” Ch. 1.</p>
+</div>
+</section>
+<section id="purpose-of-task-analysis" class="slide level2 compact">
+<h2>Purpose of Task Analysis</h2>
+<ul>
+<li><strong>Clarify goals</strong> – what counts as success</li>
+<li><strong>Reveal structure</strong> – goals, subgoals, actions</li>
+<li><strong>Expose dependencies</strong> – before, after, if, while</li>
+<li><strong>Identify resources</strong> – people, tools, data, displays</li>
+<li><strong>Locate constraints</strong> – human, device, environment</li>
+<li><strong>Support decisions</strong> – what to design or change</li>
+</ul>
+<aside class="notes">
+<p>Emphasize that task analysis is useful because it turns vague design questions into inspectable structure. Instead of saying, “The interface is confusing,” we can ask where the task depends on missing information, hidden feedback, unnecessary steps, or weak triggers.</p>
+<p>Diaper recommends beginning by asking what project stage the analysis will support, what knowledge is needed, what output format is desirable, what data can be collected, and which method is appropriate. That is the design logic behind task analysis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Sources: Diaper, “Understanding Task Analysis for Human-Computer Interaction,” Ch. 1; Annett, “Hierarchical Task Analysis,” Ch. 3.</p>
+</div>
+</section>
+<section id="simple-task-analysis" class="slide level2 compact">
+<h2>Simple Task Analysis</h2>
+<ul>
+<li><strong>List based</strong> – ordered record of activities</li>
+<li><strong>Possibly hierarchical</strong> – grouped by goal or phase</li>
+<li><strong>Dependencies</strong> – sequence, choice, repetition</li>
+<li><strong>Resources</strong> – people, tools, documents, data</li>
+<li><strong>Constraints</strong> – time, attention, access, workload</li>
+<li><strong>Output</strong> – readable model of the work</li>
+</ul>
+<aside class="notes">
+<p>Call this “simple task analysis” rather than “simplistic task analysis,” because a simple model can still be useful and disciplined.</p>
+<p>The simplest useful artifact is often an activity list. It records what happens, who does it, what object or information is involved, and any timing or contextual notes. Diaper argues that activity list construction can sometimes be enough, especially in requirements work or prototype evaluation, because it forces the analyst to understand the task.</p>
+<p>Simple models can also represent parallel work. For example, a user may search a display while talking with another person, or monitor a system while entering data. In an activity list, related parallel components can be placed on adjacent lines.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Diaper, “Understanding Task Analysis for Human-Computer Interaction,” Ch. 1, sections on activity list construction.</p>
+</div>
+</section>
+<section id="basic-task-analysis-example" class="slide level2 compact">
+<h2>Basic Task Analysis Example</h2>
+<ul>
+<li><strong>Goal</strong> – submit assignment successfully</li>
+<li><strong>Subgoals</strong> – find course, open task, upload file</li>
+<li><strong>Operators</strong> – click, type, select, confirm</li>
+<li><strong>Dependencies</strong> – login before upload</li>
+<li><strong>Resources</strong> – LMS, file, network, instructions</li>
+<li><strong>Feedback</strong> – confirmation message or receipt</li>
+</ul>
+<aside class="notes">
+<p>This is a deliberately simple example. The goal is not to teach all of HTA or GOMS yet. The goal is to show how ordinary work can be turned into a model.</p>
+<p>Start with a high-level goal: submit the assignment successfully. Then identify the subgoals: locate the course, open the correct assignment, select the file, upload it, and verify the result. Next, identify dependencies. The student cannot upload before logging in, cannot select a file before locating it, and should not stop until there is feedback that confirms success.</p>
+<p>This same task could be represented as a simple list, an HTA hierarchy, a GOMS model, or a richer model that includes errors, reminders, deadlines, and environmental constraints.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Sources: Diaper, “Understanding Task Analysis for Human-Computer Interaction,” Ch. 1; Annett, “Hierarchical Task Analysis,” Ch. 3; Kieras, “GOMS Models for Task Analysis,” Ch. 4.</p>
+</div>
+</section>
+<section id="similarity-between-task-analysis-methods" class="slide level2 compact">
+<h2>Similarity Between Task Analysis Methods</h2>
+<ul>
+<li><strong>Decomposition</strong> – goals become subgoals</li>
+<li><strong>Leaf actions</strong> – smallest modeled task units</li>
+<li><strong>Temporal rules</strong> – sequence, choice, repetition</li>
+<li><strong>Parallel activity</strong> – overlapping task components</li>
+<li><strong>Selection rules</strong> – conditions choose methods</li>
+<li><strong>Constraints</strong> – human, system, environment</li>
+</ul>
+<aside class="notes">
+<p>The key teaching point is that task analysis methods use different vocabularies, but they often share a common logic. They break work into smaller units, describe relationships between those units, and connect the task to goals, resources, and constraints.</p>
+<p>The Handbook’s comparison chapter notes that different methods use different terms for similar concepts. A “plan,” “operator,” “constructor,” or “goal” may serve related purposes in different notations. The important thing is to ask what each method can represent.</p>
+<p>Be careful with parallel activity. Some methods model it explicitly, such as CTT or CPM-GOMS. Other methods can describe it informally through plans or adjacent activity-list entries.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Limbourg and Vanderdonckt, “Comparing Task Models for User Interface Design,” in Diaper and Stanton, Ch. 6.</p>
+</div>
+</section>
+<section id="hierarchical-task-analysis-hta" class="slide level2 compact">
+<h2>Hierarchical Task Analysis (HTA)</h2>
+<ul>
+<li>Basis for understanding skills required in complex non-repetitive tasks</li>
+<li><strong>Goal</strong> – desired outcome, not just behavior</li>
+<li><strong>HTA</strong> – decomposes goals into operations</li>
+<li><strong>Operation</strong> – objective at one level of detail</li>
+<li><strong>Plan</strong> – how suboperations are ordered</li>
+<li><strong>I-A-F</strong> – input, action, feedback</li>
+<li><strong>p x c rule</strong> – stop where risk is acceptable</li>
+</ul>
+<aside class="notes">
+<p>HTA is often the most intuitive formal task analysis method. It starts with a top-level goal and decomposes it into subgoals and operations.</p>
+<p>The important distinction is that HTA is goal-oriented. A good HTA node should describe what is being achieved, not just a visible behavior. For example, “confirm submission” is better than “look at screen,” because it names the purpose of the action.</p>
+<p>Plans are essential. The hierarchy alone tells us what the parts are, but the plan tells us when and how they are performed. Plans can express fixed sequences, conditional choices, cycles, and parallel activity.</p>
+<p>The p x c rule answers “How far down do we decompose?” Annett describes the general stop rule as stopping when the analysis has enough information for its purpose. In HTA, that usually means stopping when probability of failure, p, multiplied by cost of failure, c, is acceptably low.</p>
+<p>Treat this as a heuristic, not exact arithmetic. If p x c is high, keep decomposing until the likely failure source is clearer and a plausible remedy can be proposed through interface design, procedures, staffing, or training. A very high cost can justify deeper analysis even when probability seems low.</p>
+<p>The rule also avoids fixed-depth decomposition: safe routine operations need less detail, while risky operations may need more.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Annett, “Hierarchical Task Analysis,” in Diaper and Stanton, Ch. 3.</p>
+</div>
+</section>
+<section id="goms-overview" class="slide level2 compact">
+<h2>GOMS Overview</h2>
+<ul>
+<li>Generate predictions of performance and learning</li>
+<li><strong>Goals</strong> – what the user intends</li>
+<li><strong>Operators</strong> – primitive cognitive or motor steps</li>
+<li><strong>Methods</strong> – procedures for achieving goals</li>
+<li><strong>Selection rules</strong> – choose among methods</li>
+<li><strong>Prediction</strong> – time, learning, workload</li>
+<li><strong>Limit</strong> – procedural usability only</li>
+</ul>
+<aside class="notes">
+<p>GOMS is the key bridge from task analysis into cognitive modeling. It represents the procedural knowledge a user must have to carry out a task with a system.</p>
+<p>The basic structure is Goals, Operators, Methods, and Selection Rules. Goals say what the user is trying to accomplish. Operators are the primitive actions or mental steps. Methods are procedures made from operators and subgoals. Selection rules decide which method applies when more than one method is available.</p>
+<p>GOMS is powerful, but narrow. Kieras emphasizes that GOMS starts after a basic task analysis has identified user goals and context. It models procedural aspects of usability, not every aspect of meaning, organization, motivation, perception, or social context.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Kieras, “GOMS Models for Task Analysis,” in Diaper and Stanton, Ch. 4.</p>
+</div>
+</section>
+<section id="many-more-task-analysis-methods" class="slide level2 compact">
+<h2>Many More Task Analysis Methods</h2>
+<ul>
+<li><strong>GTA</strong> – roles, agents, cooperative work</li>
+<li><strong>CTT</strong> – temporal operators and concurrency</li>
+<li><strong>TKS</strong> – knowledge structures and user variation</li>
+<li><strong>Trigger analysis</strong> – cues, reminders, breakdowns</li>
+<li><strong>TAFEI</strong> – states, transitions, possible errors</li>
+<li><strong>Formal models</strong> – task-to-interface specification</li>
+</ul>
+<aside class="notes">
+<p>This slide should prevent students from thinking HTA and GOMS are the whole field. They are important, but they are only two points in a larger design space.</p>
+<p>Groupware Task Analysis is useful when work is distributed across people or roles. ConcurTaskTrees is useful when the temporal structure matters, especially sequence, optionality, interruption, and concurrency. Task Knowledge Structures add attention to user knowledge and context variation. Trigger analysis is useful when tasks break down because people forget, lose state, or miss environmental cues. TAFEI focuses on error opportunities by modeling device states and transitions.</p>
+<p>The point is not to memorize every method. The point is to see that each method adds representational power for a different design question.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Sources: Limbourg and Vanderdonckt, “Comparing Task Models for User Interface Design,” Ch. 6; Paterno, “ConcurTaskTrees,” Ch. 24; Dix, Ramduny-Ellis, and Wilkinson, “Trigger Analysis,” Ch. 19; Baber and Stanton, “Task Analysis for Error Identification,” Ch. 18.</p>
+</div>
+</section>
+<section id="relative-complexity-of-task-analysis-methods" class="slide level2 compact">
+<h2>Relative Complexity of Task Analysis Methods</h2>
+<ul>
+<li><strong>Expressiveness</strong> – facets the model can represent</li>
+<li><strong>Complexity</strong> – effort and formality required</li>
+<li><strong>HTA / GOMS</strong> – simpler, focused models</li>
+<li><strong>GTA / TKS / CTT</strong> – richer relationships</li>
+<li><strong>Formal models</strong> – more precise, harder to use</li>
+<li><strong>Tradeoff</strong> – usable simplicity vs.&nbsp;modeling power</li>
+</ul>
+<aside class="notes">
+<p>Use this slide to summarize the “expressiveness versus complexity” idea from Limbourg and Vanderdonckt’s Figure 6.10.</p>
+<p>As models become more expressive, they can represent more facets of task modeling: roles, objects, temporal constraints, context variation, preconditions, postconditions, transitions, and formal relationships. The cost is complexity. The analyst must learn more notation, make more modeling decisions, and often use tool support.</p>
+<p>This is why GOMS is interesting. In the comparison figure it appears on the simpler side of the continuum, but it remains highly productive in HCI because it is connected to cognitive architectures and predictive modeling. It is common to start with a GOMS-style procedural model and add relationships only when the design question demands more complexity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Limbourg and Vanderdonckt, “Comparing Task Models for User Interface Design,” Ch. 6, Fig. 6.10, pp.&nbsp;151-152.</p>
+</div>
+</section>
+<section id="takeaway-use-the-smallest-useful-model" class="slide level2 compact">
+<h2>Takeaway: Use the Smallest Useful Model</h2>
+<ul>
+<li><strong>Start simple</strong> – activity list or goal hierarchy</li>
+<li><strong>Add rules</strong> – dependencies and method choices</li>
+<li><strong>Add roles</strong> – when work is cooperative</li>
+<li><strong>Add objects</strong> – when artifacts shape action</li>
+<li><strong>Add cognition</strong> – when prediction matters</li>
+<li><strong>Stop</strong> – when the model answers the question</li>
+</ul>
+<aside class="notes">
+<p>This is the closing slide for the simplified task analysis section. The message is methodological restraint.</p>
+<p>A task model should be as simple as possible, but not simpler than the design problem. Start with a readable activity list or goal hierarchy. Add plans, dependencies, resources, selection rules, roles, objects, or cognitive operators only when those additions help answer the design question.</p>
+<p>This is also the transition to cognitive architectures. Once we have a task model, we can ask what kind of human system is performing it. That is where the Model Human Processor, GOMS variants, and EPIC become useful.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Sources: Diaper, “Understanding Task Analysis for Human-Computer Interaction,” Ch. 1; Kieras, “GOMS Models for Task Analysis,” Ch. 4; Limbourg and Vanderdonckt, “Comparing Task Models for User Interface Design,” Ch. 6.</p>
+</div>
+</section></section>
+<section>
+<section id="section-1.2-cognitive-architectures" class="title-slide slide level1 section-divider center">
+<h1>Section 1.2: Cognitive Architectures</h1>
+<ul>
+<li>Model Human Processor as an engineering approximation</li>
+<li>Perception, memory, cognition, and motor action</li>
+<li>Cycle times, capacity limits, and skilled performance</li>
+<li>Foundation for GOMS, KLM, CPM-GOMS, and EPIC</li>
+</ul>
+<aside class="notes">
+<p>This section shifts from task descriptions to the human information-processing assumptions that make predictive modeling possible. The goal is not to teach a complete psychology course, but to give students the engineering parameters and processing stages that later models simplify or formalize.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="model-human-processor" class="slide level2">
+<h2>Model Human Processor</h2>
+<p><img data-src="figures/card_1983_fig2_1_model_human_processor.png" class="slide-figure figure-mhp"></p>
+<aside class="notes">
+<p>Card, Moran, and Newell introduce the Model Human Processor as a deliberately simplified information-processing model for HCI engineering. It is meant to help designers remember psychological facts and make approximate predictions, not to describe literally what is inside the head.</p>
+<p>The model has two parts: memories and processors, plus principles of operation. Memories are described by capacity, decay time, and code type. Processors are described mainly by cycle time. The three interacting subsystems are perceptual, cognitive, and motor.</p>
+<p>For the parameters in the figure, <span class="math inline">\(\mu\)</span> means storage capacity, <span class="math inline">\(\delta\)</span> means decay time or persistence of an item, <span class="math inline">\(\kappa\)</span> means the dominant code type used to represent the information, and <span class="math inline">\(\tau\)</span> means processor cycle time. The exact values differ by memory store or processor, but the general idea is the same: how much can be held, how long it remains available, what form the representation takes, and how quickly a processing cycle can complete.</p>
+<p>The notation <code>100 [50-200] ms</code> means a nominal value followed by an estimated range. The first number is the middle or typical value Card, Moran, and Newell recommend for approximate engineering calculations. The bracketed values are plausible low and high bounds, reflecting task conditions, measurement conditions, practice, individual differences, and stimulus quality. For time parameters, the low value is faster and the high value is slower; for capacity parameters, the low value means less capacity and the high value means more capacity. This is why the model supports both a typical Middleman calculation and sensitivity checks using low and high parameter values.</p>
+<p>Use this figure to connect the rest of the lesson to GOMS. Information flows from sensory input into perceptual memories, then into Working Memory through the Perceptual Processor. Working Memory is activated chunks in Long-Term Memory. The Cognitive Processor uses a recognize-act cycle to select actions, and the Motor Processor carries out those actions.</p>
+<p>The model supports task analysis, calculation, and approximation. Card, Moran, and Newell recommend reasoning with nominal values and with plausible ranges: a Middleman, Fastman, and Slowman version of the user. Some tasks look serial, such as pressing a key in response to a light. Other skilled tasks, such as typing or reading, can pipeline perceptual, cognitive, and motor processes.</p>
+<p>Section 2.3 is the caveat: this is a useful synthesis, not a settled complete theory. The memory “boxes,” depth of processing, Working Memory span, interference, decay, and processor-control assumptions are simplifications chosen because they give designers a usable first approximation.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, especially section 2.1 and Figure 2.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="simplified-model-human-processor" class="slide level2 compact">
+<h2>Simplified Model Human Processor</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/kieras_2005_simplified_model_human_processor.jpeg" class="slide-figure figure-tall"></p>
+<figcaption>Kieras simplified Model Human Processor diagram for CPM-GOMS.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Use this after the detailed Card, Moran, and Newell figure as the “working sketch” version of the same idea. Kieras simplifies the Model Human Processor into perceptual, cognitive, and motor processors with approximate timing parameters so it can be used for CPM-GOMS and other engineering analyses.</p>
+<p>The teaching move is to say: the previous slide shows the richer parameterized model; this slide shows the version analysts often carry forward when they model task execution. It keeps the key timing idea visible: perception, cognition, and motor action are separable enough to reason about, and in some tasks they can overlap.</p>
+<p>This also sets up the later contrast with KLM. KLM usually sums a mostly serial operator string. CPM-GOMS uses the same human-processing idea but represents dependencies and possible overlap among perceptual, cognitive, and motor activities.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Kieras, “GOMS Models - Simplified Cognitive Architectures,” slide 13.</p>
+</div>
+</section>
+<section id="model-human-processor-parameters" class="slide level2 compact">
+<h2>Model Human Processor Parameters</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Question answered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mu\)</span></td>
+<td>capacity</td>
+<td>How much can it hold?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta\)</span></td>
+<td>decay / persistence</td>
+<td>How long is it available?</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\kappa\)</span></td>
+<td>code</td>
+<td>What form is it represented in?</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\tau\)</span></td>
+<td>cycle time</td>
+<td>How long is one processor cycle?</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Format: nominal [low-high range]</li>
+<li>Nominal = Middleman engineering value</li>
+<li>Range = low to high parameter bounds</li>
+<li>Decay is degradation, not deletion</li>
+<li>Values synthesize empirical estimates</li>
+</ul>
+<aside class="notes">
+<p>This slide makes the notation in Figure 2.1 explicit. Card, Moran, and Newell use memory parameters for capacity, decay, and code type, and processor parameters for cycle time.</p>
+<p>Decay does not mean the information is completely gone at exactly the listed time. It means availability or retrievability is declining. For the sensory image stores, Card, Moran, and Newell use half-life as an index of decay: the point where probability of retrieval has fallen below about 50%. They also note that exponential decay is a useful approximation, not a claim that the trace disappears instantly.</p>
+<p>For Working Memory, apparent decay is strongly shaped by interference. A chunk can become less accessible as new chunks are activated, and it can sometimes be refreshed or reconstructed if appropriate cues remain. In Long-Term Memory, failure to retrieve often means the right cue did not activate the item or that competing associations interfered, not that the knowledge was physically erased.</p>
+<p>The notation such as <code>70 [25-170] ms</code> or <code>7 [5-9] chunks</code> should be read as a typical or nominal value followed by a plausible low-high range. The nominal value is the value to use for a first-pass Middleman calculation. The bracketed range gives low and high parameter values for sensitivity analysis.</p>
+<p>The nominal values should not be treated as exact biological constants or simple averages from a single experiment. Card, Moran, and Newell chose them as practical engineering estimates from the available empirical literature. For example, they describe the nominal cognitive processor cycle time as about the median of estimates across several task phenomena, while the lower and upper bounds include the estimates they wanted the model to cover.</p>
+<p>The range is intentionally broad because user performance changes with practice, effort, task pacing, stimulus quality, measurement conditions, and individual differences. The engineering use is to calculate a typical estimate and then check whether the design conclusion still holds under low and high assumptions.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, especially sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="perceptual-processor" class="slide level2 compact mhp-callout-slide">
+<h2>Perceptual Processor</h2>
+<ul>
+<li>Converts sensations into percepts</li>
+<li>Encodes selected input into symbols</li>
+<li>Combines events within one cycle</li>
+<li>Guides visual search and fixation</li>
+<li>Cycle time <span class="math inline">\(\tau_{\mathrm{P}}\)</span>: 100 [50-200] ms</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 34%; --mhp-y: 39%; --mhp-w: 25%; --mhp-h: 11%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The Perceptual Processor turns sensory input into internal representations. The nominal cycle time <span class="math inline">\(\tau_{\mathrm{P}}\)</span> is about 100 ms, with a typical range from about 50 to 200 ms.</p>
+<p>Events that occur within one perceptual cycle can be combined into one percept. Chapter 2 uses this idea to explain phenomena such as apparent motion, click fusion, and perceived causality in animation. For interface timing, very short delays can be perceptually invisible, while delays around the perceptual cycle can disrupt continuity.</p>
+<p>Visual tasks are not just about the processor cycle. The eye obtains high detail only in the fovea, and the eyes move in saccades. The model uses about 230 ms for a typical eye movement, with a wide range depending on task and observer. Reading, scanning a display, and finding a target can therefore be dominated by eye movements rather than by the 100 ms perceptual cycle alone.</p>
+<p>The Variable Perceptual Processor Rate Principle says that perceptual cycle time varies inversely with stimulus intensity. High-contrast, bright, salient signals are processed faster than faint or low-contrast signals. This gives a psychological reason for making critical state changes visible, persistent, and discriminable.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="visual-and-auditory-image-stores" class="slide level2 compact mhp-callout-slide">
+<h2>Visual and Auditory Image Stores</h2>
+<ul>
+<li>Visual code <span class="math inline">\(\kappa_{\mathrm{VIS}}\)</span>: physical trace</li>
+<li>Visual capacity <span class="math inline">\(\mu_{\mathrm{VIS}}\)</span>: 17 [7-17] letters</li>
+<li>Visual duration <span class="math inline">\(\delta_{\mathrm{VIS}}\)</span>: 200 [70-1000] ms</li>
+<li>Auditory code <span class="math inline">\(\kappa_{\mathrm{AIS}}\)</span>: physical sound</li>
+<li>Auditory capacity <span class="math inline">\(\mu_{\mathrm{AIS}}\)</span>: 5 [4.4-6.2] letters</li>
+<li>Auditory duration <span class="math inline">\(\delta_{\mathrm{AIS}}\)</span>: 1500 [900-3500] ms</li>
+<li>Decay <span class="math inline">\(\delta\)</span> is a retrieval half-life estimate</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 16%; --mhp-y: 12%; --mhp-w: 50%; --mhp-h: 18%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The perceptual memories are short-lived stores that hold sensory information before it has been fully recognized and symbolically encoded. Card, Moran, and Newell distinguish the Visual Image Store and Auditory Image Store.</p>
+<p>The code type is physical. A visual stimulus is represented in terms of physical features such as shape, curvature, intensity, and spatial pattern before it is represented as a recognized symbol. This matters for interface design because users can select from the perceptual store only by physical properties before recognition. After a quick display of colored letters and numbers, for example, a person can attend to the green items or the top half, but not to “the even digits” before identifying the items.</p>
+<p>Useful nominal values from the model are: Visual Image Store half-life about 200 ms, capacity about 17 letters; Auditory Image Store half-life about 1500 ms, capacity about 5 letters. Auditory information persists longer because it often needs to be interpreted over time.</p>
+<p>For dashboards, alarms, and machine HMIs, the design implication is that fleeting displays and transient alerts should not require users to extract many symbolic items after the fact. If the trace is brief and complex, Working Memory fills before everything can be transferred.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, section 2.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="working-memory" class="slide level2 compact mhp-callout-slide">
+<h2>Working Memory</h2>
+<ul>
+<li>Active chunks for the current task</li>
+<li>Chunk = meaningful unit for this user</li>
+<li>Code <span class="math inline">\(\kappa_{\mathrm{WM}}\)</span>: acoustic or visual</li>
+<li>Pure capacity <span class="math inline">\(\mu_{\mathrm{WM}}\)</span>: 3 [2.5-4.1] chunks</li>
+<li>Effective span <span class="math inline">\(\mu^*_{\mathrm{WM}}\)</span>: 7 [5-9] chunks</li>
+<li>Pure = raw slots; span = chunked/rehearsed units</li>
+<li>Interference: new chunks make old chunks harder to access</li>
+<li>Decay <span class="math inline">\(\delta_{\mathrm{WM}}\)</span>: 7 [5-226] sec</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 66%; --mhp-y: 12%; --mhp-w: 30%; --mhp-h: 20%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>This slide separates the Working Memory variables from the Visual Image Store and Auditory Image Store. Those image stores are perceptual memories. Working Memory is the active task workspace used by the Cognitive Processor.</p>
+<p>Working Memory holds the intermediate products of thinking and the representations produced by perception. Functionally, it is where mental operations get their operands and leave their outputs. Structurally, Card, Moran, and Newell model it as activated chunks in Long-Term Memory.</p>
+<p>The key unit is the chunk. What counts as a chunk depends on the user and their prior knowledge. A random sequence can exceed span, while an only slightly different sequence can become easy if it maps onto familiar chunks. This is why expertise matters so much in KLM and GOMS: an expert may treat a procedure, command, or display state as one chunk that a novice must handle as several separate items.</p>
+<p>Working Memory commonly uses acoustic or visual symbolic codes. The model distinguishes a pure capacity of about 3 chunks from an effective span of about 7 chunks, because familiar structures and rehearsal let people maintain more useful units than raw storage alone would suggest. It decays or becomes inaccessible over seconds, especially under interference. The model gives a rough half-life of about 7 seconds for three chunks, but much longer for a single chunk. Rehearsal can keep a small number of chunks active, but it consumes attention and competes with other mental work.</p>
+<p>For interface design, reduce Working Memory load by chunking information, keeping task-relevant values visible, using meaningful labels, avoiding easily confused codes, and not requiring users to remember arbitrary strings across intervening steps.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cognitive-long-term-memory" class="slide level2 compact mhp-callout-slide">
+<h2>Cognitive Long-Term Memory</h2>
+<ul>
+<li>Learned facts/procedures <span class="math inline">\(\kappa_{\mathrm{LTM}}\)</span>: semantic</li>
+<li>Capacity <span class="math inline">\(\mu_{\mathrm{LTM}}\)</span>: effectively unlimited</li>
+<li>Duration <span class="math inline">\(\delta_{\mathrm{LTM}}\)</span>: effectively permanent</li>
+<li>Retrieves by associative cues</li>
+<li>Similar items can interfere</li>
+<li>Fast to read, slow to write</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 14%; --mhp-y: 1%; --mhp-w: 84%; --mhp-h: 31%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>Long-Term Memory holds facts, procedures, histories, and associations. In the Model Human Processor it is coded primarily semantically, with no modeled erasure and no practical capacity limit for the engineering questions in the chapter.</p>
+<p>Retrieval is associative. A cue in Working Memory activates related chunks in Long-Term Memory. Failure to remember often means the right retrieval route was not activated, not that the knowledge is gone.</p>
+<p>Two principles are central. The Encoding Specificity Principle says that how information is encoded determines which retrieval cues will work later. The Discrimination Principle says retrieval difficulty depends on competing candidates relative to the cue. Similar command names, similar procedures, or semantically overlapping systems can interfere with each other.</p>
+<p>Writing to Long-Term Memory is slow compared with reading. The Cognitive Processor can access Long-Term Memory on each cognitive cycle, but forming retrievable new knowledge requires time in Working Memory and useful associations. This is why training, naming, examples, and consistency matter: they shape the cues users will later have available.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cognitive-processor" class="slide level2 compact mhp-callout-slide">
+<h2>Cognitive Processor</h2>
+<ul>
+<li>Interprets the current task state</li>
+<li>Retrieves knowledge and procedures</li>
+<li>Chooses the next deliberate action</li>
+<li>Updates Working Memory each cycle</li>
+<li>Cycle time <span class="math inline">\(\tau_{\mathrm{C}}\)</span>: 70 [25-170] ms</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 67%; --mhp-y: 35%; --mhp-w: 20%; --mhp-h: 11%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The Cognitive Processor operates through a recognize-act cycle. On each cycle, the contents of Working Memory cue associated actions or knowledge in Long-Term Memory; those actions then modify Working Memory and set up the next cycle.</p>
+<p>The nominal cognitive cycle time <span class="math inline">\(\tau_{\mathrm{C}}\)</span> is about 70 ms, with a broad range. Card, Moran, and Newell use this value to explain simple reaction tasks: a perceptual cycle plus a cognitive cycle plus a motor cycle gives about 240 ms. More complex judgments add cycles. Physical matches, name matches, class matches, and choice reactions become slower as additional recognition, classification, or decision steps are required.</p>
+<p>The Variable Cognitive Processor Rate Principle says the cycle can shorten under higher effort, higher task demand, information load, or practice. The Uncertainty Principle adds that decision time increases with uncertainty, as in Hick’s Law.</p>
+<p>The cognitive system can recognize many things in parallel, but deliberate action is effectively serial. This is the bridge to GOMS: a method can be modeled as a sequence of operators because deliberate cognitive control tends to choose one next action at a time, even though perception and motor execution may overlap in skilled behavior.</p>
+<p>Chapter 2 also uses the Cognitive Processor to frame complex task behavior. Operator sequences can often be added to approximate total task time. The Rationality Principle says behavior is shaped by goals, task structure, operators, inputs, knowledge, and process limits. The Problem Space Principle says problem solving can be described as states of knowledge, operators, constraints, and control knowledge.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, sections 2.1 and 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="motor-system" class="slide level2 compact mhp-callout-slide">
+<h2>Motor System</h2>
+<ul>
+<li>Turns selected actions into movement</li>
+<li>Controls eyes, head, hands, fingers</li>
+<li>Executes skilled action bursts</li>
+<li>Uses slower feedback for correction</li>
+<li>Cycle time <span class="math inline">\(\tau_{\mathrm{M}}\)</span>: 70 [30-100] ms</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 73%; --mhp-y: 47%; --mhp-w: 23%; --mhp-h: 13%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>The motor system translates thought into action through voluntary muscles. For computer interaction, the most important effectors are the arm-hand-finger system and the head-eye system.</p>
+<p>Card, Moran, and Newell model movement as discrete micromovements rather than continuous motion. The nominal Motor Processor cycle time <span class="math inline">\(\tau_{\mathrm{M}}\)</span> is about 70 ms. Because the feedback loop from action to perception is much longer, roughly 200 to 500 ms, rapid acts such as typing and speaking are executed as preprogrammed bursts rather than as fully closed-loop movements.</p>
+<p>The chapter’s pen-movement example shows two paths. Open-loop motor commands can be issued at roughly the motor cycle rate. Closed-loop corrections require perceiving the result, deciding on a correction, and issuing a new motor command, so the cycle is closer to <span class="math inline">\(\tau_{\mathrm{P}} + \tau_{\mathrm{C}} + \tau_{\mathrm{M}}\)</span>, about 240 ms nominally.</p>
+<p>For KLM, this helps explain why not every small motor movement should be treated as a visually corrected decision. Skilled, practiced actions can run as motor routines; visually guided corrections, target acquisition, and verification add time.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, section 2.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="motor-skill-and-fitts-law" class="slide level2 compact mhp-callout-slide">
+<h2>Motor Skill and Fitts’ Law</h2>
+<ul>
+<li>Predicts aimed movement time</li>
+<li>Links layout to physical effort</li>
+<li><span class="math inline">\(T_{\mathrm{pos}} = I_{\mathrm{M}} \log_2(D/S + 0.5)\)</span></li>
+<li>Smaller/farther targets take longer</li>
+<li>Practice speeds repeated routines</li>
+<li><span class="math inline">\(I_{\mathrm{M}} \approx 100\)</span> ms/bit</li>
+</ul>
+<div class="mhp-thumb" style="--mhp-x: 0%; --mhp-y: 84%; --mhp-w: 27%; --mhp-h: 16%;" aria-hidden="true">
+<img src="figures/card_1983_fig2_1_model_human_processor.png" alt="">
+<div class="mhp-box">
+
+</div>
+</div>
+<aside class="notes">
+<p>Fitts’ Law models the time to move to a target as a function of distance <span class="math inline">\(D\)</span> and target size <span class="math inline">\(S\)</span>. The important design idea is relative precision: far targets and small targets take longer because they require more corrective control.</p>
+<p>Card, Moran, and Newell derive the law from repeated perceptual-cognitive-motor corrections, then use empirical data to set a practical value of about 100 ms per bit, with a typical range around 70 to 120 ms per bit depending on task conditions and measurement method. They recommend a Welford-style form, shown on the slide as <span class="math inline">\(T_{\mathrm{pos}} = I_{\mathrm{M}} \log_2(D/S + 0.5)\)</span>.</p>
+<p>The same motor-skill section also emphasizes the Power Law of Practice: task time decreases as a power function of practice. This applies broadly to skilled cognitive and perceptual-motor behavior. For keystroking, practice produces large differences: novice, moderate, expert, and champion rates can differ by more than an order of magnitude.</p>
+<p>For interface evaluation, use average KLM pointing times for quick classroom estimates, but use Fitts’ Law when target distance and target size are central to the design question. In industrial HMIs, this matters for high-frequency controls, emergency actions, gloved use, touchscreens, and dense dashboards.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 2, especially section 2.2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-1.3-goms-models" class="title-slide slide level1 section-divider center">
+<h1>Section 1.3: GOMS Models</h1>
+<ul>
+<li>GOMS as an engineering model</li>
+<li>Goals, operators, methods, and selection rules</li>
+<li>NGOMSL for explicit procedures and learning time</li>
+<li>Limits of serial procedural models</li>
+</ul>
+<aside class="notes">
+<p>This section turns the task-analysis and cognitive-architecture foundations into a specific family of HCI models. Students should see GOMS as a practical modeling language for routine skilled procedures, not as a complete account of all human behavior.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-as-engineering-model" class="slide level2">
+<h2>GOMS as Engineering Model</h2>
+<ul>
+<li>Approximate, not perfect</li>
+<li>Predictive, not merely descriptive</li>
+<li>Usable by designers</li>
+<li>Focused on procedural interaction</li>
+</ul>
+<aside class="notes">
+<p>John and Kieras describe GOMS models as engineering models of human-computer interaction. Engineering models are deliberately approximate. They include enough detail to support design decisions, without trying to model every psychological process.</p>
+<p>Use the “EPA mileage rating” analogy: GOMS predictions may not exactly match any particular user on any particular day, but they can be very useful for comparing alternatives under consistent assumptions.</p>
+<p>The original Card, Moran, and Newell framing emphasizes a priori prediction, coverage of relevant HCI tasks, approximation, and learnability for practitioners.</p>
+<p>This framing helps students avoid two mistakes: treating GOMS as exact truth, and dismissing it because it is approximate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-architecture" class="slide level2 compact goms-architecture-slide">
+<h2>GOMS Architecture</h2>
+<p><strong>GOMS model = Goals + Operators + Methods + Selection Rules</strong></p>
+<ul>
+<li><strong>Goals:</strong> desired states that organize the task; they identify what is wanted, what methods are available, and what has already been tried</li>
+<li><strong>Operators:</strong> elementary perceptual, cognitive, or motor acts; each changes the user’s mental state or task environment and has an effect and duration</li>
+<li><strong>Methods:</strong> learned procedures for achieving goals; conditional sequences of subgoals and operators driven by memory and task-environment tests</li>
+<li><strong>Selection rules:</strong> if-then rules for choosing among competing methods; skilled choices are fast, smooth, and based on task conditions</li>
+</ul>
+<div class="footer source-citation-footer">
+<p>Card, Moran, and Newell, 1983, “The Psychology of Human-Computer Interaction,” Chap. 5, sec.&nbsp;5.1.</p>
+</div>
+<aside class="notes">
+<p>This slide follows Card, Moran, and Newell’s original definition of a GOMS model in Chapter 5, Section 5.1. Their key claim is that the user’s cognitive structure for skilled interaction can be represented as goals, operators, methods, and selection rules.</p>
+<p>A goal might be “Start CNC cutting program.” It is not just a label for the outcome; it also functions as a memory point for what the user is trying to do, which methods could be used, and what has already been attempted.</p>
+<p>Operators are the model’s executable units. Depending on the grain of analysis, an operator might be pressing a key, pointing to a target, mentally preparing for the next step, or verifying the displayed machine state. Card, Moran, and Newell emphasize that operators have effects and durations, which is what lets a GOMS model support time prediction.</p>
+<p>A method is the ordered procedure for a goal: open the program screen, select the program, confirm it, and press Cycle Start. Methods are learned task knowledge available during skilled performance, not plans invented from scratch while acting.</p>
+<p>A selection rule chooses among methods when more than one method is available. For example, if the correct CNC program is already loaded, use a shorter method that skips program selection; otherwise, use the full method. In skilled behavior, this choice should be quick and routine rather than a new problem-solving episode.</p>
+<p>Source: Card, Moran, and Newell (1983), Chapter 5, Section 5.1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-example-produce-report" class="slide level2 dense goms-model-text">
+<h2>GOMS Example: Produce Report</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>Goal: Produce HCI textbook sales report</span>
+<span id="cb1-2"><a href=""></a>  Gather source data</span>
+<span id="cb1-3"><a href=""></a>    Identify introductory HCI textbooks</span>
+<span id="cb1-4"><a href=""></a>      Search title/metadata database</span>
+<span id="cb1-5"><a href=""></a>      Screen candidate names and abstracts</span>
+<span id="cb1-6"><a href=""></a>    Retrieve sales figures for selected books</span>
+<span id="cb1-7"><a href=""></a>  Build tables and histograms</span>
+<span id="cb1-8"><a href=""></a>  Write explanatory text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Shows goals decomposed into subgoals</li>
+<li>Stopping point depends on the design question</li>
+<li>Too broad for low-level GOMS timing without selecting unit tasks</li>
+</ul>
+<div class="footer source-citation-footer">
+<p>Adapted from Dix et al.&nbsp;(2004), Ch. 12, goal and task hierarchies, p.&nbsp;421.</p>
+</div>
+<aside class="notes">
+<p>Dix et al.&nbsp;use the report example to introduce goal and task hierarchies before the more formal GOMS section. The important teaching point is decomposition: a large goal can be split into smaller goals, and those can be split again until the analyst reaches a useful level of detail.</p>
+<p>This is not yet a good low-level execution-time model because “produce a report” includes creative work, domain judgment, and problem solving. To use GOMS or KLM, the analyst would choose routine unit tasks inside this hierarchy, such as “search the database,” “enter query terms,” or “insert chart.”</p>
+<p>Use this slide before the photocopy-paper example to contrast a broad knowledge-work hierarchy with a narrower routine procedure.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-example-photocopy-paper" class="slide level2 compact">
+<h2>GOMS Example: Photocopy Paper</h2>
+<p><strong>Task assumptions</strong></p>
+<ul>
+<li>Copy an article from a bound journal</li>
+<li>Copy one source page at a time</li>
+<li>Copier cover must be closed before copying</li>
+<li>Expert routine; no errors modeled</li>
+</ul>
+<p><strong>GOMS focus</strong></p>
+<ul>
+<li>Goal hierarchy for a familiar physical task</li>
+<li>Repeated page-copying method</li>
+<li>Closure risk after the visible output appears</li>
+</ul>
+<div class="footer source-citation-footer">
+<p>Adapted from Dix et al.&nbsp;(2004), Ch. 12, GOMS worked exercise, p.&nbsp;424.</p>
+</div>
+<aside class="notes">
+<p>This is a rewritten version of Dix et al.’s photocopying worked exercise. Use it to show that GOMS is not limited to screen interaction. It can describe any learned procedural interaction where goals, subgoals, and primitive operators can be identified.</p>
+<p>The assumptions matter: the article is copied one page at a time, and the copier has a cover that must be closed before a page can be copied. Different copier designs would produce different methods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="photocopy-paper-method-structure" class="slide level2 dense goms-model-text">
+<h2>Photocopy Paper: Method Structure</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>Goal: Copy journal article</span>
+<span id="cb2-2"><a href=""></a>  Locate the target article</span>
+<span id="cb2-3"><a href=""></a>  For each page to copy:</span>
+<span id="cb2-4"><a href=""></a>    Prepare source page</span>
+<span id="cb2-5"><a href=""></a>      Open copier cover</span>
+<span id="cb2-6"><a href=""></a>      Select next journal page</span>
+<span id="cb2-7"><a href=""></a>      Align page on glass</span>
+<span id="cb2-8"><a href=""></a>      Close copier cover</span>
+<span id="cb2-9"><a href=""></a>    Make page copy</span>
+<span id="cb2-10"><a href=""></a>      Press Copy</span>
+<span id="cb2-11"><a href=""></a>      Wait for output</span>
+<span id="cb2-12"><a href=""></a>      Inspect copied page</span>
+<span id="cb2-13"><a href=""></a>  Collect copied pages          # visible task success</span>
+<span id="cb2-14"><a href=""></a>  Retrieve original journal     # easy to forget</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="footer source-citation-footer">
+<p>Adapted from Dix et al.&nbsp;(2004), Ch. 12, GOMS worked exercise, p.&nbsp;424.</p>
+</div>
+<aside class="notes">
+<p>Walk down the hierarchy from top to bottom. The unit task is not “use a copier” in the abstract; it is a routine method for copying a particular article under stated device assumptions.</p>
+<p>The page-copying loop is the method’s repeated unit. Within each repetition, the user prepares the page, starts the copy, waits for output, and checks the result.</p>
+<p>The last two goals create the teaching moment. Once the copied pages are in hand, the user can feel finished even though the original journal still needs to be retrieved from the copier.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="photocopy-paper-closure-problem" class="slide level2 compact goms-model-text">
+<h2>Photocopy Paper: Closure Problem</h2>
+<ul>
+<li><strong>Perceived closure:</strong> copied pages are in hand</li>
+<li><strong>Hidden leftover:</strong> original journal remains under cover</li>
+<li><strong>Failure mode:</strong> user leaves the original behind</li>
+<li><strong>Design question:</strong> how can the method or copier make cleanup unavoidable?</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>Safer ordering:</span>
+<span id="cb3-2"><a href=""></a>  Retrieve original journal</span>
+<span id="cb3-3"><a href=""></a>  Then collect copied pages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="footer source-citation-footer">
+<p>Adapted from Dix et al.&nbsp;(2004), Ch. 12, GOMS worked exercise, p.&nbsp;424.</p>
+</div>
+<aside class="notes">
+<p>Closure means the user believes the task is complete. In this method, collecting the copied pages strongly signals completion, but the original is still hidden on the glass. That makes retrieval depend on memory after the main success cue has already appeared.</p>
+<p>The simple procedural fix is to retrieve the original before collecting the copies. A design fix would make the original visible, block completion until the cover is opened, add a persistent reminder, or arrange output so the original must be handled before the copies are taken.</p>
+<p>This is a good transition into why task models are useful for design: the goal hierarchy exposes a likely failure point even before measuring execution time.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goms-example-get-money-from-atm" class="slide level2 compact goms-model-text">
+<h2>GOMS Example: Get Money From ATM</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href=""></a>Goal: Withdraw cash</span>
+<span id="cb4-2"><a href=""></a>  Use ATM</span>
+<span id="cb4-3"><a href=""></a>    Insert card</span>
+<span id="cb4-4"><a href=""></a>    Enter PIN</span>
+<span id="cb4-5"><a href=""></a>    Choose withdrawal amount</span>
+<span id="cb4-6"><a href=""></a>    Take cash                 # main goal feels complete</span>
+<span id="cb4-7"><a href=""></a>    Take card                 # leftover subgoal</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><strong>Closure risk:</strong> cash satisfies the user’s principal goal</li>
+<li><strong>Missed subgoal:</strong> card retrieval can be dropped from the goal stack</li>
+<li><strong>Design fix:</strong> return the card before dispensing cash</li>
+</ul>
+<div class="footer source-citation-footer">
+<p>Adapted from Dix et al.&nbsp;(2004), Ch. 12, problems and extensions of goal hierarchies, p.&nbsp;430.</p>
+</div>
+<aside class="notes">
+<p>Dix et al.&nbsp;use the ATM example to show how goal hierarchies can reveal interface problems that are not just timing problems. Early ATMs sometimes gave the user cash before returning the card. Once the user had the money, the main goal felt complete, so the remaining subgoal, retrieving the card, was easy to forget.</p>
+<p>This is the same closure logic as the photocopier example, but with higher stakes. The design change is procedural: make the user retrieve the card before the ATM dispenses the cash. The source also notes that perceived closure can be hard to predict: a user might still retrieve the card and forget the money, so the general design principle must be applied with attention to the actual user goal and context.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mini-goms-example" class="slide level2 goms-model-text">
+<h2>Mini GOMS Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>Goal: Start CNC cutting program</span>
+<span id="cb5-2"><a href=""></a>Method:</span>
+<span id="cb5-3"><a href=""></a>  1. Open Program screen</span>
+<span id="cb5-4"><a href=""></a>  2. Select required program</span>
+<span id="cb5-5"><a href=""></a>  3. Confirm program loaded</span>
+<span id="cb5-6"><a href=""></a>  4. Press Cycle Start</span>
+<span id="cb5-7"><a href=""></a>Selection rule:</span>
+<span id="cb5-8"><a href=""></a>  IF program already loaded, skip 1-3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Use this mini example to show why GOMS is more than a flowchart. The goal specifies the user’s intention. The method specifies what the user must know how to do. The selection rule captures procedural knowledge that depends on task state.</p>
+<p>This also previews NGOMSL, which writes methods in a structured natural-language notation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gomsklm-assumptions" class="slide level2">
+<h2>GOMS/KLM Assumptions</h2>
+<ul>
+<li>Routine cognitive skill</li>
+<li>Skilled, knowledgeable user</li>
+<li>Known method and starting state</li>
+<li>Error-free execution</li>
+<li>Measured or estimated response times</li>
+</ul>
+<aside class="notes">
+<p>These are boundary conditions. Basic GOMS/KLM is strongest when the task is routine, the user already knows what to do, the method is known, and the analyst can represent the procedure as a sequence of primitive operators.</p>
+<p>The model predicts procedural cost, not user acceptance, trust, motivation, fatigue, emotion, organizational fit, or deep conceptual understanding. Olson and Olson’s review, as discussed by John &amp; Kieras, is useful for emphasizing what cognitive modeling can and cannot address.</p>
+<p>Warn students not to use simple KLM for open-ended exploration, diagnosis, creative problem solving, or emergency improvisation unless the model is extended and the limitations are clearly stated.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ngomsl" class="slide level2 compact">
+<h2>NGOMSL</h2>
+<ul>
+<li>Natural GOMS Language</li>
+<li>Structured procedure notation</li>
+<li>Shows methods and selection rules</li>
+<li>Estimates execution and learning time</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/john_kieras_1994_fig5_ngomsl_moving_text.png" class="slide-figure figure-tall"></p>
+<figcaption>John &amp; Kieras (1994), Figure 5: NGOMSL methods for moving text.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>NGOMSL stands for Natural GOMS Language. It is a readable, program-like notation for writing GOMS methods and selection rules.</p>
+<p>NGOMSL is more explicit than KLM because it shows method structure, not just an operator sequence. It is useful for training, documentation, help-system design, and learning-time estimation.</p>
+<p>Explain that NGOMSL is best for hierarchical, sequential procedures. It is less appropriate when perceptual, cognitive, and motor processes overlap heavily; those cases motivate CPM-GOMS.</p>
+<p>John &amp; Kieras Figure 5 shows NGOMSL methods for moving text and includes both execution-time and procedure-learning-time estimates.</p>
+<p>Wagner et al.&nbsp;(2006) provide an applied example of NGOMSL/GOMS modeling in a multi-robot interface context.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ngomsl-mini-example" class="slide level2 goms-model-text">
+<h2>NGOMSL Mini Example</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href=""></a>Method for goal: Start CNC cutting program</span>
+<span id="cb6-2"><a href=""></a>Step 1. Accomplish goal: Open program screen.</span>
+<span id="cb6-3"><a href=""></a>Step 2. Accomplish goal: Select required program.</span>
+<span id="cb6-4"><a href=""></a>Step 3. Accomplish goal: Confirm program is loaded.</span>
+<span id="cb6-5"><a href=""></a>Step 4. Accomplish goal: Start cycle.</span>
+<span id="cb6-6"><a href=""></a>Step 5. Return with goal accomplished.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>Point out that NGOMSL reads like a simplified program for the user’s procedural knowledge. Each step can be expanded into submethods until the operators are primitive enough for analysis.</p>
+<p>Also mention that NGOMSL can reveal inconsistencies in interface procedure design. If two similar tasks require very different procedures, users may need more learning and may be more likely to make slips.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-1.4-key-stroke-level-model" class="title-slide slide level1 section-divider center">
+<h1>Section 1.4: Key-Stroke Level Model</h1>
+<ul>
+<li>Define task, user, starting state, and method</li>
+<li>Convert the method into KLM operators</li>
+<li>Sum predicted time and compare alternatives</li>
+<li>Validate against observations and task-specific data</li>
+</ul>
+<aside class="notes">
+<p>This section is the main hands-on modeling section. Students should leave able to build a first-pass KLM, defend their assumptions, and explain what the model can and cannot predict.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="keystroke-level-model" class="slide level2">
+<h2>Keystroke-Level Model</h2>
+<ul>
+<li>Simplest GOMS variant</li>
+<li>Analyst supplies the method</li>
+<li>Convert method into operators</li>
+<li>Sum operator times</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href=""></a>T_task = ΣK + ΣB + ΣP + ΣH + ΣD + ΣM + ΣR</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>KLM is the most accessible GOMS technique. It is fast, practical, and easy to teach.</p>
+<p>The analyst defines the task, user, starting state, and method. Then each action is converted to a primitive operator such as K, B, P, H, D, M, or R. Predicted time is simply the sum of those operator times.</p>
+<p>KLM is particularly useful for comparing alternatives for the same benchmark task. It does not determine which method users will discover or choose unless the analyst explicitly defines methods and selection rules.</p>
+<p>Sources: Card, Moran, &amp; Newell (1983); John &amp; Kieras (1994); Dix et al.&nbsp;(2004), Chapter 12.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="klm-operators" class="slide level2">
+<h2>KLM Operators</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/dix_2004_table_12_1_klm_operator_times.png" class="slide-figure figure-wide"></p>
+<figcaption>Dix et al.&nbsp;(2004), Table 12.1: operator times for the keystroke-level model.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Keep the slide concise; discuss details verbally.</p>
+<p>K depends heavily on user skill. Dix summarizes examples such as 0.12s for a very skilled typist, 0.28s for a less skilled typist, and longer values for non-typists. B is commonly 0.10s for button-down or button-up, or 0.20s for a click. P is often approximated as 1.10s, but can be replaced by Fitts’ Law when distance and target size matter. H is homing time between input devices. D is drawing or gesture time and is domain dependent. M is mental preparation. R is system response time and should be measured when possible.</p>
+<p>For CNC panels, touchscreens, gloves, robot-control stations, or VR interfaces, use standard values for classroom exercises but measure task-specific values for research or design decisions.</p>
+<p>Sources: Card, Moran, &amp; Newell (1983); Dix et al.&nbsp;(2004), Table 12.1; Kieras in Diaper &amp; Stanton (2004).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="building-a-klm" class="slide level2">
+<h2>Building a KLM</h2>
+<ol type="1">
+<li>Define benchmark task</li>
+<li>Define user and starting state</li>
+<li>Write exact method</li>
+<li>Translate into operators</li>
+<li>Add M and R</li>
+<li>Sum and compare</li>
+</ol>
+<aside class="notes">
+<p>Students often skip the starting state. Do not let them. KLM predictions change drastically depending on whether text is already selected, whether the cursor is active, whether the user’s hand is on the mouse or keyboard, whether the target is visible, and whether the system is already in the right mode.</p>
+<p>The method must be exact enough that another analyst could reproduce the operator sequence. Ambiguous verbs like “use the menu” should be decomposed into point, button-down, drag/point, button-up, and any required mental operators.</p>
+<p>After summing, compare alternatives or validate against observations. The value of a KLM is usually comparative rather than absolute.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-macos-finder-file-delete" class="slide level2 compact">
+<h2>Example: MacOS Finder File Delete</h2>
+<p><strong>Scenario:</strong> experienced user deletes one Finder file by dragging it to Trash.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>User action</th>
+<th style="text-align: right;">Operator</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Initiate deletion</td>
+<td style="text-align: right;">M</td>
+</tr>
+<tr class="even">
+<td>Find file icon</td>
+<td style="text-align: right;">M</td>
+</tr>
+<tr class="odd">
+<td>Point to file icon</td>
+<td style="text-align: right;">P</td>
+</tr>
+<tr class="even">
+<td>Press and hold mouse button</td>
+<td style="text-align: right;">B</td>
+</tr>
+<tr class="odd">
+<td>Drag file icon to Trash</td>
+<td style="text-align: right;">P</td>
+</tr>
+<tr class="even">
+<td>Release mouse button</td>
+<td style="text-align: right;">B</td>
+</tr>
+<tr class="odd">
+<td>Point back to original window</td>
+<td style="text-align: right;">P</td>
+</tr>
+<tr class="even">
+<td><strong>Predicted time</strong></td>
+<td style="text-align: right;"><strong>3P + 2B + 2M = 5.90s</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Values: P=1.10s, B=0.10s, M=1.20s</li>
+<li>Modeling choice: drag-to-Trash is a practiced chunk</li>
+</ul>
+<aside class="notes">
+<p>This example comes from David Kieras’ GOMS architecture presentation. It is useful because the task is familiar, yet the model still depends on explicit assumptions.</p>
+<p>Walk students through the assumptions: the user is experienced; selecting and dragging the file is treated as one practiced direct-manipulation unit; the file icon must still be found because it differs each time; the Trash location is already known; checking that the Trash was hit is overlapped with the pointing/dragging action; and the final “bulging can” result is not checked separately because it is redundant with verifying the target hit.</p>
+<p>This is a good place to contrast action description with operator coding. “Delete the file” is not a KLM model. “M M P B P B P” is a model because it states which cognitive and motor operators are being counted.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Kieras, “GOMS Models - Simplified Cognitive Architectures,” slide 9.</p>
+</div>
+</section>
+<section id="klm-example-open-application" class="slide level2 dense klm-worked-exercise">
+<h2>KLM Example: Open Application</h2>
+<div class="klm-scrollbox">
+<p><strong>Task summary</strong></p>
+<p>Dix et al.&nbsp;compare three ways to open an application from a visual desktop: double-clicking the application icon, selecting the icon and using an accelerator key, and selecting the icon then opening it from a menu. The exercise compares a conventional one-button mouse, a trackball positioned away from the keyboard, and a trackball positioned close enough that no explicit homing time is needed.</p>
+<p><strong>Method 1: Double clicking on application icon</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Operator</th>
+<th style="text-align: right;">Mouse</th>
+<th style="text-align: right;">Trackball1</th>
+<th style="text-align: right;">Trackball2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Move hand to mouse</td>
+<td>H[mouse]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td>2. Mouse to icon</td>
+<td>P[to icon]</td>
+<td style="text-align: right;">0.664</td>
+<td style="text-align: right;">1.113</td>
+<td style="text-align: right;">1.113</td>
+</tr>
+<tr class="odd">
+<td>3. Double click</td>
+<td>2B[click]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+</tr>
+<tr class="even">
+<td>4. Return to keyboard</td>
+<td>H[kbd]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td>Total times</td>
+<td></td>
+<td style="text-align: right;">1.864</td>
+<td style="text-align: right;">2.313</td>
+<td style="text-align: right;">1.513</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Method 2: Using an accelerator key</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Operator</th>
+<th style="text-align: right;">Mouse</th>
+<th style="text-align: right;">Trackball1</th>
+<th style="text-align: right;">Trackball2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Move hand to mouse</td>
+<td>H[mouse]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td>2. Mouse to icon</td>
+<td>P[to icon]</td>
+<td style="text-align: right;">0.664</td>
+<td style="text-align: right;">1.113</td>
+<td style="text-align: right;">1.113</td>
+</tr>
+<tr class="odd">
+<td>3. Click to select</td>
+<td>B[click]</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.200</td>
+</tr>
+<tr class="even">
+<td>4. Pause</td>
+<td>M</td>
+<td style="text-align: right;">1.350</td>
+<td style="text-align: right;">1.350</td>
+<td style="text-align: right;">1.350</td>
+</tr>
+<tr class="odd">
+<td>5. Return to keyboard</td>
+<td>H[kbd]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td>6. Press accelerator</td>
+<td>K</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.200</td>
+</tr>
+<tr class="odd">
+<td>Total times</td>
+<td></td>
+<td style="text-align: right;">3.214</td>
+<td style="text-align: right;">3.663</td>
+<td style="text-align: right;">2.763</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Method 3: Using a menu</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Steps</th>
+<th>Operator</th>
+<th style="text-align: right;">Mouse</th>
+<th style="text-align: right;">Trackball1</th>
+<th style="text-align: right;">Trackball2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Move hand to mouse</td>
+<td>H[mouse]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td>2. Mouse to icon</td>
+<td>P[to icon]</td>
+<td style="text-align: right;">0.664</td>
+<td style="text-align: right;">1.113</td>
+<td style="text-align: right;">1.113</td>
+</tr>
+<tr class="odd">
+<td>3. Click to select</td>
+<td>B[click]</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.200</td>
+<td style="text-align: right;">0.200</td>
+</tr>
+<tr class="even">
+<td>4. Pause</td>
+<td>M</td>
+<td style="text-align: right;">1.350</td>
+<td style="text-align: right;">1.350</td>
+<td style="text-align: right;">1.350</td>
+</tr>
+<tr class="odd">
+<td>5. Mouse to file menu</td>
+<td>P</td>
+<td style="text-align: right;">0.664</td>
+<td style="text-align: right;">1.113</td>
+<td style="text-align: right;">1.113</td>
+</tr>
+<tr class="even">
+<td>6. Pop-up menu</td>
+<td>B[down]</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">0.100</td>
+</tr>
+<tr class="odd">
+<td>7. Drag to open</td>
+<td>P[drag]</td>
+<td style="text-align: right;">0.713</td>
+<td style="text-align: right;">1.248</td>
+<td style="text-align: right;">1.248</td>
+</tr>
+<tr class="even">
+<td>8. Release mouse</td>
+<td>B[up]</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">0.100</td>
+<td style="text-align: right;">0.100</td>
+</tr>
+<tr class="odd">
+<td>9. Return to keyboard</td>
+<td>H[kbd]</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="even">
+<td>Total times</td>
+<td></td>
+<td style="text-align: right;">4.591</td>
+<td style="text-align: right;">6.024</td>
+<td style="text-align: right;">5.224</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Summary: Total Time by Method</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th style="text-align: right;">Mouse</th>
+<th style="text-align: right;">Trackball1</th>
+<th style="text-align: right;">Trackball2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Method 1: Double clicking</td>
+<td style="text-align: right;">1.864</td>
+<td style="text-align: right;">2.313</td>
+<td style="text-align: right;">1.513</td>
+</tr>
+<tr class="even">
+<td>Method 2: Accelerator key</td>
+<td style="text-align: right;">3.214</td>
+<td style="text-align: right;">3.663</td>
+<td style="text-align: right;">2.763</td>
+</tr>
+<tr class="odd">
+<td>Method 3: Menu</td>
+<td style="text-align: right;">4.591</td>
+<td style="text-align: right;">6.024</td>
+<td style="text-align: right;">5.224</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="footer source-citation-footer">
+<p>Adapted from Dix et al.&nbsp;(2004), Ch. 12, KLM worked exercise, p.&nbsp;440.</p>
+</div>
+<aside class="notes">
+<p>Use this as the worked classroom example for KLM comparison. The task summary is paraphrased, while the tables preserve the source’s method structure, operators, device columns, and timing values.</p>
+<p>The modeling lesson is that device placement can matter as much as the command method. Trackball2 removes homing time, so it changes the comparison even when pointing time remains slower than the mouse.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mental-operator-rules" class="slide level2">
+<h2>Mental Operator Rules</h2>
+<ul>
+<li>Place <strong>M</strong> before cognitive units</li>
+<li>Do not split practiced chunks unnecessarily</li>
+<li>Chunking depends on expertise</li>
+<li>Treat uncertainty as sensitivity analysis</li>
+</ul>
+<aside class="notes">
+<p>Most KLM debates are debates about M. M represents mental preparation before an action or action chunk. It is not a model of deep reasoning.</p>
+<p>Place M before choosing a command, recalling what to do next, or verifying what action is appropriate. Avoid adding separate M operators inside a well-practiced chunk.</p>
+<p>For direct manipulation, John and Kieras recommend modified placement rules: place M before command-selecting pointing actions or before the start of a direct-manipulation cognitive unit.</p>
+<p>Olson and Olson refined estimates for mental operations, and Lane et al.&nbsp;refined M-placement heuristics for fixed menu-choice subtasks, as summarized by John &amp; Kieras.</p>
+<p>Teaching tactic: if students disagree, make two models: a conservative model with more M operators and an expert-chunked model with fewer M operators. Compare whether the design conclusion changes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-copypaste-task" class="slide level2">
+<h2>Example: Copy/Paste Task</h2>
+<p><strong>Task state</strong></p>
+<ul>
+<li>Text already selected</li>
+<li>Insertion point visible</li>
+<li>Compare shortcut vs.&nbsp;menu</li>
+<li>Values: M=1.35, P=1.10, B=0.20, K=0.28</li>
+</ul>
+<aside class="notes">
+<p>This example is intentionally simple and familiar. It lets students focus on KLM mechanics rather than domain complexity.</p>
+<p>Be explicit about assumptions. If the insertion point is already active, the shortcut method is much faster. If the user must move to the insertion point, the shortcut method needs pointing and clicking too. If the user does not know shortcuts, menu interaction may be more realistic.</p>
+<p>This is a good moment to emphasize that KLM models are conditional claims: “Given this user, task state, method, and operator-value set, the predicted execution time is X.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="copypaste-klm-comparison" class="slide level2">
+<h2>Copy/Paste KLM Comparison</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Operator sequence</th>
+<th style="text-align: right;">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shortcut</td>
+<td>M 2K M 2K</td>
+<td style="text-align: right;">3.82s</td>
+</tr>
+<tr class="even">
+<td>Menu</td>
+<td>3M 5P 5B</td>
+<td style="text-align: right;">10.15s</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Shortcut is faster for skilled users</li>
+<li>Menu may be more discoverable</li>
+<li>State assumptions matter</li>
+</ul>
+<aside class="notes">
+<p>For the shortcut method, the model is M + 2K + M + 2K. With K = 0.28s, this is 1.35 + 0.56 + 1.35 + 0.56 = 3.82s.</p>
+<p>For the menu method, the model includes preparing to copy, pointing to the Edit menu, mouse down, pointing to Copy, mouse up, preparing to position the insertion point, pointing to the insertion point, clicking, preparing to paste, pointing to Edit, mouse down, pointing to Paste, and mouse up. That aggregates to 3M + 5P + 5B, where the B total is 0.60s because some button actions are down/up rather than full clicks.</p>
+<p>Interpretation: the shortcut method is faster only under the stated assumptions. The menu method may be slower but more discoverable for novices. This distinction is a design tradeoff, not just a calculation.</p>
+<p>Suggested figure: pair this slide with John &amp; Kieras Figure 3, which shows KLM for a moving-text task and demonstrates M placement before command-oriented chunks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="literature-example-moving-text" class="slide level2 dense">
+<h2>Literature Example: Moving Text</h2>
+<ul>
+<li>Task: move phrase in word processor</li>
+<li>KLM prediction: <strong>14.38s</strong></li>
+<li>CMN-GOMS prediction: <strong>14.38s</strong></li>
+<li>NGOMSL prediction: <strong>16.38s</strong></li>
+</ul>
+<div class="figure-grid">
+<p><img data-src="figures/john_kieras_1994_fig3_klm_moving_text.png" class="slide-figure" alt="John &amp; Kieras (1994), Figure 3: KLM for moving text."> <img data-src="figures/john_kieras_1994_fig4_cmn_goms_moving_text.png" class="slide-figure" alt="John &amp; Kieras (1994), Figure 4: CMN-GOMS for moving text."> <img data-src="figures/john_kieras_1994_fig5_ngomsl_moving_text.png" class="slide-figure" alt="John &amp; Kieras (1994), Figure 5: NGOMSL for moving text."></p>
+</div>
+<aside class="notes">
+<p>John &amp; Kieras use one text-editing task to illustrate several GOMS variants. The KLM and CMN-GOMS predictions match at 14.38 seconds for the example. NGOMSL predicts 16.38 seconds because it represents additional cognitive overhead and method structure more explicitly.</p>
+<p>The NGOMSL example also estimates procedure learning time. This is a useful distinction: KLM estimates execution time, while NGOMSL can also estimate learning time for procedural knowledge.</p>
+<p>Use Figures 3, 4, and 5 side by side if possible. Figure 3 shows the KLM sequence. Figure 4 shows the CMN-GOMS hierarchy and selection rule. Figure 5 shows the NGOMSL method listing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="industry-4.0-example-cnc-hmi" class="slide level2 compact">
+<h2>Industry 4.0 Example: CNC HMI</h2>
+<p><strong>Task:</strong> start a CNC cutting program</p>
+<ul>
+<li>Trained operator</li>
+<li>Known program and part ID</li>
+<li>Touchscreen or mouse input</li>
+<li>No errors modeled</li>
+<li>R values measured/estimated</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/dou_2017_fig2_cnc_hmi_design_scheme.jpeg" class="slide-figure figure-wide"></p>
+<figcaption>Dou et al.&nbsp;(2017), Figure 2: HMI design scheme of a CNC machine control panel.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Dou et al.&nbsp;describe CNC control panels as including areas such as total control, pattern selection, spindle control, program edit, and tool changer areas. They also emphasize that CNC HMI design affects operator efficiency and experience, and that poor designs can create burden when they do not match the operator’s mental model.</p>
+<p>This makes CNC control a good Industry 4.0 example: it is procedural, safety-relevant, and HMI layout matters.</p>
+<p>State the assumptions before showing the KLM. The operator is trained. The program name and part ID are known. The task is routine. There are no errors. The program list opens after 0.80s, and machine confirmation takes 1.00s.</p>
+<p>Suggested custom visual: simple CNC panel AOI diagram with Program Edit, Pattern Selection, Spindle Control, Tool Changer, Cycle Start, and Alarm/Status Area.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cnc-klm-model" class="slide level2">
+<h2>CNC KLM Model</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href=""></a>M P B R  M P B  M P B R  M P B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5.40s</td>
+</tr>
+<tr class="even">
+<td>P</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4.40s</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.80s</td>
+</tr>
+<tr class="even">
+<td>R</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1.80s</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>12.40s</strong></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Walk through the expanded procedure verbally:</p>
+<ol type="1">
+<li>Prepare to open the program screen. 2. Point to Program Edit. 3. Select it. 4. Wait for program list. 5. Choose target program. 6. Point to program ID. 7. Select program. 8. Prepare to load program. 9. Point to Load/Run. 10. Select Load/Run. 11. Wait for confirmation. 12. Verify ready state. 13. Point to Cycle Start. 14. Press Cycle Start.</li>
+</ol>
+<p>The total is 4M + 4P + 4B + 2R = 5.40 + 4.40 + 0.80 + 1.80 = 12.40 seconds.</p>
+<p>Discussion prompts: What changes if the operator searches a long program list? What if Program Edit is far from Cycle Start? What if system response is 3.0s instead of 0.8s? What if safety verification is required before Cycle Start? What if gloves, lighting, or screen size alter pointing time?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validating-klm" class="slide level2">
+<h2>Validating KLM</h2>
+<ul>
+<li>Record same benchmark task</li>
+<li>Separate execution, wait, error, and recovery time</li>
+<li>Compare predicted vs.&nbsp;observed time</li>
+<li>Re-estimate task-specific values if needed</li>
+<li>Report design-relevant differences</li>
+</ul>
+<aside class="notes">
+<p>Validation checks whether the model is good enough for the design decision. It does not need to prove that the model perfectly predicts every user.</p>
+<p>A practical validation process: record trained users performing the same benchmark task; capture time-stamped actions through video, screen logs, interaction logs, or eye tracking; separate user execution time from system response time; remove or separately model errors and recovery; compare predicted and observed times; adjust task-specific operator values if needed.</p>
+<p>John and Kieras emphasize that GOMS predictions are especially useful for comparing alternatives. A model that predicts the direction and rough magnitude of differences may be sufficient for early design.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validation-data-sources" class="slide level2">
+<h2>Validation Data Sources</h2>
+<ul>
+<li>Screen or interaction logs</li>
+<li>Video coding</li>
+<li>Eye tracking</li>
+<li>Physiological data</li>
+<li>Post-task interview / RTA</li>
+</ul>
+<aside class="notes">
+<p>Use multiple data sources when a single measure does not explain performance. Dou et al.&nbsp;combine physiological data, eye tracking, behavior analysis, and visualization to evaluate CNC control-panel schemes.</p>
+<p>Eye tracking can help identify visual search, verification, and attention allocation. Land and Tatler argue that gaze during natural tasks is strongly tied to the information needed for action. Meyer et al.&nbsp;show how eye-tracking stimulated retrospective think-aloud can reveal decision cues in air traffic control.</p>
+<p>Do not overclaim eye tracking. A fixation tells us where the eyes were directed, not automatically what the user understood. Combining gaze data with task context, logs, and post-task explanation is stronger.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="weaknesses-of-klm" class="slide level2">
+<h2>Weaknesses of KLM</h2>
+<ul>
+<li>Assumes skilled, error-free performance</li>
+<li>Weak for exploration and diagnosis</li>
+<li>Does not discover missing goals</li>
+<li>Mostly serial</li>
+<li>Sensitive to analyst assumptions</li>
+</ul>
+<aside class="notes">
+<p>KLM is powerful because it is simple, but that simplicity is also its boundary.</p>
+<p>It assumes the user already knows what to do. It does not model novice exploration, errors, recovery, fatigue, motivation, trust, acceptance, or organizational fit unless extended. It may also underrepresent visual search and verification unless those activities are explicitly included.</p>
+<p>The model can hide analyst assumptions if the task state, method, M placements, and operator values are not documented. Require students to report assumptions with every KLM.</p>
+<p>Bridge to Lesson 2: when the user can look, think, speak, and move in overlapping streams, or when multiple people coordinate, move from KLM to CPM-GOMS or team models.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-placement-of-m" class="slide level2">
+<h2>Extension: Placement of M</h2>
+<ul>
+<li>M = preparation for an action chunk</li>
+<li>More expertise → larger chunks</li>
+<li>Direct manipulation needs care</li>
+<li>Model uncertainty explicitly</li>
+</ul>
+<aside class="notes">
+<p>M placement is the most common source of disagreement. Treat it as a modeling decision, not a hidden truth.</p>
+<p>Experienced users combine actions into larger chunks, reducing the number of M operators. Novices may require more mental preparation because they must recall commands, interpret labels, or verify task state more often.</p>
+<p>Direct-manipulation interfaces need careful M placement because pointing can be part of selecting a command or part of executing a physical-like action. John &amp; Kieras discuss modifications to the original KLM rules for direct manipulation.</p>
+<p>Class exercise: give the same task to students and ask for two models: conservative and expert-chunked. Compare the predicted difference.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-task-specific-m" class="slide level2">
+<h2>Extension: Task-Specific M</h2>
+<p>Industry 4.0 mental checks may include:</p>
+<ul>
+<li>Verify part / work order</li>
+<li>Check tool path or recipe</li>
+<li>Confirm safety interlock</li>
+<li>Interpret alarm severity</li>
+<li>Confirm robot behavior</li>
+</ul>
+<aside class="notes">
+<p>Some domains require mental operators that are not well represented by generic “prepare” pauses. In CNC, welding, robot control, and manufacturing execution systems, users may repeatedly verify state before committing to action.</p>
+<p>Estimate task-specific M by using video, logs, eye tracking, and interviews. Repeated fixations on status or alarm areas before a command may suggest verification activity. Retrospective think-aloud can help identify what was being checked.</p>
+<p>Replace generic 1.35s M with measured task-specific values when verification dominates the task. Document the evidence used to justify the custom value.</p>
+<p>Sources: Dou et al.&nbsp;(2017); Wagner et al.&nbsp;(2006); Land &amp; Tatler (2009); Meyer et al.&nbsp;(2022).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-fitts-law" class="slide level2">
+<h2>Extension: Fitts’ Law</h2>
+<p>Use when pointing depends on layout:</p>
+<ul>
+<li>Small targets</li>
+<li>Large distances</li>
+<li>Gloves or touchscreens</li>
+<li>Alternative panel layouts</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>T = a + b log2(D / W + 1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>For quick classroom estimates, use P = 1.10s. Replace average P with Fitts’ Law when target distance and width are central to the design question.</p>
+<p>D is distance to the target. W is target width. a and b are empirically estimated constants.</p>
+<p>Design implication: large, nearby, frequently used controls reduce pointing time. For CNC panels, Cycle Start, Feed Hold, Program Select, and alarm acknowledgement should be laid out with both speed and safety in mind. However, safety-critical controls may also require protection against accidental activation, so speed is not the only design criterion.</p>
+<p>Sources: Card, Moran, &amp; Newell (1983); Dix et al.&nbsp;(2004); Gong &amp; Kieras as summarized in Kieras/Helander.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="extension-learning" class="slide level2">
+<h2>Extension: Learning</h2>
+<ul>
+<li>KLM predicts execution time</li>
+<li>NGOMSL can estimate learning time</li>
+<li>Practice reduces M through chunking</li>
+<li>Domain knowledge remains outside the model</li>
+</ul>
+<aside class="notes">
+<p>KLM assumes the method is already known. It is not a learning model.</p>
+<p>NGOMSL can estimate procedure learning time from the amount and similarity of procedural knowledge. This makes it more useful when the design question involves training, documentation, or help-system design.</p>
+<p>Use caution in high-domain-knowledge systems. NGOMSL can estimate learning of the procedure in the model, but not all domain knowledge needed to operate a CNC machine, robot team, aircraft system, or manufacturing process.</p>
+<p>Example: a novice CNC operator may need explicit mental steps for locating Program Edit, interpreting program IDs, confirming the correct part, and interpreting ready status. A trained operator may chunk these into one routine “load program” method.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="choosing-a-goms-variant" class="slide level2 compact">
+<h2>Choosing a GOMS Variant</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Technique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fast execution estimate</td>
+<td>KLM</td>
+</tr>
+<tr class="even">
+<td>Procedure structure</td>
+<td>CMN-GOMS / NGOMSL</td>
+</tr>
+<tr class="odd">
+<td>Learning time</td>
+<td>NGOMSL</td>
+</tr>
+<tr class="even">
+<td>Parallel activity</td>
+<td>CPM-GOMS</td>
+</tr>
+<tr class="odd">
+<td>Team coordination</td>
+<td>Team / distributed models</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/john_kieras_1994_fig8_goms_technique_selection.png" class="slide-figure figure-wide"></p>
+<figcaption>John &amp; Kieras (1994), Figure 8: matching GOMS techniques to design questions.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Use this slide to consolidate the lesson and bridge to Lesson 2.</p>
+<p>KLM is the fastest and simplest model. CMN-GOMS and NGOMSL provide more explicit method structures. NGOMSL is useful when learning time and documentation matter. CPM-GOMS is needed when perceptual, cognitive, motor, and system processes overlap. Team or distributed models are needed when multiple people or agents coordinate.</p>
+<p>John &amp; Kieras Figure 8 is the key summary figure for choosing among GOMS methods.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-1.5-epic-models" class="title-slide slide level1 section-divider center">
+<h1>Section 1.5: EPIC Models</h1>
+<ul>
+<li>Explicit cognitive architecture for HCI simulation</li>
+<li>Parallel perceptual, cognitive, and motor processors</li>
+<li>Useful when KLM’s serial approximation is too simple</li>
+<li>Bridge to CPM-GOMS and richer performance models</li>
+</ul>
+<aside class="notes">
+<p>This final section introduces EPIC at a conceptual level. Students do not need to implement an EPIC model in this lesson. They need to understand why a more explicit cognitive architecture becomes useful when work involves overlapping perceptual, cognitive, motor, and system processes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="epic-core-idea" class="slide level2 compact">
+<h2>EPIC: Core Idea</h2>
+<ul>
+<li><strong>EPIC</strong> – Executive-Process Interactive Control</li>
+<li>Computational cognitive architecture</li>
+<li>Multiple processors can run in parallel</li>
+<li>Production rules coordinate task strategy</li>
+<li>Models perceptual, cognitive, and motor timing</li>
+<li>Useful for complex, time-critical interaction</li>
+</ul>
+<aside class="notes">
+<p>EPIC is a computational cognitive architecture developed for modeling human performance in interactive tasks. Unlike KLM, which usually treats the task as a mostly serial string of operators, EPIC represents multiple processors that can operate concurrently.</p>
+<p>The core idea for students is parallelism with control. Perceptual processing, cognitive production rules, and motor actions can overlap, but the model still needs an executive process or strategy to coordinate what happens when.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: John and Kieras, 1994, “The GOMS Family of Analysis Techniques,” sec.&nbsp;3.2; Olson and Olson, 1990, “The Growth of Cognitive Modeling in Human-Computer Interaction Since GOMS.”</p>
+</div>
+</section>
+<section id="why-klm-is-not-always-enough" class="slide level2 compact">
+<h2>Why KLM Is Not Always Enough</h2>
+<ul>
+<li>Visual search and hand movement may overlap</li>
+<li>System waits can be used for preparation</li>
+<li>Monitoring can continue during action</li>
+<li>Speech, eye, hand, and cognition may interleave</li>
+<li>Skilled work often pipelines subtasks</li>
+<li>Serial sums can overestimate or hide bottlenecks</li>
+</ul>
+<aside class="notes">
+<p>KLM is intentionally simple. That makes it valuable, but it also means analysts must be careful with tasks that are not well approximated as a serial sequence.</p>
+<p>In an industrial control room, an operator may monitor one display, prepare an action, listen for an alarm, and move a hand toward a control in overlapping time. In aviation or healthcare, perceptual checking and motor action may be tightly coordinated. EPIC-style models are built for this kind of overlapping activity.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: John and Kieras, 1994; Card, Moran, and Newell, 1983, Chap. 2.</p>
+</div>
+</section>
+<section id="epic-modeling-questions" class="slide level2 compact">
+<h2>EPIC Modeling Questions</h2>
+<ul>
+<li>What information is available to perception?</li>
+<li>Which task goals are active?</li>
+<li>Which production rules control action?</li>
+<li>Which motor processors are busy?</li>
+<li>What can overlap, and what must wait?</li>
+<li>Where does the bottleneck occur?</li>
+</ul>
+<aside class="notes">
+<p>Frame EPIC as asking a more detailed set of timing questions. KLM asks, “What operator sequence should we sum?” EPIC asks, “Which perceptual, cognitive, and motor processes are active, what dependencies connect them, and where does coordination force a wait?”</p>
+<p>This makes EPIC useful for evaluating interaction designs where timing, attention, and concurrency matter more than a simple expert execution estimate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="when-to-use-epic-style-models" class="slide level2 compact">
+<h2>When To Use EPIC-Style Models</h2>
+<ul>
+<li>Time-critical monitoring and control</li>
+<li>Multimodal interaction</li>
+<li>Dense dashboards and alarm management</li>
+<li>Aviation, driving, healthcare, and process control</li>
+<li>Human-automation coordination</li>
+<li>Research questions about bottlenecks and overlap</li>
+</ul>
+<aside class="notes">
+<p>Students should not leave thinking that EPIC replaces KLM. The model choice depends on the question. Use KLM when a fast estimate of a routine serial procedure is enough. Use a richer architecture when overlapping activity, bottlenecks, divided attention, or human-automation timing is central to the design question.</p>
+<p>This also sets up later lessons on eye tracking, cognitive load, and model integration. Those empirical measures help determine whether the assumed perceptual and cognitive processes are plausible.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exit-activity" class="slide level2">
+<h2>Exit Activity</h2>
+<p>Choose one routine task and one complex task:</p>
+<ul>
+<li>CNC: load/start program</li>
+<li>MES: acknowledge alarm</li>
+<li>Dashboard: trace heat-lot</li>
+<li>Robot UI: add behavior</li>
+<li>Word processor: move text</li>
+</ul>
+<aside class="notes">
+<p>Student deliverables for the routine task should include: task description, assumed user, starting state, method steps, operator table, predicted time, validation plan, and one design change expected to reduce execution time.</p>
+<p>For the complex task, ask students whether KLM is still sufficient. If the task involves diagnosis, exploration, parallel monitoring, multimodal input, or multi-person coordination, have them identify what KLM can model and what would require GOMS, CPM-GOMS, EPIC, or another technique.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="figure-checklist" class="slide level2">
+<h2>Figure Checklist</h2>
+<ul>
+<li>Card, Moran, &amp; Newell Fig. 2.1: Model Human Processor</li>
+<li>Kieras slide 13: simplified Model Human Processor</li>
+<li>Kieras Fig. 6.2: GOMS meta-model</li>
+<li>Dix Table 12.1: KLM operators</li>
+<li>John &amp; Kieras Figs. 3–5: text editing examples</li>
+<li>John &amp; Kieras Fig. 8: technique selection</li>
+<li>Custom CNC HMI AOI diagram</li>
+</ul>
+<aside class="notes">
+<p>This slide can remain at the end of the instructor version or be removed from the student version.</p>
+<p>For a polished deck, insert or redraw the figures where they are referenced:</p>
+<ol type="1">
+<li>Evaluation methods matrix: custom 2×2.</li>
+<li>Card, Moran, and Newell Figure 2.1: Model Human Processor memories and processors.</li>
+<li>Kieras slide 13: simplified Model Human Processor for CPM-GOMS.</li>
+<li>Kieras Figure 6.2: task meta-model from Diaper &amp; Stanton.</li>
+<li>Dix Table 12.1: KLM operator values.</li>
+<li>John &amp; Kieras Figures 3–5: KLM, CMN-GOMS, and NGOMSL for the same moving-text task.</li>
+<li>John &amp; Kieras Figure 8: matching GOMS variants to design questions.</li>
+<li>Custom CNC HMI AOI diagram based on Dou et al.’s control-panel areas.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="core-sources" class="slide level2">
+<h2>Core Sources</h2>
+<ul>
+<li>Card, Moran, &amp; Newell (1983)</li>
+<li>John &amp; Kieras (1994)</li>
+<li>Kieras in Diaper &amp; Stanton (2004)</li>
+<li>Olson &amp; Olson (1990)</li>
+<li>Lane et al.&nbsp;(1993)</li>
+<li>Dix et al.&nbsp;(2004)</li>
+<li>Kieras (2005), GOMS architecture presentation</li>
+<li>Dou et al.&nbsp;(2017)</li>
+<li>Wagner et al.&nbsp;(2006)</li>
+</ul>
+<aside class="notes">
+<p>Source integrity note: the working set includes local source files for Card, Moran, &amp; Newell (1983), John &amp; Kieras (1994), Kieras/Diaper task-analysis material, Dix et al.&nbsp;(2004), the Kieras GOMS architecture presentation, CNC-HMI evaluation, multi-robot GOMS modeling, and several eye-tracking/task-analysis sources. Standalone copies of Olson &amp; Olson (1990) and Lane et al.&nbsp;(1993) were not available as independent uploaded files in the working set. Those sources are referenced where the uploaded documents summarize or cite them.</p>
+<p>Additional useful supporting sources for validation and visual task analysis include Land &amp; Tatler (2009), Meyer et al.&nbsp;(2022), Starke et al.&nbsp;(2017), and related eye-tracking/control-room studies.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="L1_Quarto_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="L1_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="L1_Quarto_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="L1_Quarto_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'grid',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: true,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 800,
+
+        height: 600,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <div class="uri-slide-header" data-uri-slide-header="" hidden="">
+      <span data-uri-slide-header-text=""></span>
+    </div>
+
+    <script>
+      (function() {
+        let slideMetadata = new WeakMap();
+
+        function revealElement() {
+          return document.querySelector(".reveal");
+        }
+
+        function slidesRoot() {
+          return document.querySelector(".reveal .slides");
+        }
+
+        function headerElement() {
+          const header = document.querySelector("[data-uri-slide-header]");
+          const reveal = revealElement();
+
+          if (header && reveal && header.parentElement !== reveal) {
+            reveal.appendChild(header);
+          }
+
+          return header;
+        }
+
+        function directSectionChildren(element) {
+          if (!element) {
+            return [];
+          }
+
+          return Array.from(element.children).filter((child) => child.tagName === "SECTION");
+        }
+
+        function headingText(slide) {
+          const heading = slide && slide.querySelector(":scope > h1, :scope > h2, :scope > h3");
+          return heading ? heading.textContent.trim().replace(/\s+/g, " ") : "";
+        }
+
+        function parseSectionDivider(slide) {
+          const match = headingText(slide).match(/^Section\s+(\d+)\.(\d+)\s*:\s*(.+)$/i);
+
+          if (!match) {
+            return null;
+          }
+
+          return {
+            lessonNumber: match[1],
+            sectionNumber: match[2],
+            sectionName: match[3].trim()
+          };
+        }
+
+        function indexSectionStack(stack) {
+          const stackSlides = stack.matches(".section-divider")
+            ? [stack]
+            : directSectionChildren(stack);
+          const divider = stackSlides.find((slide) => slide.matches(".section-divider"));
+          const section = parseSectionDivider(divider);
+
+          if (!section) {
+            return;
+          }
+
+          slideMetadata.set(stack, {
+            lessonNumber: section.lessonNumber,
+            sectionNumber: section.sectionNumber,
+            sectionName: section.sectionName,
+            slideNumber: 1
+          });
+
+          stackSlides.forEach((slide, index) => {
+            slideMetadata.set(slide, {
+              lessonNumber: section.lessonNumber,
+              sectionNumber: section.sectionNumber,
+              sectionName: section.sectionName,
+              slideNumber: index + 1
+            });
+          });
+        }
+
+        function rebuildIndex() {
+          const root = slidesRoot();
+          slideMetadata = new WeakMap();
+
+          directSectionChildren(root).forEach(indexSectionStack);
+        }
+
+        function currentSlide() {
+          if (window.Reveal && typeof window.Reveal.getCurrentSlide === "function") {
+            return window.Reveal.getCurrentSlide();
+          }
+
+          return document.querySelector(".reveal .slides section.present");
+        }
+
+        function hideHeader(header) {
+          if (!header) {
+            return;
+          }
+
+          const text = header.querySelector("[data-uri-slide-header-text]");
+          header.hidden = true;
+          header.classList.add("is-hidden");
+
+          if (text) {
+            text.textContent = "";
+          }
+        }
+
+        function updateHeader(event) {
+          const header = headerElement();
+          const slide = event && event.currentSlide ? event.currentSlide : currentSlide();
+
+          if (!header || !slide) {
+            hideHeader(header);
+            return;
+          }
+
+          let metadata = slideMetadata.get(slide);
+
+          if (!metadata) {
+            rebuildIndex();
+            metadata = slideMetadata.get(slide);
+          }
+
+          if (!metadata) {
+            hideHeader(header);
+            return;
+          }
+
+          const text = header.querySelector("[data-uri-slide-header-text]");
+
+          if (!text) {
+            hideHeader(header);
+            return;
+          }
+
+          text.textContent = `${metadata.sectionName} - ${metadata.lessonNumber}.${metadata.sectionNumber}.${metadata.slideNumber}`;
+          header.hidden = false;
+          header.classList.remove("is-hidden");
+        }
+
+        function setupHeader() {
+          headerElement();
+          rebuildIndex();
+          updateHeader();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", function(event) {
+              rebuildIndex();
+              updateHeader(event);
+            });
+            window.Reveal.on("slidechanged", updateHeader);
+            window.Reveal.on("overviewshown", updateHeader);
+            window.Reveal.on("overviewhidden", updateHeader);
+            window.Reveal.on("resize", updateHeader);
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", setupHeader);
+        } else {
+          setupHeader();
+        }
+
+        window.addEventListener("load", function() {
+          rebuildIndex();
+          updateHeader();
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        const minScale = 1;
+        const maxScale = 4;
+        const zoomStep = 0.0018;
+        const resetEpsilon = 0.01;
+        const state = {
+          slide: null,
+          scale: 1,
+          x: 0,
+          y: 0,
+          dragging: false,
+          pointerId: null,
+          lastX: 0,
+          lastY: 0
+        };
+
+        function currentSlide() {
+          if (!window.Reveal || typeof window.Reveal.getCurrentSlide !== "function") {
+            return document.querySelector(".reveal .slides section.present");
+          }
+
+          return window.Reveal.getCurrentSlide();
+        }
+
+        function modifierPressed(event) {
+          return event.ctrlKey || event.metaKey || event.altKey;
+        }
+
+        function clamp(value, min, max) {
+          return Math.min(max, Math.max(min, value));
+        }
+
+        function ensureSlide() {
+          const slide = currentSlide();
+
+          if (state.slide !== slide) {
+            clearSlide();
+            state.slide = slide;
+          }
+
+          return state.slide;
+        }
+
+        function applyTransform() {
+          const slide = ensureSlide();
+
+          if (!slide) {
+            return;
+          }
+
+          if (state.scale <= minScale + resetEpsilon && Math.abs(state.x) < resetEpsilon && Math.abs(state.y) < resetEpsilon) {
+            slide.style.removeProperty("transform");
+            slide.style.removeProperty("transform-origin");
+            slide.style.removeProperty("z-index");
+            document.body.classList.remove("uri-panzoom-active");
+            return;
+          }
+
+          slide.style.transformOrigin = "center center";
+          slide.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
+          slide.style.zIndex = "100";
+          document.body.classList.add("uri-panzoom-active");
+        }
+
+        function clearSlide() {
+          if (state.slide) {
+            state.slide.style.removeProperty("transform");
+            state.slide.style.removeProperty("transform-origin");
+            state.slide.style.removeProperty("z-index");
+          }
+
+          state.slide = null;
+          state.scale = 1;
+          state.x = 0;
+          state.y = 0;
+          state.dragging = false;
+          state.pointerId = null;
+          document.body.classList.remove("uri-panzoom-active");
+        }
+
+        function onWheel(event) {
+          if (!modifierPressed(event) || event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          ensureSlide();
+          const nextScale = clamp(state.scale * Math.exp(-event.deltaY * zoomStep), minScale, maxScale);
+
+          if (nextScale === state.scale) {
+            return;
+          }
+
+          state.scale = nextScale;
+
+          if (state.scale <= minScale + resetEpsilon) {
+            state.scale = 1;
+            state.x = 0;
+            state.y = 0;
+          }
+
+          applyTransform();
+        }
+
+        function onPointerDown(event) {
+          if (!modifierPressed(event) || event.button !== 0 || event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          ensureSlide();
+          state.dragging = true;
+          state.pointerId = event.pointerId;
+          state.lastX = event.clientX;
+          state.lastY = event.clientY;
+
+          if (event.target.setPointerCapture) {
+            event.target.setPointerCapture(event.pointerId);
+          }
+
+          document.body.classList.add("uri-panzoom-dragging");
+        }
+
+        function onPointerMove(event) {
+          if (!state.dragging || event.pointerId !== state.pointerId) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          state.x += event.clientX - state.lastX;
+          state.y += event.clientY - state.lastY;
+          state.lastX = event.clientX;
+          state.lastY = event.clientY;
+          applyTransform();
+        }
+
+        function onPointerUp(event) {
+          if (!state.dragging || event.pointerId !== state.pointerId) {
+            return;
+          }
+
+          state.dragging = false;
+          state.pointerId = null;
+          document.body.classList.remove("uri-panzoom-dragging");
+        }
+
+        function onKeyDown(event) {
+          if (event.key === "Escape" && state.slide) {
+            clearSlide();
+          }
+        }
+
+        function onContextMenu(event) {
+          if (modifierPressed(event)) {
+            event.preventDefault();
+          }
+        }
+
+        window.addEventListener("wheel", onWheel, { capture: true, passive: false });
+        window.addEventListener("pointerdown", onPointerDown, { capture: true });
+        window.addEventListener("pointermove", onPointerMove, { capture: true });
+        window.addEventListener("pointerup", onPointerUp, { capture: true });
+        window.addEventListener("pointercancel", onPointerUp, { capture: true });
+        window.addEventListener("contextmenu", onContextMenu, { capture: true });
+        document.addEventListener("keydown", onKeyDown);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("slidechanged", clearSlide);
+            window.Reveal.on("overviewshown", clearSlide);
+          }
+        });
+      })();
+    </script>
+    <script>
+      window.addEventListener("load", function() {
+        let scrollTimeout = null;
+        const cooldownPeriod = 10;
+        const minimumDelta = 10;
+
+        window.addEventListener("wheel", function(event) {
+          if (event.target.closest(".klm-scrollbox")) {
+            event.stopPropagation();
+          }
+        }, { passive: true, capture: true });
+
+        window.addEventListener("wheel", function(event) {
+          if (!window.Reveal) {
+            return;
+          }
+
+          if (event.ctrlKey || event.metaKey || event.altKey) {
+            return;
+          }
+
+          if (event.target.closest(".speaker-notes, .slide-menu-wrapper, .klm-scrollbox")) {
+            return;
+          }
+
+          if (Math.abs(event.deltaY) < minimumDelta || scrollTimeout) {
+            return;
+          }
+
+          event.preventDefault();
+
+          if (event.deltaY > 0) {
+            window.Reveal.next();
+          } else {
+            window.Reveal.prev();
+          }
+
+          scrollTimeout = window.setTimeout(function() {
+            scrollTimeout = null;
+          }, cooldownPeriod);
+        }, { passive: false });
+      });
+    </script>
+    <script>
+      (function() {
+        const minScale = 0.3;
+        const fitPadding = 2;
+        let fitScheduled = false;
+
+        function visibleSlides() {
+          return Array.from(document.querySelectorAll(
+            ".reveal .slides section.slide, .reveal .slides #title-slide, .reveal .slides section.quarto-title-block"
+          ))
+            .filter((section) => {
+              const rect = section.getBoundingClientRect();
+              const style = window.getComputedStyle(section);
+              return rect.width > 0 && rect.height > 0 && style.display !== "none";
+            });
+        }
+
+        function measuredChildren(section) {
+          return Array.from(section.children).filter((child) => {
+            if (child.matches("aside.notes, aside:not(.notes), .speaker-notes")) {
+              return false;
+            }
+
+            const style = window.getComputedStyle(child);
+            return style.display !== "none" && style.visibility !== "hidden";
+          });
+        }
+
+        function contentOverflow(section) {
+          const sectionRect = section.getBoundingClientRect();
+          const sectionStyle = window.getComputedStyle(section);
+          const allowedBottom = sectionRect.bottom - parseFloat(sectionStyle.paddingBottom || 0);
+          let maxBottom = sectionRect.top;
+
+          measuredChildren(section).forEach((child) => {
+            const rect = child.getBoundingClientRect();
+            if (rect.width === 0 && rect.height === 0) {
+              return;
+            }
+            maxBottom = Math.max(maxBottom, rect.bottom);
+          });
+
+          return Math.max(0, maxBottom - allowedBottom + fitPadding);
+        }
+
+        function resetFit(section) {
+          section.style.removeProperty("font-size");
+          section.style.removeProperty("--uri-autofit-scale");
+          section.classList.remove("uri-autofit-body");
+        }
+
+        function setFitScale(section, scale) {
+          section.classList.add("uri-autofit-body");
+          section.style.setProperty("--uri-autofit-scale", scale.toFixed(4));
+        }
+
+        function fitSlide(section) {
+          resetFit(section);
+
+          // Scrollboxes are intentional overflow regions; preserve their readable text size.
+          if (section.querySelector(".klm-scrollbox")) {
+            return;
+          }
+
+          const maxFontSize = parseFloat(window.getComputedStyle(section).fontSize);
+
+          if (!maxFontSize || contentOverflow(section) <= 0) {
+            return;
+          }
+
+          let low = minScale;
+          let high = 1;
+          let best = minScale;
+
+          for (let i = 0; i < 12; i += 1) {
+            const scale = (low + high) / 2;
+            setFitScale(section, scale);
+
+            if (contentOverflow(section) <= 0) {
+              best = scale;
+              low = scale;
+            } else {
+              high = scale;
+            }
+          }
+
+          setFitScale(section, best);
+        }
+
+        function fitVisibleSlides() {
+          visibleSlides().forEach(fitSlide);
+        }
+
+        function scheduleFit() {
+          if (fitScheduled) {
+            return;
+          }
+
+          fitScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              fitScheduled = false;
+              fitVisibleSlides();
+            });
+          });
+        }
+
+        window.addEventListener("load", scheduleFit);
+        window.addEventListener("resize", scheduleFit);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleFit();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", scheduleFit);
+            window.Reveal.on("slidechanged", scheduleFit);
+            window.Reveal.on("resize", scheduleFit);
+            window.Reveal.on("overviewhidden", scheduleFit);
+          }
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        let sourceFooterScheduled = false;
+
+        function currentSlide() {
+          if (!window.Reveal || typeof window.Reveal.getCurrentSlide !== "function") {
+            return null;
+          }
+
+          return window.Reveal.getCurrentSlide();
+        }
+
+        function syncSourceFooter() {
+          const reveal = document.querySelector(".reveal");
+
+          if (!reveal) {
+            return;
+          }
+
+          reveal.querySelectorAll(":scope > .footer.source-citation-footer").forEach((footer) => {
+            footer.remove();
+          });
+          reveal.classList.remove("has-source-citation-footer");
+
+          const slide = currentSlide();
+
+          if (!slide) {
+            return;
+          }
+
+          const slideFooter = slide.querySelector(":scope > .footer.source-citation-footer");
+
+          if (!slideFooter) {
+            return;
+          }
+
+          const clonedFooter = slideFooter.cloneNode(true);
+          clonedFooter.dataset.sourceFooterClone = "true";
+          reveal.appendChild(clonedFooter);
+          reveal.classList.add("has-source-citation-footer");
+        }
+
+        function scheduleSourceFooterSync() {
+          if (sourceFooterScheduled) {
+            return;
+          }
+
+          sourceFooterScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              sourceFooterScheduled = false;
+              syncSourceFooter();
+            });
+          });
+        }
+
+        window.addEventListener("load", scheduleSourceFooterSync);
+        window.addEventListener("hashchange", scheduleSourceFooterSync);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleSourceFooterSync();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", scheduleSourceFooterSync);
+            window.Reveal.on("slidechanged", scheduleSourceFooterSync);
+            window.Reveal.on("overviewhidden", scheduleSourceFooterSync);
+          }
+        });
+      })();
+    </script>
+    <script src="https://unpkg.com/@panzoom/panzoom@4.6.1/dist/panzoom.min.js"></script>
+    <style>
+      .reveal .slides .uri-panzoom-frame {
+        position: relative;
+        overflow: hidden;
+        touch-action: none;
+        cursor: auto !important;
+      }
+
+      .reveal .slides .uri-panzoom-frame.uri-panzoom-active {
+        outline: 0.05em solid rgba(104, 171, 232, 0.35);
+        outline-offset: 0.08em;
+      }
+
+      .reveal .slides .uri-panzoom-frame.uri-panzoom-dragging {
+        cursor: grabbing !important;
+      }
+
+      .reveal .slides .uri-panzoom-frame > .uri-panzoom-target {
+        transform-origin: 50% 50%;
+        will-change: transform;
+      }
+
+      .reveal .slides .uri-panzoom-reset {
+        position: absolute;
+        top: 0.45em;
+        right: 0.45em;
+        z-index: 4;
+        width: 2.1em;
+        height: 2.1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #17324d;
+        background: rgba(255, 255, 255, 0.88);
+        border: 0.05em solid rgba(23, 50, 77, 0.24);
+        border-radius: 0.16em;
+        box-shadow: 0 0.08em 0.22em rgba(19, 35, 51, 0.16);
+        font-size: 0.34em;
+        line-height: 1;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 120ms ease;
+      }
+
+      .reveal .slides .uri-panzoom-frame:hover > .uri-panzoom-reset,
+      .reveal .slides .uri-panzoom-frame:focus-within > .uri-panzoom-reset,
+      .reveal .slides .uri-panzoom-frame.uri-panzoom-active > .uri-panzoom-reset {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .reveal .slides section.slide.uri-slide-panzoom-target {
+        touch-action: none;
+        will-change: transform;
+        cursor: auto !important;
+      }
+
+      body.uri-panzoom-modifier-active .reveal .slides .uri-panzoom-frame,
+      body.uri-panzoom-modifier-active .reveal .slides section.slide.uri-slide-panzoom-target {
+        cursor: grab !important;
+      }
+
+      .reveal .slides section.slide.uri-slide-panzoom-dragging {
+        cursor: grabbing !important;
+      }
+
+      .uri-slide-panzoom-reset {
+        position: fixed;
+        left: 0.75rem;
+        bottom: 0.75rem;
+        z-index: 80;
+        width: 2.4rem;
+        height: 2.4rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #17324d;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(23, 50, 77, 0.24);
+        border-radius: 0.18rem;
+        box-shadow: 0 0.12rem 0.32rem rgba(19, 35, 51, 0.18);
+        font: 700 0.86rem/1 sans-serif;
+      }
+
+      body.uri-slide-panzoom-has-active .uri-slide-panzoom-reset {
+        display: flex;
+      }
+
+      @media print {
+        .uri-slide-panzoom-reset {
+          display: none !important;
+        }
+      }
+    </style>
+    <script>
+      (function() {
+        const defaults = {
+          maxScale: 12,
+          minScale: 1,
+          step: 0.3,
+          canvas: true,
+          contain: "outside",
+          excludeClass: "panzoom-exclude",
+          noBind: true
+        };
+
+        const slideDefaults = {
+          maxScale: 5,
+          minScale: 1,
+          step: 0.25,
+          canvas: false,
+          panOnlyWhenZoomed: true,
+          excludeClass: "panzoom-exclude",
+          noBind: true
+        };
+
+        const instances = new Map();
+        const slideInstances = new Map();
+        let initScheduled = false;
+        let slideResetButton = null;
+
+        function getReveal() {
+          return window.Reveal && typeof window.Reveal.getCurrentSlide === "function" ? window.Reveal : null;
+        }
+
+        function parseNumber(value, fallback) {
+          const parsed = Number.parseFloat(value);
+          return Number.isFinite(parsed) ? parsed : fallback;
+        }
+
+        function panzoomModifierActive(event) {
+          return Boolean(event && (event.ctrlKey || event.metaKey));
+        }
+
+        function setPanzoomModifierState(active) {
+          if (document.body) {
+            document.body.classList.toggle("uri-panzoom-modifier-active", active);
+          }
+        }
+
+        function syncPanzoomModifierState(event) {
+          setPanzoomModifierState(panzoomModifierActive(event));
+        }
+
+        function sizeAutoWrapper(wrapper, target) {
+          const rect = target.getBoundingClientRect();
+          const styles = window.getComputedStyle(target);
+          const width = rect.width || target.offsetWidth;
+          const height = rect.height || target.offsetHeight;
+          const marginLeft = parseNumber(styles.marginLeft, 0);
+          const marginRight = parseNumber(styles.marginRight, 0);
+
+          wrapper.style.display = styles.display === "inline" ? "inline-block" : "block";
+          wrapper.style.maxWidth = "100%";
+          wrapper.style.marginTop = styles.marginTop;
+          wrapper.style.marginBottom = styles.marginBottom;
+
+          if (Math.abs(marginLeft - marginRight) < 1 && marginLeft > 0) {
+            wrapper.style.marginLeft = "auto";
+            wrapper.style.marginRight = "auto";
+          } else {
+            wrapper.style.marginLeft = styles.marginLeft;
+            wrapper.style.marginRight = styles.marginRight;
+          }
+
+          if (width <= 0 || height <= 0) {
+            wrapper.dataset.panzoomNeedsSizing = "true";
+            return false;
+          }
+
+          delete wrapper.dataset.panzoomNeedsSizing;
+
+          if (width > 0) {
+            wrapper.style.width = `${width}px`;
+          }
+
+          if (height > 0) {
+            wrapper.style.height = `${height}px`;
+          }
+
+          target.style.boxSizing = "border-box";
+          target.style.width = "100%";
+          target.style.height = "100%";
+          target.style.maxWidth = "none";
+          target.style.maxHeight = "none";
+          target.style.margin = "0";
+          target.style.objectFit = styles.objectFit && styles.objectFit !== "fill" ? styles.objectFit : "contain";
+
+          return true;
+        }
+
+        function retryPendingTarget(target, container) {
+          if (instances.has(target)) {
+            return;
+          }
+
+          if (!sizeAutoWrapper(container, target)) {
+            return;
+          }
+
+          delete target.dataset.panzoomPending;
+          initTarget(target);
+        }
+
+        function bindPendingTarget(target, container) {
+          target.dataset.panzoomPending = "true";
+
+          if (target.dataset.panzoomLoadBound === "true") {
+            return;
+          }
+
+          target.dataset.panzoomLoadBound = "true";
+          target.addEventListener("load", function() {
+            window.requestAnimationFrame(() => retryPendingTarget(target, container));
+          });
+
+          if (target.complete && target.naturalWidth > 0) {
+            window.requestAnimationFrame(() => retryPendingTarget(target, container));
+          }
+        }
+
+        function isSingleFigureImage(element) {
+          if (!element.matches("img.slide-figure, img.case-figure")) {
+            return false;
+          }
+
+          const parent = element.parentElement;
+
+          if (!parent || parent.matches(".uri-panzoom-frame, .panzoom-container, [data-panzoom-container]")) {
+            return false;
+          }
+
+          if (parent.matches("p")) {
+            const meaningfulChildren = Array.from(parent.childNodes).filter((node) => {
+              return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+            });
+
+            return meaningfulChildren.length === 1 && meaningfulChildren[0] === element;
+          }
+
+          return parent.children.length === 1;
+        }
+
+        function moveOutOfQuartoParagraph(target, container) {
+          const parent = target.parentElement;
+
+          if (!parent || parent === container || !parent.matches("p")) {
+            return;
+          }
+
+          const meaningfulChildren = Array.from(parent.childNodes).filter((node) => {
+            return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+          });
+
+          if (meaningfulChildren.length !== 1 || meaningfulChildren[0] !== target) {
+            return;
+          }
+
+          container.insertBefore(target, parent);
+          parent.remove();
+        }
+
+        function ensureContainer(target) {
+          const existingContainer = target.closest(".panzoom-container, [data-panzoom-container], .uri-panzoom-frame");
+
+          if (existingContainer) {
+            moveOutOfQuartoParagraph(target, existingContainer);
+
+            if (
+              existingContainer.dataset.panzoomAutoWrapped === "true" &&
+              existingContainer.dataset.panzoomNeedsSizing === "true"
+            ) {
+              sizeAutoWrapper(existingContainer, target);
+            }
+
+            return existingContainer;
+          }
+
+          if (!isSingleFigureImage(target)) {
+            return null;
+          }
+
+          const parent = target.parentElement;
+          const wrapper = document.createElement("div");
+          wrapper.className = "uri-panzoom-frame";
+          wrapper.dataset.panzoomAutoWrapped = "true";
+          sizeAutoWrapper(wrapper, target);
+
+          if (parent && parent.matches("p")) {
+            parent.parentNode.insertBefore(wrapper, parent);
+            wrapper.appendChild(target);
+            parent.remove();
+            return wrapper;
+          }
+
+          target.parentNode.insertBefore(wrapper, target);
+          wrapper.appendChild(target);
+          return wrapper;
+        }
+
+        function findTarget(container) {
+          if (!container) {
+            return null;
+          }
+
+          if (container.matches(".panzoom-target, [data-panzoom]")) {
+            return container;
+          }
+
+          return container.querySelector(".panzoom-target, [data-panzoom], img, svg, canvas, video, iframe, object");
+        }
+
+        function candidateTargets(root) {
+          const explicitContainerRoots = root.matches && root.matches(".panzoom-container, [data-panzoom-container]")
+            ? [root]
+            : [];
+
+          const explicitTargetRoots = root.matches && root.matches(".panzoom-target, [data-panzoom]")
+            ? [root]
+            : [];
+
+          const explicitContainers = [...explicitContainerRoots, ...Array.from(root.querySelectorAll(".panzoom-container, [data-panzoom-container]"))]
+            .map(findTarget)
+            .filter(Boolean);
+
+          const explicitTargets = [...explicitTargetRoots, ...Array.from(root.querySelectorAll(".panzoom-target, [data-panzoom]"))];
+          const pendingTargets = Array.from(root.querySelectorAll("[data-panzoom-pending='true']"));
+
+          return Array.from(new Set([...explicitContainers, ...explicitTargets, ...pendingTargets]));
+        }
+
+        function resetInactiveSlides() {
+          const reveal = getReveal();
+          const current = reveal ? reveal.getCurrentSlide() : null;
+
+          instances.forEach((instance, target) => {
+            if (current && current.contains(target)) {
+              return;
+            }
+
+            if (typeof instance.reset === "function") {
+              instance.reset({ animate: false });
+            }
+          });
+        }
+
+        function slidePanzoomEnabled(slide) {
+          return Boolean(slide) &&
+            slide.matches(".reveal .slides section.slide") &&
+            slide.dataset.panzoomSlide !== "false" &&
+            !slide.classList.contains("no-slide-panzoom");
+        }
+
+        function candidateSlideTargets(root) {
+          const scope = root || document;
+          const roots = scope.matches && scope.matches(".reveal .slides section.slide") ? [scope] : [];
+          const descendants = Array.from(scope.querySelectorAll(".reveal .slides section.slide"));
+
+          return Array.from(new Set([...roots, ...descendants])).filter(slidePanzoomEnabled);
+        }
+
+        function currentSlideTarget() {
+          const reveal = getReveal();
+          const current = reveal ? reveal.getCurrentSlide() : null;
+
+          if (slidePanzoomEnabled(current)) {
+            return current;
+          }
+
+          return document.querySelector(".reveal .slides section.slide.present.uri-slide-panzoom-target");
+        }
+
+        function slideEventIsExcluded(event) {
+          return Boolean(event.target.closest(
+            "a, button, input, textarea, select, summary, [contenteditable='true'], .panzoom-exclude, .uri-panzoom-frame, .panzoom-container, [data-panzoom-container]"
+          ));
+        }
+
+        function bindModifiedPointerDrag(surface, instance, config) {
+          const eventNames = instance.eventNames || {};
+          const downEvent = eventNames.down || "pointerdown";
+          const moveEvent = eventNames.move || "pointermove";
+          const upEvent = eventNames.up || "pointerup";
+          const shouldStart = config && typeof config.shouldStart === "function" ? config.shouldStart : () => true;
+          const onStart = config && typeof config.onStart === "function" ? config.onStart : () => {};
+          const onEnd = config && typeof config.onEnd === "function" ? config.onEnd : () => {};
+
+          surface.addEventListener(downEvent, function(event) {
+            syncPanzoomModifierState(event);
+
+            if (!panzoomModifierActive(event) || !shouldStart(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.handleDown(event);
+            onStart(event);
+
+            const handleMove = function(moveEventObject) {
+              instance.handleMove(moveEventObject);
+            };
+
+            const handleUp = function(upEventObject) {
+              instance.handleUp(upEventObject);
+              document.removeEventListener(moveEvent, handleMove);
+              document.removeEventListener(upEvent, handleUp);
+              onEnd(upEventObject);
+            };
+
+            document.addEventListener(moveEvent, handleMove, { passive: true });
+            document.addEventListener(upEvent, handleUp, { passive: true });
+          });
+        }
+
+        function getSlideResetButton() {
+          if (slideResetButton) {
+            return slideResetButton;
+          }
+
+          slideResetButton = document.createElement("button");
+          slideResetButton.type = "button";
+          slideResetButton.className = "uri-slide-panzoom-reset panzoom-exclude";
+          slideResetButton.setAttribute("aria-label", "Reset slide zoom");
+          slideResetButton.setAttribute("title", "Reset slide zoom");
+          slideResetButton.textContent = "1x";
+
+          slideResetButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            resetSlideTarget(currentSlideTarget());
+          });
+
+          document.body.appendChild(slideResetButton);
+          return slideResetButton;
+        }
+
+        function updateSlideState(slide, instance) {
+          const active = Boolean(instance && instance.getScale && instance.getScale() > 1.001);
+          const current = currentSlideTarget();
+
+          if (slide) {
+            slide.classList.toggle("uri-slide-panzoom-active", active);
+
+            if (!active) {
+              slide.classList.remove("uri-slide-panzoom-dragging");
+            }
+          }
+
+          if (slide === current) {
+            document.body.classList.toggle("uri-slide-panzoom-has-active", active);
+          }
+        }
+
+        function resetSlideTarget(slide) {
+          const instance = slideInstances.get(slide);
+
+          if (!instance || typeof instance.reset !== "function") {
+            return;
+          }
+
+          instance.reset({ animate: false });
+          updateSlideState(slide, instance);
+        }
+
+        function resetInactiveSlideTargets() {
+          const current = currentSlideTarget();
+
+          slideInstances.forEach((instance, slide) => {
+            if (slide === current) {
+              updateSlideState(slide, instance);
+              return;
+            }
+
+            if (typeof instance.reset === "function") {
+              instance.reset({ animate: false });
+            }
+
+            updateSlideState(slide, instance);
+          });
+
+          if (!current || !slideInstances.get(current) || slideInstances.get(current).getScale() <= 1.001) {
+            document.body.classList.remove("uri-slide-panzoom-has-active");
+          }
+        }
+
+        function initSlideTarget(slide) {
+          if (!window.Panzoom || slideInstances.has(slide) || !slidePanzoomEnabled(slide)) {
+            return;
+          }
+
+          slide.classList.add("uri-slide-panzoom-target");
+          getSlideResetButton();
+
+          let instance;
+          const options = {
+            ...slideDefaults,
+            maxScale: parseNumber(slide.dataset.slidePanzoomMaxScale, slideDefaults.maxScale),
+            minScale: parseNumber(slide.dataset.slidePanzoomMinScale, slideDefaults.minScale),
+            step: parseNumber(slide.dataset.slidePanzoomStep, slideDefaults.step),
+            handleStartEvent: function(event) {
+              if (slideEventIsExcluded(event) || !panzoomModifierActive(event)) {
+                return;
+              }
+
+              if (instance && instance.getScale() > 1.001) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+            }
+          };
+
+          const contain = slide.dataset.slidePanzoomContain;
+          if (contain === "inside" || contain === "outside") {
+            options.contain = contain;
+          }
+
+          instance = window.Panzoom(slide, options);
+          slideInstances.set(slide, instance);
+
+          slide.addEventListener("wheel", function(event) {
+            syncPanzoomModifierState(event);
+
+            if (slideEventIsExcluded(event) || !panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.zoomWithWheel(event);
+            window.requestAnimationFrame(() => updateSlideState(slide, instance));
+          }, { passive: false });
+
+          slide.addEventListener("panzoomchange", function() {
+            updateSlideState(slide, instance);
+          });
+
+          bindModifiedPointerDrag(slide, instance, {
+            shouldStart: function(event) {
+              return !slideEventIsExcluded(event) && instance.getScale() > 1.001;
+            },
+            onStart: function() {
+              slide.classList.add("uri-slide-panzoom-dragging");
+            },
+            onEnd: function() {
+              slide.classList.remove("uri-slide-panzoom-dragging");
+              updateSlideState(slide, instance);
+            }
+          });
+
+          slide.addEventListener("click", function(event) {
+            if (instance.getScale() > 1.001 && panzoomModifierActive(event) && !slideEventIsExcluded(event)) {
+              event.stopPropagation();
+            }
+          });
+
+          slide.addEventListener("dblclick", function(event) {
+            if (slideEventIsExcluded(event) || !panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            resetSlideTarget(slide);
+          });
+        }
+
+        function initTarget(target) {
+          if (!window.Panzoom || instances.has(target)) {
+            return;
+          }
+
+          const container = ensureContainer(target);
+
+          if (!container) {
+            return;
+          }
+
+          if (container.dataset.panzoomNeedsSizing === "true") {
+            bindPendingTarget(target, container);
+            return;
+          }
+
+          container.classList.add("uri-panzoom-frame");
+          target.classList.add("uri-panzoom-target");
+          container.setAttribute("tabindex", "0");
+
+          const options = {
+            ...defaults,
+            maxScale: parseNumber(container.dataset.panzoomMaxScale || target.dataset.panzoomMaxScale, defaults.maxScale),
+            minScale: parseNumber(container.dataset.panzoomMinScale || target.dataset.panzoomMinScale, defaults.minScale),
+            step: parseNumber(container.dataset.panzoomStep || target.dataset.panzoomStep, defaults.step)
+          };
+
+          const contain = container.dataset.panzoomContain || target.dataset.panzoomContain;
+          if (contain === "inside" || contain === "outside") {
+            options.contain = contain;
+          }
+
+          const instance = window.Panzoom(target, options);
+          instances.set(target, instance);
+
+          const resetButton = document.createElement("button");
+          resetButton.type = "button";
+          resetButton.className = "uri-panzoom-reset panzoom-exclude";
+          resetButton.setAttribute("aria-label", "Reset zoom");
+          resetButton.setAttribute("title", "Reset zoom");
+          resetButton.textContent = "1x";
+          container.appendChild(resetButton);
+
+          container.addEventListener("wheel", function(event) {
+            syncPanzoomModifierState(event);
+
+            if (!panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.zoomWithWheel(event);
+            container.classList.add("uri-panzoom-active");
+          }, { passive: false });
+
+          bindModifiedPointerDrag(container, instance, {
+            shouldStart: function() {
+              return instance.getScale() > 1.001;
+            },
+            onStart: function() {
+              container.classList.add("uri-panzoom-dragging");
+            },
+            onEnd: function() {
+              container.classList.remove("uri-panzoom-dragging");
+              container.classList.add("uri-panzoom-active");
+            }
+          });
+
+          container.addEventListener("click", function(event) {
+            if (panzoomModifierActive(event) && instance.getScale() > 1.001) {
+              event.stopPropagation();
+            }
+          });
+
+          container.addEventListener("dblclick", function(event) {
+            if (!panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.reset({ animate: false });
+            container.classList.remove("uri-panzoom-active");
+          });
+
+          resetButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            instance.reset({ animate: false });
+            container.classList.remove("uri-panzoom-active");
+          });
+        }
+
+        function initPanzoom(root) {
+          if (!window.Panzoom) {
+            return;
+          }
+
+          candidateTargets(root || document).forEach(initTarget);
+          candidateSlideTargets(getReveal() ? currentSlideTarget() || root || document : root || document).forEach(initSlideTarget);
+          resetInactiveSlides();
+          resetInactiveSlideTargets();
+        }
+
+        function scheduleInit(root) {
+          if (initScheduled) {
+            return;
+          }
+
+          initScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              initScheduled = false;
+              initPanzoom(root || document);
+            });
+          });
+        }
+
+        window.URIRevealPanzoom = {
+          init: function(root) {
+            initPanzoom(root || document);
+          },
+          reset: function() {
+            instances.forEach((instance) => {
+              if (typeof instance.reset === "function") {
+                instance.reset({ animate: false });
+              }
+            });
+            slideInstances.forEach((instance, slide) => {
+              if (typeof instance.reset === "function") {
+                instance.reset({ animate: false });
+              }
+              updateSlideState(slide, instance);
+            });
+          },
+          instances: instances,
+          slideInstances: slideInstances
+        };
+
+        window.addEventListener("load", function() {
+          scheduleInit(document);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleInit(document);
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", function(event) {
+              scheduleInit(event && event.currentSlide ? event.currentSlide : document);
+            });
+            window.Reveal.on("slidechanged", function(event) {
+              scheduleInit(event && event.currentSlide ? event.currentSlide : document);
+            });
+            window.Reveal.on("overviewhidden", function() {
+              scheduleInit(document);
+            });
+          }
+        });
+
+        document.addEventListener("keydown", syncPanzoomModifierState);
+        document.addEventListener("keyup", syncPanzoomModifierState);
+        document.addEventListener("pointermove", syncPanzoomModifierState);
+        window.addEventListener("blur", function() {
+          setPanzoomModifierState(false);
+        });
+        document.addEventListener("visibilitychange", function() {
+          if (document.visibilityState === "hidden") {
+            setPanzoomModifierState(false);
+          }
+        });
+      })();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

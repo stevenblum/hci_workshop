@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="460" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+  <title id="title">Eye tracking data pipeline</title>
+  <desc id="desc">Pipeline from eye image capture to pupil detection, gaze estimation, mapping, event detection, and design evidence.</desc>
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #2f3947; stroke-width: 3; rx: 8; }
+      .accent1 { fill: #6fc2b0; }
+      .accent2 { fill: #f7b267; }
+      .accent3 { fill: #f05d5e; }
+      .label { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 22px; font-weight: 700; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #4b5563; font-size: 17px; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2f3947"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="460" fill="#ffffff"/>
+  <text x="500" y="45" class="label" style="font-size:30px">From Eye Image to HCI Evidence</text>
+  <rect class="box" x="50" y="100" width="140" height="125"/>
+  <circle class="accent1" cx="120" cy="142" r="28"/>
+  <circle cx="120" cy="142" r="11" fill="#20232a"/>
+  <text class="label" x="120" y="188">Capture</text>
+  <text class="small" x="120" y="212">eye image</text>
+  <rect class="box" x="230" y="100" width="140" height="125"/>
+  <circle class="accent2" cx="300" cy="142" r="28"/>
+  <circle cx="300" cy="142" r="13" fill="#20232a"/>
+  <text class="label" x="300" y="188">Detect</text>
+  <text class="small" x="300" y="212">pupil/glint</text>
+  <rect class="box" x="410" y="100" width="140" height="125"/>
+  <path d="M450 157 L510 128" stroke="#f05d5e" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="450" cy="157" r="12" fill="#20232a"/>
+  <text class="label" x="480" y="188">Estimate</text>
+  <text class="small" x="480" y="212">gaze vector</text>
+  <rect class="box" x="590" y="100" width="140" height="125"/>
+  <rect x="620" y="122" width="80" height="55" fill="#d9e2ec" stroke="#2f3947" stroke-width="2"/>
+  <circle class="accent3" cx="667" cy="150" r="8"/>
+  <text class="label" x="660" y="188">Map</text>
+  <text class="small" x="660" y="212">screen/world</text>
+  <rect class="box" x="770" y="100" width="170" height="125"/>
+  <path d="M805 148 H835 L850 130 L875 168 L895 142" stroke="#6fc2b0" stroke-width="6" fill="none"/>
+  <text class="label" x="855" y="188">Summarize</text>
+  <text class="small" x="855" y="212">events + metrics</text>
+  <path d="M190 162 H225" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M370 162 H405" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M550 162 H585" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M730 162 H765" stroke="#2f3947" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="130" y="300" width="740" height="88" fill="#f8fafc" stroke="#8b95a1" stroke-width="3" rx="8"/>
+  <text class="label" x="500" y="336">Interpret with task context</text>
+  <text class="small" x="500" y="365">screen recording, task events, performance, errors, comments, and design intent</text>
+</svg>

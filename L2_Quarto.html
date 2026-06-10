@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="L2_Quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="L2_Quarto_files/libs/quarto-html/tabby.min.js"></script>
+<script src="L2_Quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="L2_Quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="L2_Quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="L2_Quarto_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="L2_Quarto_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <title>Lesson 2: Visual Attention and Eye Tracking</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="L2_Quarto_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="L2_Quarto_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="L2_Quarto_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="uri-slide-branding.css">
+  <link href="L2_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="L2_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="L2_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="L2_Quarto_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <style>
+    html.lesson-l2 .reveal .slides section.case-study-slide > h2:first-child {
+      margin-bottom: 0.05em;
+    }
+
+    html.lesson-l2 .reveal .slides section.case-study-slide > p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 94cqw;
+      height: 72cqh;
+      margin: 0 auto;
+    }
+
+    html.lesson-l2 .reveal .slides section.case-study-slide img.case-figure {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    html.lesson-l2 .reveal .slides section.case-study-slide img.case-figure.figure-wide {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    html.lesson-l2 .reveal .slides section.case-study-slide img.case-figure.figure-tall {
+      max-height: 100%;
+    }
+
+    html.lesson-l2 .reveal .slides section.case-study-slide img.case-figure.figure-ultrawide {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer {
+      bottom: 1.6cqh;
+      width: 88%;
+      max-width: 88%;
+      font-size: 16px;
+      line-height: 1.12;
+      color: #4d4d4d;
+      text-align: left;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer p {
+      margin: 0;
+    }
+
+    html.lesson-l2 .reveal.has-source-citation-footer .controls .navigate-down {
+      display: none;
+    }
+
+    /* Parts of the Eye uses a two-column layout so the anatomy list can stay visible beside the labeled reference figure. */
+    html.lesson-l2 .reveal .slides section.parts-eye-slide .parts-eye-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+      gap: 0.58em;
+      align-items: center;
+      width: 96%;
+    }
+
+    html.lesson-l2 .reveal .slides section.parts-eye-slide .parts-eye-layout ul {
+      margin: 0;
+      padding-left: 1.05em;
+      font-size: 0.86em;
+      line-height: 1.12;
+    }
+
+    html.lesson-l2 .reveal .slides section.parts-eye-slide img.parts-eye-figure {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 51cqh;
+      margin: 0 auto;
+      object-fit: contain;
+      background: #fff;
+      border: 0.04em solid rgba(28, 57, 82, 0.18);
+      border-radius: 0.08em;
+      box-shadow: 0 0.12em 0.32em rgba(19, 35, 51, 0.1);
+    }
+
+    /* Rods and cones uses the receptor-density figure as the primary content with a short interpretation list beside it. */
+    html.lesson-l2 .reveal .slides section.rods-cones-slide .rods-cones-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.82fr);
+      gap: 0.6em;
+      align-items: center;
+      width: 96%;
+    }
+
+    html.lesson-l2 .reveal .slides section.rods-cones-slide img.rods-cones-figure {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: 53cqh;
+      margin: 0 auto;
+      object-fit: contain;
+      background: #fff;
+      border: 0.04em solid rgba(28, 57, 82, 0.18);
+      border-radius: 0.08em;
+      box-shadow: 0 0.12em 0.32em rgba(19, 35, 51, 0.1);
+    }
+
+    html.lesson-l2 .reveal .slides section.rods-cones-slide .rods-cones-copy ul {
+      margin: 0;
+      padding-left: 1.05em;
+      font-size: 0.9em;
+      line-height: 1.14;
+    }
+
+    /* Eye movement overview uses labeled panels so each movement name is visually bound to its diagram. */
+    html.lesson-l2 .reveal .slides section.eye-movement-types-slide > h2:first-child {
+      margin-bottom: 0.08em;
+    }
+
+    html.lesson-l2 .reveal .slides section.eye-movement-types-slide .eye-movement-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.34em 0.2em;
+      align-items: start;
+      width: 98%;
+      margin: 0 auto;
+    }
+
+    html.lesson-l2 .reveal .slides section.eye-movement-types-slide .eye-movement-card {
+      min-width: 0;
+    }
+
+    html.lesson-l2 .reveal .slides section.eye-movement-types-slide .eye-movement-card-title {
+      margin: 0 0 0.03em;
+      color: #24394f;
+      font-size: 0.4em;
+      font-weight: 700;
+      line-height: 1.05;
+      text-align: center;
+    }
+
+    html.lesson-l2 .reveal .slides section.eye-movement-types-slide .eye-movement-card img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: 27cqh;
+      max-height: 27cqh;
+      margin: 0 auto;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    html.lesson-l2 .reveal .slides section.eye-movement-types-slide .source-citation-footer {
+      font-size: 0.26em;
+      line-height: 1.15;
+      margin-top: 0;
+      max-width: 88%;
+      text-align: left;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer.eye-movement-source-footnote {
+      bottom: 1.6cqh;
+      width: 88%;
+      max-width: 88%;
+      font-size: 16px;
+      line-height: 1.12;
+      color: #4d4d4d;
+      text-align: left;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer.eye-movement-source-footnote p {
+      margin: 0;
+    }
+
+    /* Fixation-saccade figure is wide and short, so it can carry the slide below the compact concept list. */
+    html.lesson-l2 .reveal .slides section.fixation-saccade-slide > h2:first-child {
+      margin-bottom: 0.12em;
+    }
+
+    html.lesson-l2 .reveal .slides section.fixation-saccade-slide ul {
+      margin-bottom: 0.24em;
+      font-size: 0.78em;
+      line-height: 1.08;
+    }
+
+    html.lesson-l2 .reveal .slides section.fixation-saccade-slide img.saccade-fixations-figure {
+      display: block;
+      width: 80%;
+      max-width: 80%;
+      max-height: 31cqh;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer.scanpath-source-footnote {
+      bottom: 1.6cqh;
+      width: 88%;
+      max-width: 88%;
+      font-size: 16px;
+      line-height: 1.12;
+      color: #4d4d4d;
+      text-align: left;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer.scanpath-source-footnote p {
+      margin: 0;
+    }
+
+    /* Bottom-up attention uses a visible title and keeps the saliency image as the only body content. */
+    html.lesson-l2 .reveal .slides section.bottom-up-attention-slide > h2:first-child {
+      margin-bottom: 0.26em;
+    }
+
+    html.lesson-l2 .reveal .slides section.bottom-up-attention-slide img.barn-saliency-figure {
+      display: block;
+      width: 78cqw;
+      max-width: 78cqw;
+      max-height: 76cqh;
+      height: auto;
+      margin: 0 0 0 var(--uri-slide-pad-left);
+      object-fit: contain;
+      object-position: center center;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    /* Yarbus' top-down attention figure is tall, so this slide gives the image most of the available vertical space. */
+    html.lesson-l2 .reveal .slides section.top-down-attention-slide > h2:first-child {
+      margin-bottom: 0.04em;
+    }
+
+    html.lesson-l2 .reveal .slides section.top-down-attention-slide img.yarbus-top-down-figure {
+      display: block;
+      width: auto;
+      max-width: 90%;
+      height: 76cqh;
+      max-height: 76cqh;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer.yarbus-source-footnote {
+      bottom: 1.6cqh;
+      width: 88%;
+      max-width: 88%;
+      font-size: 16px;
+      line-height: 1.12;
+      color: #4d4d4d;
+      text-align: left;
+    }
+
+    html.lesson-l2 .reveal .footer.source-citation-footer.yarbus-source-footnote p {
+      margin: 0;
+    }
+  </style>
+  <script>
+    document.documentElement.classList.add("lesson-l2");
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "v" || event.key === "V") {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!window.Reveal || typeof window.Reveal.configure !== "function") {
+          return;
+        }
+
+        const notesAreVisible = window.Reveal.getConfig().showNotes === true;
+        document.body.classList.add("notes-toggle-in-progress");
+        window.Reveal.configure({ showNotes: !notesAreVisible });
+
+        window.requestAnimationFrame(function() {
+          if (typeof window.Reveal.layout === "function") {
+            window.Reveal.layout();
+          }
+          window.requestAnimationFrame(function() {
+            document.body.classList.remove("notes-toggle-in-progress");
+          });
+        });
+      }
+    });
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="lesson-2-visual-attention-and-eye-tracking" class="title-slide slide level1 quarto-title-block center">
+<h1>Lesson 2: Visual Attention and Eye Tracking</h1>
+<div class="subtitle">
+<p>HCI Workshop</p>
+</div>
+</section>
+<section id="table-of-contents" class="slide level2">
+<h2>Lesson Roadmap</h2>
+<ul>
+<li><strong>Section 2.1: Visual Attention:</strong> eye anatomy, foveal sampling, eye movements, and attention guidance</li>
+<li><strong>Section 2.2: Eye Tracking:</strong> trackers, AOIs, gaze visualization, and gaze phenomena</li>
+<li><strong>Section 2.3: Eye-tracking Case Studies:</strong> applied traffic-control and VR-driving examples</li>
+</ul>
+<aside class="notes">
+<p>Use this roadmap as the scope control for the lesson. The goal is shared vocabulary and useful analysis patterns, not a full eye-tracking methods course.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-2.1-visual-attention" class="title-slide slide level1 section-divider center">
+<h1>Section 2.1: Visual Attention</h1>
+<ul>
+<li>Parts of the eye</li>
+<li>Foveal sampling</li>
+<li>Eye movements</li>
+<li>Bottom-up and top-down attention</li>
+</ul>
+</section>
+<section id="parts-of-the-eye" class="slide level2 compact parts-eye-slide">
+<h2>Parts of the Eye</h2>
+<div class="parts-eye-layout">
+<div>
+<ul>
+<li><strong>Cornea</strong> - clear surface that protects the eye and helps focus light</li>
+<li><strong>Pupil</strong> - dark opening that lets light enter the eye</li>
+<li><strong>Iris</strong> - colored ring around the pupil</li>
+<li><strong>Lens</strong> - focuses light onto the retina</li>
+<li><strong>Retina</strong> - light-sensitive surface at the back of the eye</li>
+<li><strong>Fovea</strong> - small region used for high-detail vision</li>
+</ul>
+</div>
+<p><img src="figures/footprinteduction_in_.png" class="parts-eye-figure" alt="Labeled cross-section of the eye showing the cornea, iris, pupil, lens, retina, fovea, blind spot, optic nerve, and eye muscles."></p>
+</div>
+<aside class="notes">
+<p>These notes add detail for students who want more anatomy than the visible slide provides. The goal is not memorizing biology; it is understanding how the eye supports visual sampling, detailed inspection, and peripheral awareness.</p>
+<p><strong>Cornea:</strong> The cornea is the clear, curved front surface of the eye. It provides much of the eye’s focusing power by bending incoming light before it reaches the pupil and lens. Because it is exposed at the front of the eye, it also helps protect the more delicate internal structures.</p>
+<p><strong>Pupil:</strong> The pupil is the dark opening that lets light enter the eye. It gets larger in dim environments and smaller in bright environments, which helps regulate how much light reaches the retina. The pupil is not a physical object by itself; it is the opening created by the surrounding iris.</p>
+<p><strong>Iris:</strong> The iris is the colored ring of muscle around the pupil. It controls pupil size by constricting or dilating the pupil in response to light and other physiological conditions. This adjustment helps balance visibility and protection: too little light makes details hard to see, while too much light can overwhelm the visual system.</p>
+<p><strong>Lens:</strong> The lens sits behind the pupil and changes shape to focus light onto the retina. This focusing process, called accommodation, helps the eye keep objects clear at different distances. The key takeaway for HCI is that seeing detail depends on both where the eye is directed and whether the visual information can be focused clearly.</p>
+<p><strong>Retina:</strong> The retina is the light-sensitive tissue at the back of the eye. It converts light into neural signals that travel toward the brain. The retina is not uniform: peripheral regions are useful for motion, broad layout, and context, while central regions support higher-detail inspection. This is why a user can notice something in the periphery but still need to move their eyes to read a value, inspect a label, or verify a small control state.</p>
+<p><strong>Fovea:</strong> The fovea is a small central region of the retina with very high visual acuity. Fine detail, such as text, small icons, numeric values, and subtle visual differences, is usually processed best when it falls near the fovea. Eye movements are therefore a sampling strategy: users move the fovea from one information source to another when they need detailed visual information.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="rods-cones-and-foveal-vision" class="slide level2 compact rods-cones-slide">
+<h2>Rods, Cones, and Foveal Vision</h2>
+<div class="rods-cones-layout">
+<p><img src="figures/wordpress_eye_physiology_the_retina.png" class="rods-cones-figure" alt="Rod and cone receptor density across the retina, with cones concentrated at the fovea and rods concentrated in the peripheral retina."></p>
+<div class="rods-cones-copy">
+<ul>
+<li><strong>Cones</strong> - color and fine detail</li>
+<li><strong>Rods</strong> - motion and low-light sensitivity</li>
+<li><strong>Fovea</strong> - narrow zone of sharp vision</li>
+<li><strong>Implication</strong> - eyes move to inspect detail</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>This slide explains why the fovea is a small visual zone rather than a large area of equally sharp vision. The figure plots receptor density across visual angle, with zero degrees marking the fovea.</p>
+<p><strong>Cones</strong> are densely packed near the fovea. They support high-acuity detail and color vision, which is why reading text, distinguishing small symbols, and inspecting fine visual differences work best when the target is near the center of gaze.</p>
+<p><strong>Rods</strong> are more common outside the fovea. They are sensitive in low light and useful for detecting motion, change, and broad spatial layout. Rods help peripheral vision notice that something happened, but they do not support the same fine detail as foveal cone vision.</p>
+<p>The foveal region covers only a very small part of the visual field, roughly the central 1-2 degrees for the sharpest detail. As information falls farther from the fovea, detailed recognition drops quickly even though peripheral awareness remains useful.</p>
+<p>The practical implication is that people move their eyes to inspect details. Peripheral vision helps guide where to look next, and saccades reposition the fovea onto the information source that needs closer inspection.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="high-level-terminology" class="slide level2 compact">
+<h2>High-Level Terminology</h2>
+<ul>
+<li><strong>Gaze</strong> - where the eyes are directed</li>
+<li><strong>Attention</strong> - selected information for processing</li>
+<li>Gaze and attention often overlap</li>
+<li>Gaze does not prove comprehension or intent</li>
+<li>In task work, people often look where useful information is expected</li>
+</ul>
+<aside class="notes">
+<p>Make the caution early: eye tracking estimates gaze behavior. It does not directly measure thought, awareness, or understanding.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Land and Tatler, <em>Looking and Acting: Vision and Eye Movements in Natural Behaviour</em>, Oxford University Press, 2009, Chs. 1 and 3.</p>
+</div>
+</section>
+<section id="foveal-sampling" class="slide level2 compact">
+<h2>Foveal Sampling</h2>
+<ul>
+<li>High-detail vision is concentrated near the fovea</li>
+<li>Peripheral vision supports context, motion, and rough location</li>
+<li>Small labels, values, and controls usually require fixation</li>
+<li>Visual displays should make important information easy to sample</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/visual_sampling_problem.svg" class="slide-figure figure-wide"></p>
+<figcaption>Foveal sampling and peripheral context.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Connect this to dashboards and control panels: small warnings or values may be visible, but they may not be readable without direct gaze.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Land and Tatler, <em>Looking and Acting: Vision and Eye Movements in Natural Behaviour</em>, Oxford University Press, 2009, Ch. 2.</p>
+</div>
+</section>
+<section id="eye-movement-types" class="slide level2 compact eye-movement-types-slide">
+<h2>Eye Movement Types</h2>
+<div class="eye-movement-card-grid">
+<div class="eye-movement-card">
+<div class="eye-movement-card-title">
+Saccades
+</div>
+<p><img src="figures/imotions_saccades_eye_tracking_fullcrop.png" alt="iMotions diagram of saccadic eye movements."></p>
+</div>
+<div class="eye-movement-card">
+<div class="eye-movement-card-title">
+Pursuit
+</div>
+<p><img src="figures/imotions_smooth_pursuit_eye_tracking_fullcrop.png" alt="iMotions diagram of smooth pursuit eye movements."></p>
+</div>
+<div class="eye-movement-card">
+<div class="eye-movement-card-title">
+Vergence
+</div>
+<p><img src="figures/imotions_vergence_fullcrop.png" alt="iMotions diagram of vergence eye movements."></p>
+</div>
+<div class="eye-movement-card">
+<div class="eye-movement-card-title">
+Stabilizing movements
+</div>
+<p><img src="figures/imotions_vestibulo_ocular_reflex_fullcrop.png" alt="iMotions diagram of vestibulo-ocular reflex stabilizing eye movements."></p>
+</div>
+</div>
+<aside class="notes">
+<p>This overview introduces four movement patterns before the lesson moves into individual definitions. The images are direct examples from the iMotions eye movements explainer.</p>
+<p>Saccades are rapid jumps that move gaze from one location to another. Pursuit movements follow a moving target more smoothly. Vergence aligns the two eyes for depth by moving them in opposite directions. Stabilizing movements, such as the vestibulo-ocular reflex, help keep a target stable on the retina while the head or body moves.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer eye-movement-source-footnote">
+<p>Source images: Bryn Farnsworth, “<a href="https://imotions.com/blog/learning/best-practice/types-of-eye-movements/">Eye Movements Explained: Understanding Saccades, Smooth Pursuits, and Fixations</a>,” iMotions, published Jan.&nbsp;8, 2019; last edited Apr.&nbsp;21, 2026; accessed June 10, 2026.</p>
+</div>
+</section>
+<section id="fixations-and-saccades" class="slide level2 compact fixation-saccade-slide">
+<h2>Fixations and Saccades</h2>
+<ul>
+<li><strong>Fixation</strong> - relative gaze stability for information uptake</li>
+<li><strong>Saccade</strong> - rapid shift to a new location</li>
+<li><strong>Scanpath</strong> - ordered sequence of fixations and saccades</li>
+<li>HCI use: compare the scanpath with the task’s expected information sequence</li>
+</ul>
+<p><img src="figures/saccade_fixations.png" class="saccade-fixations-figure" alt="Diagram of gaze points, fixations, microsaccades, and saccades."></p>
+<aside class="notes">
+<p>Fixations are not perfectly still; they are algorithm-defined events. For HCI, the useful idea is that fixations mark likely information samples.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer scanpath-source-footnote">
+<p>Source: Huang, Doebler, and Mertins, “<a href="https://link.springer.com/article/10.3758/s13428-023-02332-w">Short-time AOIs-based representative scanpath identification and scanpath aggregation</a>,” <em>Behavior Research Methods</em> 56 (2024), Fig. 1, p.&nbsp;6053, doi:10.3758/s13428-023-02332-w.</p>
+</div>
+</section>
+<section id="pursuit-stabilization-vergence" class="slide level2 compact">
+<h2>Pursuit, Stabilization, Vergence</h2>
+<ul>
+<li><strong>Smooth pursuit</strong> - tracking a moving target</li>
+<li><strong>Stabilizing movements</strong> - keeping gaze stable during head or scene motion</li>
+<li><strong>Vergence</strong> - aligning both eyes for depth</li>
+<li>These matter in mobile, vehicle, AR/VR, and physical work studies</li>
+</ul>
+<aside class="notes">
+<p>Most HCI analyses emphasize fixations and saccades, but these other movements matter when the environment or target is moving.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Land and Tatler, <em>Looking and Acting: Vision and Eye Movements in Natural Behaviour</em>, Oxford University Press, 2009, Ch. 2.</p>
+</div>
+</section>
+<section id="bottom-up-and-top-down" class="slide level2 compact">
+<h2>Bottom-Up and Top-Down</h2>
+<ul>
+<li><strong>Bottom-up</strong> - attention is pulled by visual features</li>
+<li><strong>Top-down</strong> - attention is guided by goals and expectations</li>
+<li>Salient features can help alerts stand out</li>
+<li>Task goals guide where people look for needed information</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/top_down_bottom_up_attention.svg" class="slide-figure figure-wide"></p>
+<figcaption>Top-down task goals and bottom-up salience both shape gaze.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Use a simple contrast: a flashing alarm can pull attention, but an operator’s task determines whether they next inspect the trend, the setpoint, or the control state.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Land and Tatler, <em>Looking and Acting: Vision and Eye Movements in Natural Behaviour</em>, Oxford University Press, 2009, Ch. 3.</p>
+</div>
+</section>
+<section id="attention-bottom-up" class="slide level2 compact bottom-up-attention-slide">
+<h2>Attention: Bottom-Up</h2>
+<p><img src="figures/Barn_saliency.png" class="barn-saliency-figure" alt="Barn scene paired with a saliency visualization showing visually conspicuous regions."></p>
+<aside class="notes">
+<p>Bottom-up attention refers to attention that is driven by the visual stimulus itself, rather than by the viewer’s current goal. If top-down attention is “I am looking for the pressure gauge,” bottom-up attention is “that flashing red light pulled my eyes before I decided to look there.”</p>
+<p>A visual feature becomes salient when it stands out from its surroundings. A red object among gray objects, a flashing warning icon on a static dashboard, a tilted line among vertical lines, or a bright object in a dark scene can all attract attention because they are locally distinctive. Classic models of visual saliency emphasize low-level features such as intensity, color, and orientation, which are combined into a saliency map that predicts conspicuous locations in the scene.</p>
+<p>Important bottom-up features include:</p>
+<p><strong>Color contrast.</strong> A red, yellow, or blue element can attract attention when the surrounding display is mostly neutral. The key is not the color alone, but the contrast between the item and its context. A red warning light on a gray HMI panel is salient; a red light in a display full of red objects is much less salient.</p>
+<p><strong>Brightness and luminance contrast.</strong> Bright regions against a dark background, or dark regions against a bright background, tend to attract attention. This is why high-contrast labels, alarms, borders, and highlights are visually powerful.</p>
+<p><strong>Motion, flicker, and animation.</strong> Movement is one of the strongest ways to attract attention. In an interface, blinking icons, scrolling banners, animated notifications, and moving objects can pull gaze even when the user is trying to focus elsewhere.</p>
+<p><strong>Sudden onset.</strong> A newly appearing object often captures attention because the visual system treats abrupt changes as potentially important. In HCI, pop-ups, alerts, badges, and appearing or disappearing indicators use this principle.</p>
+<p><strong>Orientation and shape contrast.</strong> A tilted object among vertical objects, or a diamond among circles, can stand out because it differs from the local pattern. Visual search research often uses these “singleton” displays to study how a unique feature captures attention.</p>
+<p><strong>Size and scale.</strong> Large objects, large labels, thick borders, and oversized icons tend to attract attention because they occupy more visual area and often imply importance.</p>
+<p><strong>Local detail or clutter.</strong> Dense texture, sharp edges, high spatial detail, and complex regions can attract gaze because they contain more visual information. However, clutter can also make search harder by creating too many competing points of interest.</p>
+<p><strong>Faces, eyes, text, and symbols.</strong> These are not purely low-level features, but they are extremely strong attention attractors in real scenes. People tend to look at faces, eyes, words, arrows, warning symbols, and other meaningful objects. This is why real-world saliency is not purely bottom-up; meaning and learned expectations also matter.</p>
+<p>In visual search, bottom-up salience can either support or disrupt the user’s task. It supports the task when the salient item is important, such as a true alarm, critical warning, or active system state. It disrupts the task when an irrelevant object is more visually salient than the information the user actually needs. Theeuwes’s attentional-capture work shows that salient singletons can capture attention even when they are not the target, and later work describes these singletons as producing an “attend-to-me” signal that can sometimes be suppressed but often competes with goal-directed control.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="attention-top-down" class="slide level2 compact top-down-attention-slide">
+<h2>Attention: Top Down</h2>
+<p><img src="figures/land_2009_fig3_10_yarbus_unexpected_visitor.jpeg" class="yarbus-top-down-figure" alt="Yarbus eye movement records for Repin's An Unexpected Visitor under different viewing questions."></p>
+<aside class="notes">
+<p>This slide shows Yarbus’ classic demonstration that gaze is shaped by top-down goals. The same image, Repin’s <em>An Unexpected Visitor</em>, was inspected under different questions or viewing goals. The scan paths changed depending on what information the viewer needed, so the eye movements cannot be explained by image salience alone.</p>
+<p>The important teaching point is that “where people look” depends on the task they are trying to solve. If the viewer is judging ages, faces become central. If the viewer is remembering clothing, gaze moves over bodies and garments. If the viewer is inferring relationships and absence, gaze moves among faces and social cues.</p>
+<p>Prompts shown in Figure 3.10:</p>
+<ul>
+<li><ol type="a">
+<li>Examine the picture freely, with no specific task.</li>
+</ol></li>
+<li><ol start="2" type="a">
+<li>Judge the family’s material or financial circumstances.</li>
+</ol></li>
+<li><ol start="3" type="a">
+<li>Give the ages of the people in the scene.</li>
+</ol></li>
+<li><ol start="4" type="a">
+<li>Infer what the family had been doing before the unexpected visitor arrived.</li>
+</ol></li>
+<li><ol start="5" type="a">
+<li>Remember the clothes worn by the people.</li>
+</ol></li>
+<li><ol start="6" type="a">
+<li>Remember where people and objects were positioned in the room.</li>
+</ol></li>
+<li><ol start="7" type="a">
+<li>Estimate how long the unexpected visitor had been away from the family.</li>
+</ol></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer yarbus-source-footnote">
+<p>Source: Land and Tatler, <em>Looking and Acting: Vision and Eye Movements in Natural Behaviour</em>, Oxford University Press, 2009, Fig. 3.10, p.&nbsp;43; adapted from Yarbus, <em>Eye Movements and Vision</em>, Fig. 109.</p>
+</div>
+</section></section>
+<section>
+<section id="section-2.2-eye-tracking" class="title-slide slide level1 section-divider center">
+<h1>Section 2.2: Eye Tracking</h1>
+<ul>
+<li>How eye trackers work</li>
+<li>Area of Interest</li>
+<li>Visualizing gaze</li>
+<li>Gaze phenomena and interpretation patterns</li>
+</ul>
+</section>
+<section id="how-eye-trackers-work" class="slide level2 compact">
+<h2>How Eye Trackers Work</h2>
+<ul>
+<li>Capture an image of the eye</li>
+<li>Detect the pupil and/or corneal reflection</li>
+<li>Estimate gaze direction</li>
+<li>Calibrate using known points</li>
+<li>Map gaze to a screen, scene, or virtual environment</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/eye_tracking_pipeline.svg" class="slide-figure figure-wide"></p>
+<figcaption>Eye tracking pipeline from image capture to design evidence.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Keep this as a measurement chain. Gaze data are processed estimates, so calibration and context matter.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="area-of-interest" class="slide level2 compact">
+<h2>Area of Interest</h2>
+<ul>
+<li><strong>AOI</strong> - Area of Interest</li>
+<li>AOIs define task-relevant regions for analysis</li>
+<li>Static AOIs: buttons, charts, panels, labels</li>
+<li>Dynamic AOIs: tools, vehicles, people, moving targets</li>
+<li>Good AOIs come from the task question</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/li_2023_fig4_surgery_aoi_reference.jpeg" class="slide-figure figure-wide"></p>
+<figcaption>Li et al., Figure 4: AOI reference image for simulated surgical task analysis.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>AOIs are analysis choices, not natural facts. They should represent information sources that matter to the task.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Li et al., “Using Eye Tracking to Examine Expert-Novice Differences During Simulated Surgical Training,” <em>Computers in Human Behavior</em> 144 (2023), Fig. 4, PDF p.&nbsp;5, doi:10.1016/j.chb.2023.107720.</p>
+</div>
+</section>
+<section id="visualizing-gaze" class="slide level2 compact">
+<h2>Visualizing Gaze</h2>
+<ul>
+<li><strong>Saliency or heat map</strong> - aggregate spatial concentration</li>
+<li><strong>Scanpath</strong> - ordered fixation sequence</li>
+<li><strong>AOI network</strong> - transitions between regions</li>
+<li><strong>AOI timeline or trace</strong> - where gaze went over time</li>
+<li>Choose the visualization for the question</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/starke_2017_fig4_roi_timeline.jpeg" class="slide-figure figure-wide"></p>
+<figcaption>Starke et al., Figure 4: ROI timelines show different workflows across control-room participants.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Heat maps flatten time. Scanpaths and AOI timelines keep more of the task sequence.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Starke et al., “Workflows and Individual Differences During Visually Guided Routine Tasks in a Road Traffic Management Control Room,” <em>Applied Ergonomics</em> 61 (2017), Fig. 4, p.&nbsp;84, doi:10.1016/j.apergo.2017.01.006.</p>
+</div>
+</section>
+<section id="visual-routines" class="slide level2 compact">
+<h2>Visual Routines</h2>
+<ul>
+<li>Task-directed pattern of looking and attending</li>
+<li>Used to gather visual information for a goal</li>
+<li>Can include locating, comparing, monitoring, guiding, and checking</li>
+<li>Interface layout can support or disrupt the routine</li>
+</ul>
+<aside class="notes">
+<p>Example: alarm text -&gt; trend -&gt; setpoint -&gt; related equipment -&gt; response -&gt; feedback.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Land and Tatler, <em>Looking and Acting: Vision and Eye Movements in Natural Behaviour</em>, Oxford University Press, 2009.</p>
+</div>
+</section>
+<section id="comparison" class="slide level2 compact">
+<h2>Comparison</h2>
+<ul>
+<li>Many tasks require comparing two or more information sources</li>
+<li>Examples: current value vs.&nbsp;target, option A vs.&nbsp;option B, expected vs.&nbsp;observed</li>
+<li>Gaze may alternate between comparison regions</li>
+<li>Extra revisits can suggest uncertainty, memory load, or poor grouping</li>
+</ul>
+<aside class="notes">
+<p>This slide is intentionally simple. The design point is to place comparison information close enough that the visual routine is easy.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="visual-search" class="slide level2 compact">
+<h2>Visual Search</h2>
+<ul>
+<li><strong>Context-guided search</strong> - look where the object is expected to be</li>
+<li><strong>Feature-guided search</strong> - look for a known visual feature</li>
+<li>Search is easier when layout and visual coding match expectations</li>
+<li>Poor layout turns routine search into exploration</li>
+</ul>
+<aside class="notes">
+<p>Use “find the red warning” for feature-guided search and “the filter should be near the chart” for context-guided search.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="situation-awareness-scan" class="slide level2 compact">
+<h2>Situation Awareness Scan</h2>
+<ul>
+<li>Situation awareness requires scanning critical information sources</li>
+<li>A scan may include current state, trend, alerts, controls, and feedback</li>
+<li>Missed regions can indicate risk or a task-design mismatch</li>
+<li>Overly narrow scanning can miss changes outside the current focus</li>
+</ul>
+<aside class="notes">
+<p>Use this for dashboards, vehicles, aviation, healthcare, and control rooms. The key question is whether gaze covers the information needed to maintain awareness.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gaze-phenomena" class="slide level2 compact">
+<h2>Gaze Phenomena</h2>
+<ul>
+<li>Expertise</li>
+<li>Quiet eye</li>
+<li>Attention tunneling</li>
+<li>Gaze cueing</li>
+<li>Fatigue effects</li>
+<li>Gaze bias, comparison, and confidence</li>
+</ul>
+</section>
+<section id="expertise" class="slide level2 compact">
+<h2>Expertise</h2>
+<ul>
+<li>Experts often sample task-relevant information more efficiently</li>
+<li>Novices may show broader search and more revisits</li>
+<li><strong>Visual efficiency</strong> - less unnecessary looking</li>
+<li><strong>Information reduction</strong> - focusing on cues that matter for the task</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/li_2023_fig10_expert_novice_scanpaths.jpeg" class="slide-figure figure-wide"></p>
+<figcaption>Li et al., Figure 10: novice and expert scanpaths in simulated surgical training.</figcaption>
+</figure>
+</div>
+<aside class="notes">
+<p>Avoid treating expert gaze as a universal template. Expertise effects depend on task, context, and training.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer">
+<p>Source: Li et al., “Using Eye Tracking to Examine Expert-Novice Differences During Simulated Surgical Training,” <em>Computers in Human Behavior</em> 144 (2023), Fig. 10, PDF p.&nbsp;10, doi:10.1016/j.chb.2023.107720.</p>
+</div>
+</section>
+<section id="quiet-eye" class="slide level2 compact">
+<h2>Quiet Eye</h2>
+<ul>
+<li>Final fixation before a skilled action</li>
+<li>Often discussed in sports and skilled motor performance</li>
+<li>Useful idea for timing: where does the performer look before acting?</li>
+<li>HCI analog: gaze to key feedback or control state before committing</li>
+</ul>
+<aside class="notes">
+<p>Keep this brief and conceptual. The main takeaway is anticipatory fixation before skilled action.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="attention-tunneling" class="slide level2 compact">
+<h2>Attention Tunneling</h2>
+<ul>
+<li>Attention becomes too narrow</li>
+<li>Important peripheral or secondary information is missed</li>
+<li>More likely under stress, workload, time pressure, or alarms</li>
+<li>Relevant to driving, aviation, healthcare, and industrial displays</li>
+</ul>
+<aside class="notes">
+<p>Link this to situation awareness: the user may be looking intensely, but not broadly enough.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gaze-cueing" class="slide level2 compact">
+<h2>Gaze Cueing</h2>
+<ul>
+<li>People use others’ gaze direction as an attention cue</li>
+<li>Gaze can guide joint attention in teams</li>
+<li>Useful in training, collaboration, telepresence, and supervision</li>
+<li>Also raises privacy and monitoring concerns</li>
+</ul>
+<aside class="notes">
+<p>This is the social side of gaze. Eye direction can be both information gathering and a signal to others.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="fatigue-effects" class="slide level2 compact">
+<h2>Fatigue Effects</h2>
+<ul>
+<li>Fatigue can change vigilance and scan consistency</li>
+<li>Blink behavior, fixation duration, and missed events may shift</li>
+<li>No single gaze measure proves fatigue</li>
+<li>Interpret fatigue with performance, timing, and task context</li>
+</ul>
+<aside class="notes">
+<p>Keep the claim cautious. Fatigue is a possible interpretation, not something to infer from one gaze metric alone.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gaze-bias-comparison-confidence" class="slide level2 compact">
+<h2>Gaze Bias, Comparison, Confidence</h2>
+<ul>
+<li>People may look longer at options they later choose</li>
+<li>Repeated comparison can reflect uncertainty or careful checking</li>
+<li>Faster, cleaner comparison patterns may indicate confidence</li>
+<li>These patterns require task and outcome data to interpret</li>
+</ul>
+<aside class="notes">
+<p>Use this as a decision-making bridge: gaze can show comparison behavior, but confidence needs supporting evidence.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="section-2.3-eye-tracking-case-studies" class="title-slide slide level1 section-divider center">
+<h1>Section 2.3: Eye-tracking Case Studies</h1>
+<ul>
+<li>Road traffic control room</li>
+<li>AOI timelines</li>
+<li>Novice and experienced driver gaze</li>
+<li>VR driving simulation</li>
+</ul>
+<aside class="notes">
+<p>Introduce this section as applied examples of eye tracking in operational and simulated transportation contexts. Starke and colleagues show mobile eye tracking in a live control room; Chung and colleagues show controlled VR driving analysis with AOIs, fixation measures, spatial gaze spread, and gaze transition patterns.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="evaluation-of-a-traffic-control-room" class="slide level2 compact">
+<h2>Evaluation of a Traffic Control Room</h2>
+<ul>
+<li><strong>Domain:</strong> live road traffic management control room.</li>
+<li><strong>Human role:</strong> monitor multiple displays and respond to incidents.</li>
+<li><strong>HCI issue:</strong> operators may use available visual information differently.</li>
+<li><strong>Measurement idea:</strong> mobile eye tracking captures workflow in the field.</li>
+<li><strong>Figure focus:</strong> the workstation layout and Participant 1’s visual sampling.</li>
+</ul>
+<aside class="notes">
+<p>This case is important because it is a field study in a real control room. The setting is not perfectly controlled, but that is the point. Operators work across multiple displays, with real interruptions, preferences, and routines. Starke and colleagues show that operators differed in visual sampling and task-component weighting. For students, the main lesson is that HCI methods have to work in real environments, not just in clean laboratory tasks. The design question becomes: how should the workspace support both the required workflow and individual operator strategies?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="control-room-layout" class="slide level2 compact case-study-slide">
+<h2>Control Room Layout</h2>
+<p><img src="figures/starke_2017_page81_figure1.jpeg" class="case-figure" alt="Starke et al. Figure 1, page 81: road traffic control-room workstation."></p>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Starke et al., “Workflows and Individual Differences During Visually Guided Routine Tasks in a Road Traffic Management Control Room,” <em>Applied Ergonomics</em> 61 (2017), Fig. 1, p.&nbsp;81, doi:10.1016/j.apergo.2017.01.006.</p>
+</div>
+<aside class="notes">
+<p>Use this image to ground the field setting. The workstation is a real work environment with multiple displays, physical layout constraints, and operational routines that shape visual behavior.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aoi-transition-graph" class="slide level2 compact case-study-slide">
+<h2>AOI Transition Graph</h2>
+<p><img src="figures/starke_2017_page86_figure6_participant1.jpeg" class="case-figure figure-ultrawide" alt="Starke et al. Figure 6, page 86: Participant 1 visual attention and viewing network panel."></p>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Starke et al., “Workflows and Individual Differences During Visually Guided Routine Tasks in a Road Traffic Management Control Room,” <em>Applied Ergonomics</em> 61 (2017), Fig. 6, p.&nbsp;86, doi:10.1016/j.apergo.2017.01.006.</p>
+</div>
+<aside class="notes">
+<p>Use this figure to show that operators do not necessarily sample displays in the same way. The practical question is whether the interface supports the required workflow while allowing skilled individual strategies.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aoi-transition-timeline" class="slide level2 compact case-study-slide">
+<h2>AOI Transition Timeline</h2>
+<p><img src="figures/starke_2017_page84_figure4_participant3_aoi_timeline.jpeg" class="case-figure figure-ultrawide" alt="Starke et al. Figure 4, page 84: Participant 3 mapping of HTA stages to smoothed gaze data."></p>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Starke et al., “Workflows and Individual Differences During Visually Guided Routine Tasks in a Road Traffic Management Control Room,” <em>Applied Ergonomics</em> 61 (2017), Fig. 4, p.&nbsp;84, doi:10.1016/j.apergo.2017.01.006.</p>
+</div>
+<aside class="notes">
+<p>This timeline maps Participant 3’s smoothed gaze data onto the HTA stages of the simulated traffic-control task. The top trace shows which region of interest was attended over normalized task time; the lower trace shows HTA stage and event markers. Use this to show how gaze data becomes more interpretable when it is aligned with a task model.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="vr-driving-simulator-gaze-analysis" class="slide level2 compact">
+<h2>VR Driving Simulator Gaze Analysis</h2>
+<ul>
+<li><strong>Domain:</strong> simulated intersection driving in a VR driving simulator.</li>
+<li><strong>Human role:</strong> monitor the road, cabin displays, mirrors, signals, and hazards.</li>
+<li><strong>HCI issue:</strong> novice drivers may use narrower visual search than experienced drivers.</li>
+<li><strong>Measurement idea:</strong> compare dwell time, fixation duration, fixation count, stationary gaze entropy, and gaze transition entropy.</li>
+<li><strong>Finding:</strong> experienced drivers showed broader gaze distribution and higher transition entropy.</li>
+<li><strong>Design use:</strong> identify driver groups that may need training, feedback, or safety support.</li>
+</ul>
+<aside class="notes">
+<p>This summary slide should orient students before the figures. The study used a head-mounted VR driving simulator with integrated eye tracking to compare novice and experienced drivers during an intersection scenario. The main lesson is that eye tracking can describe both where drivers look and how their gaze moves across task-relevant regions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="vr-driving-simulator" class="slide level2 compact case-study-slide">
+<h2>VR Driving Simulator</h2>
+<p><img src="figures/chung_2022_fig1_vr_driving_simulator.jpeg" class="case-figure figure-tall" alt="Chung et al. Figure 1, page 5: virtual reality driving simulator with HMD, steering wheel, gear shift, and driving pedal."></p>
+<aside class="notes">
+<p>This slide shows the measurement setup: an HTC VIVE Pro Eye HMD, steering wheel, gear shift, and driving pedals. Use it to emphasize why VR is useful here: the same hazardous driving scenario can be repeated safely while gaze is recorded in a controlled environment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Fig. 1, PDF p.&nbsp;5, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="driving-scenario" class="slide level2 compact case-study-slide">
+<h2>Driving Scenario</h2>
+<p><img src="figures/chung_2022_fig3_driving_scenario.jpeg" class="case-figure figure-tall" alt="Chung et al. Figure 3, page 6: schematic representation of the driving scenario."></p>
+<aside class="notes">
+<p>This slide shows the route and event structure. Drivers go straight, stop at a signalized intersection, turn left, encounter a sudden-braking event, then continue toward a right-turn/jaywalking situation. The intersection setting is useful because drivers must sample signals, pedestrians, vehicles, mirrors, dashboard information, and navigation cues.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Fig. 3, PDF p.&nbsp;6, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="car-cabin-aois" class="slide level2 compact case-study-slide">
+<h2>Car Cabin AOIs</h2>
+<p><img src="figures/chung_2022_fig7a_car_cabin_aois.jpeg" class="case-figure figure-wide" alt="Chung et al. Figure 7a, page 10: driver cabin view with area-of-interest labels and pixel dimensions."></p>
+<aside class="notes">
+<p>This slide shows how the driving scene was turned into AOIs. The AOIs include traffic lights, pedestrian signal lights, pedestrians, passing vehicles, the navigation system, mirrors, and dashboard information. Stress that AOIs are the bridge between raw gaze points and interpretable task evidence.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Fig. 7a, PDF p.&nbsp;10, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="salience-map" class="slide level2 compact case-study-slide">
+<h2>Salience Map</h2>
+<p><img src="figures/chung_2022_fig7c_salience_map.jpeg" class="case-figure figure-wide" alt="Chung et al. Figure 7c, page 10: experienced-driver fixation heatmap with color scale."></p>
+<aside class="notes">
+<p>This slide shows the experienced-driver fixation heatmap. The important pattern is that experienced drivers did not only inspect the forward roadway; their gaze also covered side mirrors and surrounding traffic-related AOIs. Use this as a visual example of broader situation-awareness scanning.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Fig. 7c, PDF p.&nbsp;10, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="fixations-by-aoi" class="slide level2 compact case-study-slide">
+<h2>Fixations by AOI</h2>
+<p><img src="figures/chung_2022_table3_fixations_by_aoi.png" class="case-figure figure-wide" alt="Chung et al. Table 3, page 11: probability distribution by area of interest and stationary gaze entropy."></p>
+<aside class="notes">
+<p>This table summarizes fixation frequency and probability by AOI. The experienced group had a higher stationary gaze entropy score, 3.09 versus 2.60 for novices, suggesting their gaze was spread more evenly across AOIs. Point out the missed or rarely sampled novice AOIs, especially the pedestrian signal light and right-side mirror.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Table 3, PDF p.&nbsp;11, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="fixation-duration-by-aoi" class="slide level2 compact case-study-slide">
+<h2>Fixation Duration by AOI</h2>
+<p><img src="figures/chung_2022_table2_fixation_duration_by_aoi.png" class="case-figure figure-wide" alt="Chung et al. Table 2, page 9: average fixation duration by area of interest for novice and experienced drivers."></p>
+<aside class="notes">
+<p>This table compares how long fixations lasted within each AOI. Novices had a longer average fixation duration, 0.78 seconds versus 0.51 seconds for experienced drivers. In this case, longer fixations may reflect slower information pickup or more effortful checking, especially on navigation, mirrors, and dashboard regions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Table 2, PDF p.&nbsp;9, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="aoi-transitions" class="slide level2 compact case-study-slide">
+<h2>AOI Transitions</h2>
+<p><img src="figures/chung_2022_fig8b_aoi_transitions.jpeg" class="case-figure figure-tall" alt="Chung et al. Figure 8b, page 11: experienced-driver AOI gaze transition matrix."></p>
+<aside class="notes">
+<p>This slide shows the experienced-driver AOI transition matrix. Gaze transition entropy, or GTE, summarizes how predictable the next AOI is after the current one. Low GTE means a narrower, repeated transition path; high GTE means more varied movement among AOIs. SGE describes where gaze is distributed; GTE describes the order of movement. Chung and colleagues report higher GTE for experienced drivers, consistent with broader scanning across mirrors and traffic-related AOIs.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<div class="footer source-citation-footer case-study-source-footnote">
+<p>Source: Chung et al., “The Static and Dynamic Analyses of Drivers’ Gaze Movement Using VR Driving Simulator,” <em>Applied Sciences</em> 12(5), 2362 (2022), Fig. 8b, PDF p.&nbsp;11, doi:10.3390/app12052362.</p>
+</div>
+</section>
+<section id="references" class="slide level2 compact smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-land2009lookingActing" class="csl-entry" role="listitem">
+<a href="https://doi.org/10.1093/acprof:oso/9780198570943.001.0001">Land and Tatler, 2009, <span>“Looking and acting”</span></a>.
+</div>
+<div id="ref-chung2022staticDynamicAnalyses" class="csl-entry" role="listitem">
+Chung, Lee, Moon, and Lee, 2022, <span>“<a href="https://doi.org/10.3390/app12052362">The static and dynamic analyses of drivers’ gaze movement using <span>VR</span> driving simulator</a>.”</span>
+</div>
+<div id="ref-starke2017controlRoomEyeTracking" class="csl-entry" role="listitem">
+Starke, Baber, Cooke, and Howes, 2017, <span>“<a href="https://doi.org/10.1016/j.apergo.2017.01.006">Workflows and individual differences during visually guided routine tasks in a road traffic management control room</a>.”</span>
+</div>
+<div id="ref-li2023expertNoviceSurgeryEyeTracking" class="csl-entry" role="listitem">
+<a href="https://doi.org/10.1016/j.chb.2023.107720">Li, Duffy, Lajoie, Zheng, and Lachapelle, 2023, <span>“Using eye tracking to examine expert-novice differences during simulated surgical training”</span></a>.
+</div>
+<div id="ref-farnsworth2019eyeMovementsExplained" class="csl-entry" role="listitem">
+<a href="https://imotions.com/blog/learning/best-practice/types-of-eye-movements/">Farnsworth, 2019, <span>“Eye movements explained”</span></a>.
+</div>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="L2_Quarto_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="L2_Quarto_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="L2_Quarto_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="L2_Quarto_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'grid',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: true,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 800,
+
+        height: 600,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <div class="uri-slide-header" data-uri-slide-header="" hidden="">
+      <span data-uri-slide-header-text=""></span>
+    </div>
+
+    <script>
+      (function() {
+        let slideMetadata = new WeakMap();
+
+        function revealElement() {
+          return document.querySelector(".reveal");
+        }
+
+        function slidesRoot() {
+          return document.querySelector(".reveal .slides");
+        }
+
+        function headerElement() {
+          const header = document.querySelector("[data-uri-slide-header]");
+          const reveal = revealElement();
+
+          if (header && reveal && header.parentElement !== reveal) {
+            reveal.appendChild(header);
+          }
+
+          return header;
+        }
+
+        function directSectionChildren(element) {
+          if (!element) {
+            return [];
+          }
+
+          return Array.from(element.children).filter((child) => child.tagName === "SECTION");
+        }
+
+        function headingText(slide) {
+          const heading = slide && slide.querySelector(":scope > h1, :scope > h2, :scope > h3");
+          return heading ? heading.textContent.trim().replace(/\s+/g, " ") : "";
+        }
+
+        function parseSectionDivider(slide) {
+          const match = headingText(slide).match(/^Section\s+(\d+)\.(\d+)\s*:\s*(.+)$/i);
+
+          if (!match) {
+            return null;
+          }
+
+          return {
+            lessonNumber: match[1],
+            sectionNumber: match[2],
+            sectionName: match[3].trim()
+          };
+        }
+
+        function indexSectionStack(stack) {
+          const stackSlides = stack.matches(".section-divider")
+            ? [stack]
+            : directSectionChildren(stack);
+          const divider = stackSlides.find((slide) => slide.matches(".section-divider"));
+          const section = parseSectionDivider(divider);
+
+          if (!section) {
+            return;
+          }
+
+          slideMetadata.set(stack, {
+            lessonNumber: section.lessonNumber,
+            sectionNumber: section.sectionNumber,
+            sectionName: section.sectionName,
+            slideNumber: 1
+          });
+
+          stackSlides.forEach((slide, index) => {
+            slideMetadata.set(slide, {
+              lessonNumber: section.lessonNumber,
+              sectionNumber: section.sectionNumber,
+              sectionName: section.sectionName,
+              slideNumber: index + 1
+            });
+          });
+        }
+
+        function rebuildIndex() {
+          const root = slidesRoot();
+          slideMetadata = new WeakMap();
+
+          directSectionChildren(root).forEach(indexSectionStack);
+        }
+
+        function currentSlide() {
+          if (window.Reveal && typeof window.Reveal.getCurrentSlide === "function") {
+            return window.Reveal.getCurrentSlide();
+          }
+
+          return document.querySelector(".reveal .slides section.present");
+        }
+
+        function hideHeader(header) {
+          if (!header) {
+            return;
+          }
+
+          const text = header.querySelector("[data-uri-slide-header-text]");
+          header.hidden = true;
+          header.classList.add("is-hidden");
+
+          if (text) {
+            text.textContent = "";
+          }
+        }
+
+        function updateHeader(event) {
+          const header = headerElement();
+          const slide = event && event.currentSlide ? event.currentSlide : currentSlide();
+
+          if (!header || !slide) {
+            hideHeader(header);
+            return;
+          }
+
+          let metadata = slideMetadata.get(slide);
+
+          if (!metadata) {
+            rebuildIndex();
+            metadata = slideMetadata.get(slide);
+          }
+
+          if (!metadata) {
+            hideHeader(header);
+            return;
+          }
+
+          const text = header.querySelector("[data-uri-slide-header-text]");
+
+          if (!text) {
+            hideHeader(header);
+            return;
+          }
+
+          text.textContent = `${metadata.sectionName} - ${metadata.lessonNumber}.${metadata.sectionNumber}.${metadata.slideNumber}`;
+          header.hidden = false;
+          header.classList.remove("is-hidden");
+        }
+
+        function setupHeader() {
+          headerElement();
+          rebuildIndex();
+          updateHeader();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", function(event) {
+              rebuildIndex();
+              updateHeader(event);
+            });
+            window.Reveal.on("slidechanged", updateHeader);
+            window.Reveal.on("overviewshown", updateHeader);
+            window.Reveal.on("overviewhidden", updateHeader);
+            window.Reveal.on("resize", updateHeader);
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", setupHeader);
+        } else {
+          setupHeader();
+        }
+
+        window.addEventListener("load", function() {
+          rebuildIndex();
+          updateHeader();
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        const minScale = 1;
+        const maxScale = 4;
+        const zoomStep = 0.0018;
+        const resetEpsilon = 0.01;
+        const state = {
+          slide: null,
+          scale: 1,
+          x: 0,
+          y: 0,
+          dragging: false,
+          pointerId: null,
+          lastX: 0,
+          lastY: 0
+        };
+
+        function currentSlide() {
+          if (!window.Reveal || typeof window.Reveal.getCurrentSlide !== "function") {
+            return document.querySelector(".reveal .slides section.present");
+          }
+
+          return window.Reveal.getCurrentSlide();
+        }
+
+        function modifierPressed(event) {
+          return event.ctrlKey || event.metaKey || event.altKey;
+        }
+
+        function clamp(value, min, max) {
+          return Math.min(max, Math.max(min, value));
+        }
+
+        function ensureSlide() {
+          const slide = currentSlide();
+
+          if (state.slide !== slide) {
+            clearSlide();
+            state.slide = slide;
+          }
+
+          return state.slide;
+        }
+
+        function applyTransform() {
+          const slide = ensureSlide();
+
+          if (!slide) {
+            return;
+          }
+
+          if (state.scale <= minScale + resetEpsilon && Math.abs(state.x) < resetEpsilon && Math.abs(state.y) < resetEpsilon) {
+            slide.style.removeProperty("transform");
+            slide.style.removeProperty("transform-origin");
+            slide.style.removeProperty("z-index");
+            document.body.classList.remove("uri-panzoom-active");
+            return;
+          }
+
+          slide.style.transformOrigin = "center center";
+          slide.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
+          slide.style.zIndex = "100";
+          document.body.classList.add("uri-panzoom-active");
+        }
+
+        function clearSlide() {
+          if (state.slide) {
+            state.slide.style.removeProperty("transform");
+            state.slide.style.removeProperty("transform-origin");
+            state.slide.style.removeProperty("z-index");
+          }
+
+          state.slide = null;
+          state.scale = 1;
+          state.x = 0;
+          state.y = 0;
+          state.dragging = false;
+          state.pointerId = null;
+          document.body.classList.remove("uri-panzoom-active");
+        }
+
+        function onWheel(event) {
+          if (!modifierPressed(event) || event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          ensureSlide();
+          const nextScale = clamp(state.scale * Math.exp(-event.deltaY * zoomStep), minScale, maxScale);
+
+          if (nextScale === state.scale) {
+            return;
+          }
+
+          state.scale = nextScale;
+
+          if (state.scale <= minScale + resetEpsilon) {
+            state.scale = 1;
+            state.x = 0;
+            state.y = 0;
+          }
+
+          applyTransform();
+        }
+
+        function onPointerDown(event) {
+          if (!modifierPressed(event) || event.button !== 0 || event.target.closest(".speaker-notes, .slide-menu-wrapper")) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          ensureSlide();
+          state.dragging = true;
+          state.pointerId = event.pointerId;
+          state.lastX = event.clientX;
+          state.lastY = event.clientY;
+
+          if (event.target.setPointerCapture) {
+            event.target.setPointerCapture(event.pointerId);
+          }
+
+          document.body.classList.add("uri-panzoom-dragging");
+        }
+
+        function onPointerMove(event) {
+          if (!state.dragging || event.pointerId !== state.pointerId) {
+            return;
+          }
+
+          event.preventDefault();
+          event.stopImmediatePropagation();
+
+          state.x += event.clientX - state.lastX;
+          state.y += event.clientY - state.lastY;
+          state.lastX = event.clientX;
+          state.lastY = event.clientY;
+          applyTransform();
+        }
+
+        function onPointerUp(event) {
+          if (!state.dragging || event.pointerId !== state.pointerId) {
+            return;
+          }
+
+          state.dragging = false;
+          state.pointerId = null;
+          document.body.classList.remove("uri-panzoom-dragging");
+        }
+
+        function onKeyDown(event) {
+          if (event.key === "Escape" && state.slide) {
+            clearSlide();
+          }
+        }
+
+        function onContextMenu(event) {
+          if (modifierPressed(event)) {
+            event.preventDefault();
+          }
+        }
+
+        window.addEventListener("wheel", onWheel, { capture: true, passive: false });
+        window.addEventListener("pointerdown", onPointerDown, { capture: true });
+        window.addEventListener("pointermove", onPointerMove, { capture: true });
+        window.addEventListener("pointerup", onPointerUp, { capture: true });
+        window.addEventListener("pointercancel", onPointerUp, { capture: true });
+        window.addEventListener("contextmenu", onContextMenu, { capture: true });
+        document.addEventListener("keydown", onKeyDown);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("slidechanged", clearSlide);
+            window.Reveal.on("overviewshown", clearSlide);
+          }
+        });
+      })();
+    </script>
+    <script>
+      window.addEventListener("load", function() {
+        let scrollTimeout = null;
+        const cooldownPeriod = 10;
+        const minimumDelta = 10;
+
+        window.addEventListener("wheel", function(event) {
+          if (event.target.closest(".klm-scrollbox")) {
+            event.stopPropagation();
+          }
+        }, { passive: true, capture: true });
+
+        window.addEventListener("wheel", function(event) {
+          if (!window.Reveal) {
+            return;
+          }
+
+          if (event.ctrlKey || event.metaKey || event.altKey) {
+            return;
+          }
+
+          if (event.target.closest(".speaker-notes, .slide-menu-wrapper, .klm-scrollbox")) {
+            return;
+          }
+
+          if (Math.abs(event.deltaY) < minimumDelta || scrollTimeout) {
+            return;
+          }
+
+          event.preventDefault();
+
+          if (event.deltaY > 0) {
+            window.Reveal.next();
+          } else {
+            window.Reveal.prev();
+          }
+
+          scrollTimeout = window.setTimeout(function() {
+            scrollTimeout = null;
+          }, cooldownPeriod);
+        }, { passive: false });
+      });
+    </script>
+    <script>
+      (function() {
+        const minScale = 0.3;
+        const fitPadding = 2;
+        let fitScheduled = false;
+
+        function visibleSlides() {
+          return Array.from(document.querySelectorAll(
+            ".reveal .slides section.slide, .reveal .slides #title-slide, .reveal .slides section.quarto-title-block"
+          ))
+            .filter((section) => {
+              const rect = section.getBoundingClientRect();
+              const style = window.getComputedStyle(section);
+              return rect.width > 0 && rect.height > 0 && style.display !== "none";
+            });
+        }
+
+        function measuredChildren(section) {
+          return Array.from(section.children).filter((child) => {
+            if (child.matches("aside.notes, aside:not(.notes), .speaker-notes")) {
+              return false;
+            }
+
+            const style = window.getComputedStyle(child);
+            return style.display !== "none" && style.visibility !== "hidden";
+          });
+        }
+
+        function contentOverflow(section) {
+          const sectionRect = section.getBoundingClientRect();
+          const sectionStyle = window.getComputedStyle(section);
+          const allowedBottom = sectionRect.bottom - parseFloat(sectionStyle.paddingBottom || 0);
+          let maxBottom = sectionRect.top;
+
+          measuredChildren(section).forEach((child) => {
+            const rect = child.getBoundingClientRect();
+            if (rect.width === 0 && rect.height === 0) {
+              return;
+            }
+            maxBottom = Math.max(maxBottom, rect.bottom);
+          });
+
+          return Math.max(0, maxBottom - allowedBottom + fitPadding);
+        }
+
+        function resetFit(section) {
+          section.style.removeProperty("font-size");
+          section.style.removeProperty("--uri-autofit-scale");
+          section.classList.remove("uri-autofit-body");
+        }
+
+        function setFitScale(section, scale) {
+          section.classList.add("uri-autofit-body");
+          section.style.setProperty("--uri-autofit-scale", scale.toFixed(4));
+        }
+
+        function fitSlide(section) {
+          resetFit(section);
+
+          // Scrollboxes are intentional overflow regions; preserve their readable text size.
+          if (section.querySelector(".klm-scrollbox")) {
+            return;
+          }
+
+          const maxFontSize = parseFloat(window.getComputedStyle(section).fontSize);
+
+          if (!maxFontSize || contentOverflow(section) <= 0) {
+            return;
+          }
+
+          let low = minScale;
+          let high = 1;
+          let best = minScale;
+
+          for (let i = 0; i < 12; i += 1) {
+            const scale = (low + high) / 2;
+            setFitScale(section, scale);
+
+            if (contentOverflow(section) <= 0) {
+              best = scale;
+              low = scale;
+            } else {
+              high = scale;
+            }
+          }
+
+          setFitScale(section, best);
+        }
+
+        function fitVisibleSlides() {
+          visibleSlides().forEach(fitSlide);
+        }
+
+        function scheduleFit() {
+          if (fitScheduled) {
+            return;
+          }
+
+          fitScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              fitScheduled = false;
+              fitVisibleSlides();
+            });
+          });
+        }
+
+        window.addEventListener("load", scheduleFit);
+        window.addEventListener("resize", scheduleFit);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleFit();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", scheduleFit);
+            window.Reveal.on("slidechanged", scheduleFit);
+            window.Reveal.on("resize", scheduleFit);
+            window.Reveal.on("overviewhidden", scheduleFit);
+          }
+        });
+      })();
+    </script>
+    <script>
+      (function() {
+        let sourceFooterScheduled = false;
+
+        function currentSlide() {
+          if (!window.Reveal || typeof window.Reveal.getCurrentSlide !== "function") {
+            return null;
+          }
+
+          return window.Reveal.getCurrentSlide();
+        }
+
+        function syncSourceFooter() {
+          const reveal = document.querySelector(".reveal");
+
+          if (!reveal) {
+            return;
+          }
+
+          reveal.querySelectorAll(":scope > .footer.source-citation-footer").forEach((footer) => {
+            footer.remove();
+          });
+          reveal.classList.remove("has-source-citation-footer");
+
+          const slide = currentSlide();
+
+          if (!slide) {
+            return;
+          }
+
+          const slideFooter = slide.querySelector(":scope > .footer.source-citation-footer");
+
+          if (!slideFooter) {
+            return;
+          }
+
+          const clonedFooter = slideFooter.cloneNode(true);
+          clonedFooter.dataset.sourceFooterClone = "true";
+          reveal.appendChild(clonedFooter);
+          reveal.classList.add("has-source-citation-footer");
+        }
+
+        function scheduleSourceFooterSync() {
+          if (sourceFooterScheduled) {
+            return;
+          }
+
+          sourceFooterScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              sourceFooterScheduled = false;
+              syncSourceFooter();
+            });
+          });
+        }
+
+        window.addEventListener("load", scheduleSourceFooterSync);
+        window.addEventListener("hashchange", scheduleSourceFooterSync);
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleSourceFooterSync();
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", scheduleSourceFooterSync);
+            window.Reveal.on("slidechanged", scheduleSourceFooterSync);
+            window.Reveal.on("overviewhidden", scheduleSourceFooterSync);
+          }
+        });
+      })();
+    </script>
+    <script src="https://unpkg.com/@panzoom/panzoom@4.6.1/dist/panzoom.min.js"></script>
+    <style>
+      .reveal .slides .uri-panzoom-frame {
+        position: relative;
+        overflow: hidden;
+        touch-action: none;
+        cursor: auto !important;
+      }
+
+      .reveal .slides .uri-panzoom-frame.uri-panzoom-active {
+        outline: 0.05em solid rgba(104, 171, 232, 0.35);
+        outline-offset: 0.08em;
+      }
+
+      .reveal .slides .uri-panzoom-frame.uri-panzoom-dragging {
+        cursor: grabbing !important;
+      }
+
+      .reveal .slides .uri-panzoom-frame > .uri-panzoom-target {
+        transform-origin: 50% 50%;
+        will-change: transform;
+      }
+
+      .reveal .slides .uri-panzoom-reset {
+        position: absolute;
+        top: 0.45em;
+        right: 0.45em;
+        z-index: 4;
+        width: 2.1em;
+        height: 2.1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #17324d;
+        background: rgba(255, 255, 255, 0.88);
+        border: 0.05em solid rgba(23, 50, 77, 0.24);
+        border-radius: 0.16em;
+        box-shadow: 0 0.08em 0.22em rgba(19, 35, 51, 0.16);
+        font-size: 0.34em;
+        line-height: 1;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 120ms ease;
+      }
+
+      .reveal .slides .uri-panzoom-frame:hover > .uri-panzoom-reset,
+      .reveal .slides .uri-panzoom-frame:focus-within > .uri-panzoom-reset,
+      .reveal .slides .uri-panzoom-frame.uri-panzoom-active > .uri-panzoom-reset {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .reveal .slides section.slide.uri-slide-panzoom-target {
+        touch-action: none;
+        will-change: transform;
+        cursor: auto !important;
+      }
+
+      body.uri-panzoom-modifier-active .reveal .slides .uri-panzoom-frame,
+      body.uri-panzoom-modifier-active .reveal .slides section.slide.uri-slide-panzoom-target {
+        cursor: grab !important;
+      }
+
+      .reveal .slides section.slide.uri-slide-panzoom-dragging {
+        cursor: grabbing !important;
+      }
+
+      .uri-slide-panzoom-reset {
+        position: fixed;
+        left: 0.75rem;
+        bottom: 0.75rem;
+        z-index: 80;
+        width: 2.4rem;
+        height: 2.4rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        color: #17324d;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(23, 50, 77, 0.24);
+        border-radius: 0.18rem;
+        box-shadow: 0 0.12rem 0.32rem rgba(19, 35, 51, 0.18);
+        font: 700 0.86rem/1 sans-serif;
+      }
+
+      body.uri-slide-panzoom-has-active .uri-slide-panzoom-reset {
+        display: flex;
+      }
+
+      @media print {
+        .uri-slide-panzoom-reset {
+          display: none !important;
+        }
+      }
+    </style>
+    <script>
+      (function() {
+        const defaults = {
+          maxScale: 12,
+          minScale: 1,
+          step: 0.3,
+          canvas: true,
+          contain: "outside",
+          excludeClass: "panzoom-exclude",
+          noBind: true
+        };
+
+        const slideDefaults = {
+          maxScale: 5,
+          minScale: 1,
+          step: 0.25,
+          canvas: false,
+          panOnlyWhenZoomed: true,
+          excludeClass: "panzoom-exclude",
+          noBind: true
+        };
+
+        const instances = new Map();
+        const slideInstances = new Map();
+        let initScheduled = false;
+        let slideResetButton = null;
+
+        function getReveal() {
+          return window.Reveal && typeof window.Reveal.getCurrentSlide === "function" ? window.Reveal : null;
+        }
+
+        function parseNumber(value, fallback) {
+          const parsed = Number.parseFloat(value);
+          return Number.isFinite(parsed) ? parsed : fallback;
+        }
+
+        function panzoomModifierActive(event) {
+          return Boolean(event && (event.ctrlKey || event.metaKey));
+        }
+
+        function setPanzoomModifierState(active) {
+          if (document.body) {
+            document.body.classList.toggle("uri-panzoom-modifier-active", active);
+          }
+        }
+
+        function syncPanzoomModifierState(event) {
+          setPanzoomModifierState(panzoomModifierActive(event));
+        }
+
+        function sizeAutoWrapper(wrapper, target) {
+          const rect = target.getBoundingClientRect();
+          const styles = window.getComputedStyle(target);
+          const width = rect.width || target.offsetWidth;
+          const height = rect.height || target.offsetHeight;
+          const marginLeft = parseNumber(styles.marginLeft, 0);
+          const marginRight = parseNumber(styles.marginRight, 0);
+
+          wrapper.style.display = styles.display === "inline" ? "inline-block" : "block";
+          wrapper.style.maxWidth = "100%";
+          wrapper.style.marginTop = styles.marginTop;
+          wrapper.style.marginBottom = styles.marginBottom;
+
+          if (Math.abs(marginLeft - marginRight) < 1 && marginLeft > 0) {
+            wrapper.style.marginLeft = "auto";
+            wrapper.style.marginRight = "auto";
+          } else {
+            wrapper.style.marginLeft = styles.marginLeft;
+            wrapper.style.marginRight = styles.marginRight;
+          }
+
+          if (width <= 0 || height <= 0) {
+            wrapper.dataset.panzoomNeedsSizing = "true";
+            return false;
+          }
+
+          delete wrapper.dataset.panzoomNeedsSizing;
+
+          if (width > 0) {
+            wrapper.style.width = `${width}px`;
+          }
+
+          if (height > 0) {
+            wrapper.style.height = `${height}px`;
+          }
+
+          target.style.boxSizing = "border-box";
+          target.style.width = "100%";
+          target.style.height = "100%";
+          target.style.maxWidth = "none";
+          target.style.maxHeight = "none";
+          target.style.margin = "0";
+          target.style.objectFit = styles.objectFit && styles.objectFit !== "fill" ? styles.objectFit : "contain";
+
+          return true;
+        }
+
+        function retryPendingTarget(target, container) {
+          if (instances.has(target)) {
+            return;
+          }
+
+          if (!sizeAutoWrapper(container, target)) {
+            return;
+          }
+
+          delete target.dataset.panzoomPending;
+          initTarget(target);
+        }
+
+        function bindPendingTarget(target, container) {
+          target.dataset.panzoomPending = "true";
+
+          if (target.dataset.panzoomLoadBound === "true") {
+            return;
+          }
+
+          target.dataset.panzoomLoadBound = "true";
+          target.addEventListener("load", function() {
+            window.requestAnimationFrame(() => retryPendingTarget(target, container));
+          });
+
+          if (target.complete && target.naturalWidth > 0) {
+            window.requestAnimationFrame(() => retryPendingTarget(target, container));
+          }
+        }
+
+        function isSingleFigureImage(element) {
+          if (!element.matches("img.slide-figure, img.case-figure")) {
+            return false;
+          }
+
+          const parent = element.parentElement;
+
+          if (!parent || parent.matches(".uri-panzoom-frame, .panzoom-container, [data-panzoom-container]")) {
+            return false;
+          }
+
+          if (parent.matches("p")) {
+            const meaningfulChildren = Array.from(parent.childNodes).filter((node) => {
+              return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+            });
+
+            return meaningfulChildren.length === 1 && meaningfulChildren[0] === element;
+          }
+
+          return parent.children.length === 1;
+        }
+
+        function moveOutOfQuartoParagraph(target, container) {
+          const parent = target.parentElement;
+
+          if (!parent || parent === container || !parent.matches("p")) {
+            return;
+          }
+
+          const meaningfulChildren = Array.from(parent.childNodes).filter((node) => {
+            return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "";
+          });
+
+          if (meaningfulChildren.length !== 1 || meaningfulChildren[0] !== target) {
+            return;
+          }
+
+          container.insertBefore(target, parent);
+          parent.remove();
+        }
+
+        function ensureContainer(target) {
+          const existingContainer = target.closest(".panzoom-container, [data-panzoom-container], .uri-panzoom-frame");
+
+          if (existingContainer) {
+            moveOutOfQuartoParagraph(target, existingContainer);
+
+            if (
+              existingContainer.dataset.panzoomAutoWrapped === "true" &&
+              existingContainer.dataset.panzoomNeedsSizing === "true"
+            ) {
+              sizeAutoWrapper(existingContainer, target);
+            }
+
+            return existingContainer;
+          }
+
+          if (!isSingleFigureImage(target)) {
+            return null;
+          }
+
+          const parent = target.parentElement;
+          const wrapper = document.createElement("div");
+          wrapper.className = "uri-panzoom-frame";
+          wrapper.dataset.panzoomAutoWrapped = "true";
+          sizeAutoWrapper(wrapper, target);
+
+          if (parent && parent.matches("p")) {
+            parent.parentNode.insertBefore(wrapper, parent);
+            wrapper.appendChild(target);
+            parent.remove();
+            return wrapper;
+          }
+
+          target.parentNode.insertBefore(wrapper, target);
+          wrapper.appendChild(target);
+          return wrapper;
+        }
+
+        function findTarget(container) {
+          if (!container) {
+            return null;
+          }
+
+          if (container.matches(".panzoom-target, [data-panzoom]")) {
+            return container;
+          }
+
+          return container.querySelector(".panzoom-target, [data-panzoom], img, svg, canvas, video, iframe, object");
+        }
+
+        function candidateTargets(root) {
+          const explicitContainerRoots = root.matches && root.matches(".panzoom-container, [data-panzoom-container]")
+            ? [root]
+            : [];
+
+          const explicitTargetRoots = root.matches && root.matches(".panzoom-target, [data-panzoom]")
+            ? [root]
+            : [];
+
+          const explicitContainers = [...explicitContainerRoots, ...Array.from(root.querySelectorAll(".panzoom-container, [data-panzoom-container]"))]
+            .map(findTarget)
+            .filter(Boolean);
+
+          const explicitTargets = [...explicitTargetRoots, ...Array.from(root.querySelectorAll(".panzoom-target, [data-panzoom]"))];
+          const pendingTargets = Array.from(root.querySelectorAll("[data-panzoom-pending='true']"));
+
+          return Array.from(new Set([...explicitContainers, ...explicitTargets, ...pendingTargets]));
+        }
+
+        function resetInactiveSlides() {
+          const reveal = getReveal();
+          const current = reveal ? reveal.getCurrentSlide() : null;
+
+          instances.forEach((instance, target) => {
+            if (current && current.contains(target)) {
+              return;
+            }
+
+            if (typeof instance.reset === "function") {
+              instance.reset({ animate: false });
+            }
+          });
+        }
+
+        function slidePanzoomEnabled(slide) {
+          return Boolean(slide) &&
+            slide.matches(".reveal .slides section.slide") &&
+            slide.dataset.panzoomSlide !== "false" &&
+            !slide.classList.contains("no-slide-panzoom");
+        }
+
+        function candidateSlideTargets(root) {
+          const scope = root || document;
+          const roots = scope.matches && scope.matches(".reveal .slides section.slide") ? [scope] : [];
+          const descendants = Array.from(scope.querySelectorAll(".reveal .slides section.slide"));
+
+          return Array.from(new Set([...roots, ...descendants])).filter(slidePanzoomEnabled);
+        }
+
+        function currentSlideTarget() {
+          const reveal = getReveal();
+          const current = reveal ? reveal.getCurrentSlide() : null;
+
+          if (slidePanzoomEnabled(current)) {
+            return current;
+          }
+
+          return document.querySelector(".reveal .slides section.slide.present.uri-slide-panzoom-target");
+        }
+
+        function slideEventIsExcluded(event) {
+          return Boolean(event.target.closest(
+            "a, button, input, textarea, select, summary, [contenteditable='true'], .panzoom-exclude, .uri-panzoom-frame, .panzoom-container, [data-panzoom-container]"
+          ));
+        }
+
+        function bindModifiedPointerDrag(surface, instance, config) {
+          const eventNames = instance.eventNames || {};
+          const downEvent = eventNames.down || "pointerdown";
+          const moveEvent = eventNames.move || "pointermove";
+          const upEvent = eventNames.up || "pointerup";
+          const shouldStart = config && typeof config.shouldStart === "function" ? config.shouldStart : () => true;
+          const onStart = config && typeof config.onStart === "function" ? config.onStart : () => {};
+          const onEnd = config && typeof config.onEnd === "function" ? config.onEnd : () => {};
+
+          surface.addEventListener(downEvent, function(event) {
+            syncPanzoomModifierState(event);
+
+            if (!panzoomModifierActive(event) || !shouldStart(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.handleDown(event);
+            onStart(event);
+
+            const handleMove = function(moveEventObject) {
+              instance.handleMove(moveEventObject);
+            };
+
+            const handleUp = function(upEventObject) {
+              instance.handleUp(upEventObject);
+              document.removeEventListener(moveEvent, handleMove);
+              document.removeEventListener(upEvent, handleUp);
+              onEnd(upEventObject);
+            };
+
+            document.addEventListener(moveEvent, handleMove, { passive: true });
+            document.addEventListener(upEvent, handleUp, { passive: true });
+          });
+        }
+
+        function getSlideResetButton() {
+          if (slideResetButton) {
+            return slideResetButton;
+          }
+
+          slideResetButton = document.createElement("button");
+          slideResetButton.type = "button";
+          slideResetButton.className = "uri-slide-panzoom-reset panzoom-exclude";
+          slideResetButton.setAttribute("aria-label", "Reset slide zoom");
+          slideResetButton.setAttribute("title", "Reset slide zoom");
+          slideResetButton.textContent = "1x";
+
+          slideResetButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            resetSlideTarget(currentSlideTarget());
+          });
+
+          document.body.appendChild(slideResetButton);
+          return slideResetButton;
+        }
+
+        function updateSlideState(slide, instance) {
+          const active = Boolean(instance && instance.getScale && instance.getScale() > 1.001);
+          const current = currentSlideTarget();
+
+          if (slide) {
+            slide.classList.toggle("uri-slide-panzoom-active", active);
+
+            if (!active) {
+              slide.classList.remove("uri-slide-panzoom-dragging");
+            }
+          }
+
+          if (slide === current) {
+            document.body.classList.toggle("uri-slide-panzoom-has-active", active);
+          }
+        }
+
+        function resetSlideTarget(slide) {
+          const instance = slideInstances.get(slide);
+
+          if (!instance || typeof instance.reset !== "function") {
+            return;
+          }
+
+          instance.reset({ animate: false });
+          updateSlideState(slide, instance);
+        }
+
+        function resetInactiveSlideTargets() {
+          const current = currentSlideTarget();
+
+          slideInstances.forEach((instance, slide) => {
+            if (slide === current) {
+              updateSlideState(slide, instance);
+              return;
+            }
+
+            if (typeof instance.reset === "function") {
+              instance.reset({ animate: false });
+            }
+
+            updateSlideState(slide, instance);
+          });
+
+          if (!current || !slideInstances.get(current) || slideInstances.get(current).getScale() <= 1.001) {
+            document.body.classList.remove("uri-slide-panzoom-has-active");
+          }
+        }
+
+        function initSlideTarget(slide) {
+          if (!window.Panzoom || slideInstances.has(slide) || !slidePanzoomEnabled(slide)) {
+            return;
+          }
+
+          slide.classList.add("uri-slide-panzoom-target");
+          getSlideResetButton();
+
+          let instance;
+          const options = {
+            ...slideDefaults,
+            maxScale: parseNumber(slide.dataset.slidePanzoomMaxScale, slideDefaults.maxScale),
+            minScale: parseNumber(slide.dataset.slidePanzoomMinScale, slideDefaults.minScale),
+            step: parseNumber(slide.dataset.slidePanzoomStep, slideDefaults.step),
+            handleStartEvent: function(event) {
+              if (slideEventIsExcluded(event) || !panzoomModifierActive(event)) {
+                return;
+              }
+
+              if (instance && instance.getScale() > 1.001) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+            }
+          };
+
+          const contain = slide.dataset.slidePanzoomContain;
+          if (contain === "inside" || contain === "outside") {
+            options.contain = contain;
+          }
+
+          instance = window.Panzoom(slide, options);
+          slideInstances.set(slide, instance);
+
+          slide.addEventListener("wheel", function(event) {
+            syncPanzoomModifierState(event);
+
+            if (slideEventIsExcluded(event) || !panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.zoomWithWheel(event);
+            window.requestAnimationFrame(() => updateSlideState(slide, instance));
+          }, { passive: false });
+
+          slide.addEventListener("panzoomchange", function() {
+            updateSlideState(slide, instance);
+          });
+
+          bindModifiedPointerDrag(slide, instance, {
+            shouldStart: function(event) {
+              return !slideEventIsExcluded(event) && instance.getScale() > 1.001;
+            },
+            onStart: function() {
+              slide.classList.add("uri-slide-panzoom-dragging");
+            },
+            onEnd: function() {
+              slide.classList.remove("uri-slide-panzoom-dragging");
+              updateSlideState(slide, instance);
+            }
+          });
+
+          slide.addEventListener("click", function(event) {
+            if (instance.getScale() > 1.001 && panzoomModifierActive(event) && !slideEventIsExcluded(event)) {
+              event.stopPropagation();
+            }
+          });
+
+          slide.addEventListener("dblclick", function(event) {
+            if (slideEventIsExcluded(event) || !panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            resetSlideTarget(slide);
+          });
+        }
+
+        function initTarget(target) {
+          if (!window.Panzoom || instances.has(target)) {
+            return;
+          }
+
+          const container = ensureContainer(target);
+
+          if (!container) {
+            return;
+          }
+
+          if (container.dataset.panzoomNeedsSizing === "true") {
+            bindPendingTarget(target, container);
+            return;
+          }
+
+          container.classList.add("uri-panzoom-frame");
+          target.classList.add("uri-panzoom-target");
+          container.setAttribute("tabindex", "0");
+
+          const options = {
+            ...defaults,
+            maxScale: parseNumber(container.dataset.panzoomMaxScale || target.dataset.panzoomMaxScale, defaults.maxScale),
+            minScale: parseNumber(container.dataset.panzoomMinScale || target.dataset.panzoomMinScale, defaults.minScale),
+            step: parseNumber(container.dataset.panzoomStep || target.dataset.panzoomStep, defaults.step)
+          };
+
+          const contain = container.dataset.panzoomContain || target.dataset.panzoomContain;
+          if (contain === "inside" || contain === "outside") {
+            options.contain = contain;
+          }
+
+          const instance = window.Panzoom(target, options);
+          instances.set(target, instance);
+
+          const resetButton = document.createElement("button");
+          resetButton.type = "button";
+          resetButton.className = "uri-panzoom-reset panzoom-exclude";
+          resetButton.setAttribute("aria-label", "Reset zoom");
+          resetButton.setAttribute("title", "Reset zoom");
+          resetButton.textContent = "1x";
+          container.appendChild(resetButton);
+
+          container.addEventListener("wheel", function(event) {
+            syncPanzoomModifierState(event);
+
+            if (!panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.zoomWithWheel(event);
+            container.classList.add("uri-panzoom-active");
+          }, { passive: false });
+
+          bindModifiedPointerDrag(container, instance, {
+            shouldStart: function() {
+              return instance.getScale() > 1.001;
+            },
+            onStart: function() {
+              container.classList.add("uri-panzoom-dragging");
+            },
+            onEnd: function() {
+              container.classList.remove("uri-panzoom-dragging");
+              container.classList.add("uri-panzoom-active");
+            }
+          });
+
+          container.addEventListener("click", function(event) {
+            if (panzoomModifierActive(event) && instance.getScale() > 1.001) {
+              event.stopPropagation();
+            }
+          });
+
+          container.addEventListener("dblclick", function(event) {
+            if (!panzoomModifierActive(event)) {
+              return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            instance.reset({ animate: false });
+            container.classList.remove("uri-panzoom-active");
+          });
+
+          resetButton.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            instance.reset({ animate: false });
+            container.classList.remove("uri-panzoom-active");
+          });
+        }
+
+        function initPanzoom(root) {
+          if (!window.Panzoom) {
+            return;
+          }
+
+          candidateTargets(root || document).forEach(initTarget);
+          candidateSlideTargets(getReveal() ? currentSlideTarget() || root || document : root || document).forEach(initSlideTarget);
+          resetInactiveSlides();
+          resetInactiveSlideTargets();
+        }
+
+        function scheduleInit(root) {
+          if (initScheduled) {
+            return;
+          }
+
+          initScheduled = true;
+          window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+              initScheduled = false;
+              initPanzoom(root || document);
+            });
+          });
+        }
+
+        window.URIRevealPanzoom = {
+          init: function(root) {
+            initPanzoom(root || document);
+          },
+          reset: function() {
+            instances.forEach((instance) => {
+              if (typeof instance.reset === "function") {
+                instance.reset({ animate: false });
+              }
+            });
+            slideInstances.forEach((instance, slide) => {
+              if (typeof instance.reset === "function") {
+                instance.reset({ animate: false });
+              }
+              updateSlideState(slide, instance);
+            });
+          },
+          instances: instances,
+          slideInstances: slideInstances
+        };
+
+        window.addEventListener("load", function() {
+          scheduleInit(document);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+          scheduleInit(document);
+
+          if (window.Reveal && typeof window.Reveal.on === "function") {
+            window.Reveal.on("ready", function(event) {
+              scheduleInit(event && event.currentSlide ? event.currentSlide : document);
+            });
+            window.Reveal.on("slidechanged", function(event) {
+              scheduleInit(event && event.currentSlide ? event.currentSlide : document);
+            });
+            window.Reveal.on("overviewhidden", function() {
+              scheduleInit(document);
+            });
+          }
+        });
+
+        document.addEventListener("keydown", syncPanzoomModifierState);
+        document.addEventListener("keyup", syncPanzoomModifierState);
+        document.addEventListener("pointermove", syncPanzoomModifierState);
+        window.addEventListener("blur", function() {
+          setPanzoomModifierState(false);
+        });
+        document.addEventListener("visibilitychange", function() {
+          if (document.visibilityState === "hidden") {
+            setPanzoomModifierState(false);
+          }
+        });
+      })();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

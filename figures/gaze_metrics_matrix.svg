@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Gaze metrics as design evidence</title>
+  <desc id="desc">Matrix connecting gaze metrics to design questions and possible interpretations.</desc>
+  <defs>
+    <style>
+      .head { fill: #2f3947; }
+      .cell { fill: #ffffff; stroke: #b6c2cf; stroke-width: 2; }
+      .alt { fill: #f8fafc; stroke: #b6c2cf; stroke-width: 2; }
+      .htext { font-family: Arial, Helvetica, sans-serif; fill: #ffffff; font-size: 22px; font-weight: 700; }
+      .text { font-family: Arial, Helvetica, sans-serif; fill: #20232a; font-size: 20px; font-weight: 700; }
+      .small { font-family: Arial, Helvetica, sans-serif; fill: #4b5563; font-size: 17px; }
+    </style>
+  </defs>
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <text x="56" y="45" class="text" style="font-size:30px">Metrics only become useful when tied to design questions</text>
+  <rect class="head" x="55" y="82" width="260" height="55"/>
+  <rect class="head" x="315" y="82" width="290" height="55"/>
+  <rect class="head" x="605" y="82" width="340" height="55"/>
+  <text class="htext" x="82" y="117">Metric</text>
+  <text class="htext" x="342" y="117">Question</text>
+  <text class="htext" x="632" y="117">Evidence for</text>
+  <rect class="cell" x="55" y="137" width="260" height="62"/>
+  <rect class="cell" x="315" y="137" width="290" height="62"/>
+  <rect class="cell" x="605" y="137" width="340" height="62"/>
+  <text class="text" x="80" y="176">Time to first fixation</text>
+  <text class="small" x="342" y="164">How quickly was it found?</text>
+  <text class="small" x="632" y="164">discoverability, noticeability</text>
+  <text class="small" x="632" y="187">or poor visual hierarchy</text>
+  <rect class="alt" x="55" y="199" width="260" height="62"/>
+  <rect class="alt" x="315" y="199" width="290" height="62"/>
+  <rect class="alt" x="605" y="199" width="340" height="62"/>
+  <text class="text" x="80" y="238">Dwell time</text>
+  <text class="small" x="342" y="226">Where did effort go?</text>
+  <text class="small" x="632" y="226">attention allocation, difficulty,</text>
+  <text class="small" x="632" y="249">monitoring, or verification</text>
+  <rect class="cell" x="55" y="261" width="260" height="62"/>
+  <rect class="cell" x="315" y="261" width="290" height="62"/>
+  <rect class="cell" x="605" y="261" width="340" height="62"/>
+  <text class="text" x="80" y="300">Revisits</text>
+  <text class="small" x="342" y="288">What did users re-check?</text>
+  <text class="small" x="632" y="288">uncertainty, memory demand,</text>
+  <text class="small" x="632" y="311">or active monitoring</text>
+  <rect class="alt" x="55" y="323" width="260" height="62"/>
+  <rect class="alt" x="315" y="323" width="290" height="62"/>
+  <rect class="alt" x="605" y="323" width="340" height="62"/>
+  <text class="text" x="80" y="362">Transitions</text>
+  <text class="small" x="342" y="350">How did information flow?</text>
+  <text class="small" x="632" y="350">workflow coupling, comparison,</text>
+  <text class="small" x="632" y="373">or excessive switching</text>
+  <rect class="cell" x="55" y="385" width="260" height="62"/>
+  <rect class="cell" x="315" y="385" width="290" height="62"/>
+  <rect class="cell" x="605" y="385" width="340" height="62"/>
+  <text class="text" x="80" y="424">Ignored AOI</text>
+  <text class="small" x="342" y="412">What was not sampled?</text>
+  <text class="small" x="632" y="412">missed alert, irrelevant display,</text>
+  <text class="small" x="632" y="435">or successful decluttering</text>
+</svg>
