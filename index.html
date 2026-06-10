@@ -43,21 +43,13 @@
       padding: 56px 0 44px;
     }
 
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent-dark);
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
     h1 {
-      max-width: 780px;
+      max-width: none;
       margin: 0;
-      font-size: clamp(2.2rem, 6vw, 4.5rem);
-      line-height: 1;
+      font-size: min(2.7rem, 4.4vw);
+      line-height: 1.05;
       letter-spacing: 0;
+      white-space: nowrap;
     }
 
     .intro {
@@ -132,6 +124,21 @@
       color: var(--muted);
     }
 
+    .subtopics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 22px;
+      max-width: 760px;
+      margin: 12px 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .subtopics li {
+      margin: 0;
+    }
+
     .lesson a {
       display: inline-flex;
       align-items: center;
@@ -142,6 +149,19 @@
       border-radius: 6px;
       font-weight: 700;
       text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .lesson-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      color: var(--muted);
+      background: var(--wash);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-weight: 700;
       white-space: nowrap;
     }
 
@@ -177,13 +197,22 @@
         justify-content: center;
         margin-top: 18px;
       }
+
+      .lesson-status {
+        width: 100%;
+        justify-content: center;
+        margin-top: 18px;
+      }
+
+      .subtopics {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap hero">
-      <p class="eyebrow">Industrial Engineering Graduate Workshop</p>
       <h1>Human-Computer Interaction Workshop</h1>
       <p class="intro">
         Lesson materials for studying human-centered design, task analysis, human performance,
@@ -196,7 +225,7 @@
     <div class="wrap">
       <div class="section-heading">
         <h2>Lessons</h2>
-        <span class="count">3 lessons available</span>
+        <span class="count">3 available, 5 planned</span>
       </div>
 
       <ol class="lesson-list">
@@ -235,6 +264,96 @@
             </p>
           </div>
           <a href="L2_Quarto.html">Open presentation</a>
+        </li>
+
+        <li class="lesson">
+          <div>
+            <p class="lesson-label">Lesson 3</p>
+            <h3>Mental Models and Decision Making</h3>
+            <p>
+              Analyze how users form expectations about systems, interpret feedback, and make
+              decisions under uncertainty in operational interfaces.
+            </p>
+            <ul class="subtopics">
+              <li>Mental models and interface expectations</li>
+              <li>Situation awareness and feedback loops</li>
+              <li>Decision support and automation bias</li>
+              <li>Errors, slips, mistakes, and recovery</li>
+            </ul>
+          </div>
+          <span class="lesson-status">Planned</span>
+        </li>
+
+        <li class="lesson">
+          <div>
+            <p class="lesson-label">Lesson 4</p>
+            <h3>Cognitive Load</h3>
+            <p>
+              Evaluate how interface complexity, task switching, information density, and time
+              pressure shape workload, attention, and user performance.
+            </p>
+            <ul class="subtopics">
+              <li>Intrinsic, extraneous, and germane load</li>
+              <li>Secondary-task and dual-task measures</li>
+              <li>NASA-TLX and subjective workload ratings</li>
+              <li>Design strategies for reducing load</li>
+            </ul>
+          </div>
+          <span class="lesson-status">Planned</span>
+        </li>
+
+        <li class="lesson">
+          <div>
+            <p class="lesson-label">Lesson 5</p>
+            <h3>EEG and Physiological Measures</h3>
+            <p>
+              Use physiological signals to study cognitive state, workload, stress, and engagement
+              during interaction with complex human-machine systems.
+            </p>
+            <ul class="subtopics">
+              <li>EEG indicators of attention and workload</li>
+              <li>Heart rate variability and electrodermal activity</li>
+              <li>Signal quality, artifacts, and synchronization</li>
+              <li>Multimodal measures for interface evaluation</li>
+            </ul>
+          </div>
+          <span class="lesson-status">Planned</span>
+        </li>
+
+        <li class="lesson">
+          <div>
+            <p class="lesson-label">Lesson 6</p>
+            <h3>Neural Networks for Predicting HCI</h3>
+            <p>
+              Build predictive models from interaction, behavioral, and physiological data to
+              estimate user state, performance, and interface risk.
+            </p>
+            <ul class="subtopics">
+              <li>Feature engineering for HCI datasets</li>
+              <li>Sequence models for gaze and interaction logs</li>
+              <li>Performance, workload, and error prediction</li>
+              <li>Model validation, interpretability, and limits</li>
+            </ul>
+          </div>
+          <span class="lesson-status">Planned</span>
+        </li>
+
+        <li class="lesson">
+          <div>
+            <p class="lesson-label">Lesson 7</p>
+            <h3>Human Interaction with AI</h3>
+            <p>
+              Evaluate AI-enabled interfaces by studying trust, transparency, control, collaboration,
+              and human oversight in decision-making workflows.
+            </p>
+            <ul class="subtopics">
+              <li>Trust calibration and reliance</li>
+              <li>Explainability and uncertainty communication</li>
+              <li>Human-AI teaming and shared control</li>
+              <li>Evaluation methods for AI-assisted work</li>
+            </ul>
+          </div>
+          <span class="lesson-status">Planned</span>
         </li>
       </ol>
     </div>
